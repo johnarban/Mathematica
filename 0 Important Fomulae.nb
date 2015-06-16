@@ -1,0 +1,159 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4947,        150]
+NotebookOptionsPosition[      4635,        134]
+NotebookOutlinePosition[      4979,        149]
+CellTagsIndexPosition[      4936,        146]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Important Formulas", "Title",
+ CellChangeTimes->{{3.543667247892459*^9, 3.543667254516838*^9}, 
+   3.543667985504648*^9},
+ Background->RGBColor[
+  0.996078431372549, 0.00392156862745098, 0.6509803921568628]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "Lagrangian", "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"lag", " ", "=", " ", 
+     RowBox[{"T", " ", "-", " ", "V"}]}], " ", ";"}], "\n", 
+   RowBox[{
+    RowBox[{"EL", "[", 
+     RowBox[{"f_", ",", " ", "q_"}], "]"}], " ", ":=", " ", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"f", ",", " ", "q"}], "]"}], " ", "-", " ", 
+     RowBox[{"Dt", "[", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"f", ",", " ", 
+         RowBox[{"D", "[", 
+          RowBox[{"q", ",", " ", "t"}], "]"}]}], "]"}], ",", " ", "t", ",", 
+       " ", 
+       RowBox[{"Constants", " ", "->", " ", "clist"}]}], "]"}]}]}], "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Cross", " ", "Product", "  ", "Z", " ", "x", " ", "X"}], "*)"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"Det", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"i", ",", " ", "j", ",", " ", "k"}], "}"}], ",", " ", "z", 
+       ",", " ", "x"}], "}"}], "]"}], ";"}], "\n", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"%", " ", "/.", " ", 
+        RowBox[{"i", " ", "->", " ", "1"}]}], " ", "/.", " ", 
+       RowBox[{"j", " ", "->", " ", "0"}]}], " ", "/.", " ", 
+      RowBox[{"k", " ", "->", " ", "0"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"%", " ", "/.", " ", 
+        RowBox[{"i", " ", "->", " ", "0"}]}], " ", "/.", " ", 
+       RowBox[{"j", " ", "->", " ", "1"}]}], " ", "/.", " ", 
+      RowBox[{"k", " ", "->", " ", "0"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"%", " ", "/.", " ", 
+        RowBox[{"i", " ", "->", " ", "0"}]}], " ", "/.", " ", 
+       RowBox[{"j", " ", "->", " ", "0"}]}], " ", "/.", " ", 
+      RowBox[{"k", " ", "->", " ", "1"}]}]}], "}"}], "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"elnew", "[", 
+         RowBox[{"[", "#", "]"}], "]"}], "&"}], " ", 
+       RowBox[{"a", "[", 
+        RowBox[{"[", "#", "]"}], "]"}], " ", "are", " ", "elements", " ", 
+       "of", " ", "a", " ", "list"}], "..."}], "-", 
+     RowBox[{"j", " ", "counts", " ", "backwards"}]}], "  ", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"element", "[", 
+      RowBox[{"i_", ",", " ", "j_"}], "]"}], " ", ":=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"elnew", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], " ", "/.", " ", 
+        RowBox[{
+         RowBox[{"a", "[", 
+          RowBox[{"[", "j", "]"}], "]"}], " ", "->", " ", "1"}]}], " ", "/.", 
+       " ", 
+       RowBox[{
+        RowBox[{"a", "[", 
+         RowBox[{"[", 
+          RowBox[{"-", "j"}], "]"}], "]"}], " ", "->", " ", "0"}]}], " ", "//",
+       " ", "FullSimplify"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"matrix", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"element", "[", 
+        RowBox[{"i", ",", " ", "j"}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", " ", "1", ",", " ", "2"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", " ", "1", ",", " ", "2"}], "}"}]}], "]"}]}], " ", 
+    ";"}], "\n", 
+   RowBox[{"(*", "*)"}], "\n", 
+   RowBox[{
+   "Do", " ", "not", " ", "use", " ", "decimals", " ", "values", " ", "when", 
+    " ", "u", " ", "can", " ", "use", " ", "fractions", " ", "to", " ", 
+    RowBox[{"prevent", "  ", "'"}], " ", 
+    RowBox[{"0.", "'"}], " ", "problems", " ", 
+    RowBox[{"and", " ", "'"}], " ", "0.", " ", 
+    RowBox[{"I", " ", "'"}]}], "\n", 
+   RowBox[{"(*", "*)"}], "\n"}]}]], "Code",
+ CellChangeTimes->{{3.54366731906753*^9, 3.5436673402787437`*^9}, {
+  3.5436674420355635`*^9, 3.5436674561163692`*^9}, {3.5436675576521764`*^9, 
+  3.5436676259990854`*^9}, {3.543667657478886*^9, 3.543667759804739*^9}, {
+  3.5436679148026047`*^9, 3.5436679214549847`*^9}}]
+}, Open  ]]
+},
+WindowSize->{707, 547},
+WindowMargins->{{121, Automatic}, {60, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 213, 4, 99, "Title"],
+Cell[795, 28, 3824, 103, 288, "Code"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

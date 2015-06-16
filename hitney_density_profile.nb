@@ -1,0 +1,378 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12770,        368]
+NotebookOptionsPosition[     11865,        333]
+NotebookOutlinePosition[     12223,        349]
+CellTagsIndexPosition[     12180,        346]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Nl", " ", "=", " ", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"183", " ", "*", " ", 
+      RowBox[{"StarData", "[", 
+       RowBox[{"\"\<Sun\>\"", ",", "\"\<Mass\>\""}], "]"}]}], 
+     RowBox[{"Quantity", "[", 
+      RowBox[{"1", ",", "\"\<pc^2\>\""}], "]"}]], ",", "\"\<g/cm^2\>\""}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"n", " ", "=", 
+  RowBox[{"UnitConvert", "[", " ", 
+   RowBox[{
+    FractionBox["Nl", 
+     RowBox[{"1.37", " ", 
+      RowBox[{"ParticleData", "[", 
+       RowBox[{"\"\<Proton\>\"", ",", "\"\<Mass\>\""}], "]"}]}]], ",", 
+    "\"\<1/pc^2\>\""}], "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.639833826506668*^9, 3.639833931370311*^9}, {
+   3.639833978655754*^9, 3.6398340672781963`*^9}, {3.639834125917334*^9, 
+   3.639834205049746*^9}, {3.6398342351451263`*^9, 3.639834235376659*^9}, {
+   3.639853721792953*^9, 3.639853729709299*^9}, {3.639853777973024*^9, 
+   3.639853781003709*^9}, {3.639853826314336*^9, 3.639853827402781*^9}, {
+   3.639854182681973*^9, 3.639854228997429*^9}, 3.639854432867168*^9, {
+   3.6398545258919086`*^9, 3.63985453032378*^9}, {3.6398545623311863`*^9, 
+   3.639854562563076*^9}, {3.639855074867318*^9, 3.639855086642618*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"0.0382174229071875522748997470712782383`7."},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          
+          RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+            
+            SuperscriptBox["\"cm\"", "2"]}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: grams per centimeter squared"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["\"Grams\"", 
+        SuperscriptBox["\"Centimeters\"", "2"]]}], "]"}]& )]], "Output",
+ CellChangeTimes->{
+  3.6398338753293657`*^9, 3.639833949779845*^9, {3.639833982279381*^9, 
+   3.639833994977236*^9}, {3.6398340543497963`*^9, 3.63983406858424*^9}, {
+   3.639834150066821*^9, 3.639834205855546*^9}, 3.6398342373888683`*^9, 
+   3.639853735212388*^9, 3.639853782066565*^9, 3.639854059880406*^9, {
+   3.639854198194788*^9, 3.639854229763048*^9}, 3.6398545316555357`*^9, 
+   3.639854563242498*^9, 3.639855088071103*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"1.5879769058627625`*^59"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{"\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"pc\"", "2"]}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: per parsecs squared"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["1", 
+        SuperscriptBox["\"Parsecs\"", "2"]]}], "]"}]& )]], "Output",
+ CellChangeTimes->{
+  3.6398338753293657`*^9, 3.639833949779845*^9, {3.639833982279381*^9, 
+   3.639833994977236*^9}, {3.6398340543497963`*^9, 3.63983406858424*^9}, {
+   3.639834150066821*^9, 3.639834205855546*^9}, 3.6398342373888683`*^9, 
+   3.639853735212388*^9, 3.639853782066565*^9, 3.639854059880406*^9, {
+   3.639854198194788*^9, 3.639854229763048*^9}, 3.6398545316555357`*^9, 
+   3.639854563242498*^9, 3.639855088568241*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"\[Lambda]", "=", " ", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"n", " ", "\[Pi]"}], 
+       RowBox[{"1.37", " ", 
+        RowBox[{"ParticleData", "[", 
+         RowBox[{"\"\<Proton\>\"", ",", "\"\<Mass\>\""}], "]"}]}]], ")"}], 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "2"}]], ",", "\"\<cm\>\""}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"M", " ", "=", " ", 
+  RowBox[{"n", " ", "*", " ", "\[Pi]", " ", 
+   SuperscriptBox["\[Lambda]", "2"]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[Rho]", " ", "=", " ", 
+  FractionBox["M", 
+   RowBox[{"\[Pi]", " ", 
+    SuperscriptBox["\[Lambda]", "2"]}]]}]}], "Input",
+ CellChangeTimes->{{3.6398537368422737`*^9, 3.639853771965357*^9}, {
+  3.6398538316976*^9, 3.639853961741971*^9}, {3.639854041556634*^9, 
+  3.639854079708721*^9}, {3.639854136633259*^9, 3.6398541415440474`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"4.368713028891785`*^-12"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"cm\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: centimeters"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Centimeters\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{
+  3.6398538647510223`*^9, {3.6398539336471453`*^9, 3.63985396254274*^9}, {
+   3.639854043596612*^9, 3.639854080605267*^9}, 3.63985414193226*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"2.2914917947266927`*^-24"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"g\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: grams"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Grams\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{
+  3.6398538647510223`*^9, {3.6398539336471453`*^9, 3.63985396254274*^9}, {
+   3.639854043596612*^9, 3.639854080605267*^9}, 3.639854141955119*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"0.038217422907187555`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          
+          RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+            
+            SuperscriptBox["\"cm\"", "2"]}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: grams per centimeter squared"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["\"Grams\"", 
+        SuperscriptBox["\"Centimeters\"", "2"]]}], "]"}]& )]], "Output",
+ CellChangeTimes->{
+  3.6398538647510223`*^9, {3.6398539336471453`*^9, 3.63985396254274*^9}, {
+   3.639854043596612*^9, 3.639854080605267*^9}, 3.639854141991583*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{
+    FractionBox["Mdot", 
+     RowBox[{"4", "\[Pi]"}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"G", " ", "Ms"}], 
+       SuperscriptBox["R", "3"]], ")"}], 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "2"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Rho]", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"b", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           FractionBox["r", "R"], ")"}], 
+          RowBox[{
+           RowBox[{"-", "3"}], "/", "2"}]], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"1", "+", 
+            FractionBox["mu", "mu0"]}], ")"}], 
+          RowBox[{
+           RowBox[{"-", "1"}], "/", "2"}]], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            FractionBox["mu", "mu0"], "+", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SuperscriptBox["mu0", "2"], "R"}], "r"]}], ")"}], 
+          RowBox[{"-", "1"}]]}], "/.", 
+        RowBox[{
+         RowBox[{"Solve", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["mu0", "3"], "+", 
+             RowBox[{"mu0", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"r", "/", "R"}], "-", "1"}], ")"}]}], "-", 
+             RowBox[{"mu", " ", 
+              RowBox[{"(", 
+               RowBox[{"r", "/", "R"}], ")"}]}]}], " ", "\[Equal]", "0"}], 
+           ",", "mu0"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+       RowBox[{"mu", "\[Rule]", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], "/.", 
+      RowBox[{"r", "\[Rule]", 
+       RowBox[{"r", " ", "R"}]}]}], "/.", 
+     RowBox[{"b", "\[Rule]", "1"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.639927070029811*^9, 3.639927211719852*^9}, {
+   3.639927298079616*^9, 3.639927306332513*^9}, {3.639927340890472*^9, 
+   3.639927357097653*^9}, 3.639927409401719*^9, {3.6399274982074823`*^9, 
+   3.639927631153059*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", 
+  RowBox[{
+   RowBox[{"NIntegrate", "[", 
+    RowBox[{
+     RowBox[{"\[Rho]", " ", 
+      SuperscriptBox["r", "2"], 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", "0", ",", 
+       RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", "0", ",", 
+       RowBox[{"\[Pi]", "/", "2"}]}], "}"}]}], "]"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"2", 
+     RowBox[{"NIntegrate", "[", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["r", "2"], 
+        RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r", ",", "0", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Phi]", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Theta]", ",", "0", ",", 
+         RowBox[{"\[Pi]", "/", "2"}]}], "}"}]}], "]"}]}], ")"}]}]}]], "Input",\
+
+ CellChangeTimes->{{3.639927411874237*^9, 3.639927457046339*^9}, {
+  3.6399276394927483`*^9, 3.639927655538425*^9}, {3.639927687912319*^9, 
+  3.639927719526162*^9}}],
+
+Cell[BoxData["0.6973314956003817`"], "Output",
+ CellChangeTimes->{
+  3.639927482886614*^9, {3.6399276458484783`*^9, 3.639927649486355*^9}, {
+   3.639927682543511*^9, 3.6399277204823093`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.63992778507592*^9, 3.639927795389522*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1", ",", "\"\<kg/s\>\""}], "]"}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Quantity", "[", 
+       RowBox[{"1", ",", "\"\<G\>\""}], "]"}], 
+      RowBox[{
+       RowBox[{"Quantity", "[", 
+        RowBox[{"1", ",", "\"\<kg\>\""}], "]"}], "/", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{"1", ",", "\"\<m^3\>\""}], "]"}]}]}], ")"}], "^", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "2"}], ")"}]}]}], "//", 
+  "UnitSimplify"}]], "Input",
+ CellChangeTimes->{{3.6400021586903667`*^9, 3.640002245076*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"122408.6489917014785257722`3.9212858035872364"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"kg\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: kilograms"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Kilograms\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{{3.6400022249236803`*^9, 3.64000224599201*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.639927802196307*^9, 3.6399278250234747`*^9}}]
+},
+WindowSize->{739, 756},
+WindowMargins->{{Automatic, -9}, {Automatic, 34}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1260, 26, 112, "Input"],
+Cell[1843, 50, 1101, 24, 32, "Output"],
+Cell[2947, 76, 971, 20, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3955, 101, 926, 23, 111, "Input"],
+Cell[4884, 126, 587, 13, 32, "Output"],
+Cell[5474, 141, 576, 13, 32, "Output"],
+Cell[6053, 156, 814, 20, 32, "Output"]
+}, Open  ]],
+Cell[6882, 179, 2203, 65, 206, "Input"],
+Cell[CellGroupData[{
+Cell[9110, 248, 1186, 34, 57, "Input"],
+Cell[10299, 284, 191, 3, 28, "Output"]
+}, Open  ]],
+Cell[10505, 290, 91, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[10621, 295, 621, 19, 46, "Input"],
+Cell[11245, 316, 507, 11, 66, "Output"]
+}, Open  ]],
+Cell[11767, 330, 94, 1, 28, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

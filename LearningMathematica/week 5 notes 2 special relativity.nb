@@ -1,0 +1,456 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     14508,        446]
+NotebookOptionsPosition[     13715,        415]
+NotebookOutlinePosition[     14159,        432]
+CellTagsIndexPosition[     14116,        429]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\n", 
+ RowBox[{"\[Gamma]", ":=", 
+  RowBox[{"1", "/", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"1", "-", 
+     RowBox[{"\[Beta]", "^", "2"}]}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "\[Beta]_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]", ",", 
+       RowBox[{"\[Gamma]", " ", "\[Beta]"}], ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Gamma]", " ", "\[Beta]"}], ",", "\[Gamma]", ",", "0", ",", 
+       "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], "\n", 
+  "\n", 
+  RowBox[{"(*", 
+   RowBox[{"Prime", " ", "is", " ", "rocket", " ", "frame"}], "*)"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"rp", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "tp"}], ",", 
+     RowBox[{"u", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}], "tp"}], ",", " ", 
+     RowBox[{"u", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], " ", "tp"}], ",", "0"}], "}"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"r1p", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"r2p", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", 
+      RowBox[{"L", "/", "u"}]}], ",", 
+     RowBox[{"L", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"L", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", "0"}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Tp", "=", 
+    RowBox[{"tp", "/.", 
+     RowBox[{
+      RowBox[{"Solve", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"r2p", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "\[Equal]", 
+         RowBox[{"rp", "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}], ",", "tp"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\n", "\n", 
+  RowBox[{"(*", 
+   RowBox[{"Lab", " ", "Frame"}], "*)"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"r1", "=", 
+   RowBox[{
+    RowBox[{"L", "[", "\[Beta]", "]"}], ".", "r1p"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"r2", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"L", "[", "\[Beta]", "]"}], ".", "r2p"}], "//", "PowerExpand"}],
+     "//", "Simplify"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"dist", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"r2", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "^", "2"}], " ", "+", " ", 
+       RowBox[{
+        RowBox[{"r2", "[", 
+         RowBox[{"[", "3", "]"}], "]"}], "^", "2"}]}], "]"}], "//", 
+     "PowerExpand"}], "//", "Simplify"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"speed", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"dist", "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"r2", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "/", "c"}], ")"}]}], "//", 
+      "Simplify"}], " ", "//", "PowerExpand"}], "//", "Simplify"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"length", "=", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"r2p", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "^", "2"}], " ", "/", " ", 
+        RowBox[{"\[Gamma]", "^", "2"}]}], ")"}], "+", 
+      RowBox[{
+       RowBox[{"r2p", "[", 
+        RowBox[{"[", "3", "]"}], "]"}], "^", "2"}]}], "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<\[CapitalDelta]t = \>\"", ",", 
+   RowBox[{
+    RowBox[{"r2", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "/", "c"}]}], "]"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<the distance traveled = \>\"", ",", "dist"}], "]"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<The Speed is = \>\"", ",", "speed"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Length is = \>\"", ",", "length"}], "]"}], 
+  "\n"}], "\n"}], "Input",
+ CellChangeTimes->{{3.545064485697254*^9, 3.545064647110486*^9}, {
+   3.545064720271671*^9, 3.5450647667613297`*^9}, {3.5450648049515142`*^9, 
+   3.5450648395224915`*^9}, 3.545064876613613*^9, {3.545064943358431*^9, 
+   3.5450650886817427`*^9}, {3.5450651271889453`*^9, 3.545065230755869*^9}, {
+   3.5450652764584827`*^9, 3.5450652954305677`*^9}, {3.5450656929073024`*^9, 
+   3.5450657824514236`*^9}, {3.5450658152412996`*^9, 
+   3.5450658691163807`*^9}, {3.545065919371255*^9, 3.5450659347271338`*^9}, {
+   3.5450659683930593`*^9, 3.5450660346468487`*^9}, {3.545066074797145*^9, 
+   3.5450661279311843`*^9}, {3.5450661637382326`*^9, 3.545066232498165*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\[CapitalDelta]t = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"L", " ", 
+     RowBox[{"(", 
+      RowBox[{"c", "+", 
+       RowBox[{"u", " ", "\[Beta]", " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ")"}]}], 
+    RowBox[{"c", " ", "u", " ", 
+     SqrtBox[
+      RowBox[{"1", "-", 
+       SuperscriptBox["\[Beta]", "2"]}]]}]]}],
+  SequenceForm[
+  "\[CapitalDelta]t = ", $CellContext`c^(-1) $CellContext`L \
+$CellContext`u^(-1) (1 - $CellContext`\[Beta]^2)^
+    Rational[-1, 2] ($CellContext`c + $CellContext`u $CellContext`\[Beta] 
+     Cos[$CellContext`\[Theta]])],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5450658476201515`*^9, 3.545065869890425*^9}, {
+   3.5450659733663435`*^9, 3.5450660014819517`*^9}, 3.5450660358949203`*^9, {
+   3.545066207336726*^9, 3.5450662335482254`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"the distance traveled = \"\>", "\[InvisibleSpace]", 
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["L", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"c", " ", "\[Beta]"}], "+", 
+            RowBox[{"u", " ", 
+             RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ")"}], "2"], 
+         RowBox[{
+          SuperscriptBox["u", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            SuperscriptBox["\[Beta]", "2"]}], ")"}]}]]}], "+", 
+       SuperscriptBox[
+        RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], ")"}]}]]}],
+  SequenceForm[
+  "the distance traveled = ", ($CellContext`L^2 (-$CellContext`u^(-2) (-1 + \
+$CellContext`\[Beta]^2)^(-1) ($CellContext`c $CellContext`\[Beta] + \
+$CellContext`u Cos[$CellContext`\[Theta]])^2 + Sin[$CellContext`\[Theta]]^2))^
+   Rational[1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5450658476201515`*^9, 3.545065869890425*^9}, {
+   3.5450659733663435`*^9, 3.5450660014819517`*^9}, 3.5450660358949203`*^9, {
+   3.545066207336726*^9, 3.5450662335502253`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Speed is = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"c", " ", "u", " ", 
+     SqrtBox[
+      RowBox[{"1", "-", 
+       SuperscriptBox["\[Beta]", "2"]}]], " ", 
+     SqrtBox[
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"c", " ", "\[Beta]"}], "+", 
+            RowBox[{"u", " ", 
+             RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ")"}], "2"], 
+         RowBox[{
+          SuperscriptBox["u", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            SuperscriptBox["\[Beta]", "2"]}], ")"}]}]]}], "+", 
+       SuperscriptBox[
+        RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}]]}], 
+    RowBox[{"c", "+", 
+     RowBox[{"u", " ", "\[Beta]", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}]]}],
+  SequenceForm[
+  "The Speed is = ", $CellContext`c $CellContext`u (
+     1 - $CellContext`\[Beta]^2)^
+    Rational[1, 2] ($CellContext`c + $CellContext`u $CellContext`\[Beta] 
+      Cos[$CellContext`\[Theta]])^(-1) (-$CellContext`u^(-2) (-1 + \
+$CellContext`\[Beta]^2)^(-1) ($CellContext`c $CellContext`\[Beta] + \
+$CellContext`u Cos[$CellContext`\[Theta]])^2 + Sin[$CellContext`\[Theta]]^2)^
+    Rational[1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5450658476201515`*^9, 3.545065869890425*^9}, {
+   3.5450659733663435`*^9, 3.5450660014819517`*^9}, 3.5450660358949203`*^9, {
+   3.545066207336726*^9, 3.5450662335532255`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Length is = \"\>", "\[InvisibleSpace]", 
+   SqrtBox[
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["L", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        SuperscriptBox["\[Beta]", "2"]}], ")"}], " ", 
+      SuperscriptBox[
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], "2"]}], "+", 
+     RowBox[{
+      SuperscriptBox["L", "2"], " ", 
+      SuperscriptBox[
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}]}]]}],
+  SequenceForm[
+  "Length is = ", ($CellContext`L^2 (1 - $CellContext`\[Beta]^2) 
+     Cos[$CellContext`\[Theta]]^2 + $CellContext`L^2 
+     Sin[$CellContext`\[Theta]]^2)^Rational[1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5450658476201515`*^9, 3.545065869890425*^9}, {
+   3.5450659733663435`*^9, 3.5450660014819517`*^9}, 3.5450660358949203`*^9, {
+   3.545066207336726*^9, 3.545066233554226*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\n", 
+ RowBox[{"\[Gamma]", ":=", 
+  RowBox[{"1", "/", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"1", "-", 
+     RowBox[{"\[Beta]", "^", "2"}]}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "\[Beta]_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Gamma]", ",", 
+       RowBox[{"\[Gamma]", " ", "\[Beta]"}], ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Gamma]", " ", "\[Beta]"}], ",", "\[Gamma]", ",", "0", ",", 
+       "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"rp", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", " ", "tp"}], ",", 
+     RowBox[{"upx", " ", "tp"}], ",", 
+     RowBox[{"upy", " ", "tp"}], ",", 
+     RowBox[{"upz", " ", "tp"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "=", 
+    RowBox[{
+     RowBox[{"L", "[", "\[Beta]", "]"}], ".", "rp"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"ux", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"r", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "/", "c"}], ")"}]}], "//", 
+     "PowerExpand"}], " ", "//", "Simplify"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"uy", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", "[", 
+       RowBox[{"[", "3", "]"}], "]"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"r", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "/", "c"}], ")"}]}], "//", 
+     "PowerExpand"}], " ", "//", "Simplify"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"uz", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"r", "[", 
+        RowBox[{"[", "4", "]"}], "]"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"r", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "/", "c"}], ")"}]}], "//", 
+      "PowerExpand"}], " ", "//", "Simplify"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<uII = \>\"", ",", "ux"}], "]"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<u perp = \>\"", ",", "uy"}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.545066710561509*^9, 3.545066778578399*^9}, {
+  3.545066808601116*^9, 3.545066839344875*^9}, {3.545066954689472*^9, 
+  3.545067198163398*^9}, {3.5450672350485077`*^9, 3.545067257434788*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"uII = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"c", " ", 
+     RowBox[{"(", 
+      RowBox[{"upx", "+", 
+       RowBox[{"c", " ", "\[Beta]"}]}], ")"}]}], 
+    RowBox[{"c", "+", 
+     RowBox[{"upx", " ", "\[Beta]"}]}]]}],
+  SequenceForm[
+  "uII = ", $CellContext`c ($CellContext`upx + $CellContext`c $CellContext`\
+\[Beta])/($CellContext`c + $CellContext`upx $CellContext`\[Beta])],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5450671991744556`*^9, 3.545067258012821*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"u perp = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"c", " ", "upy", " ", 
+     SqrtBox[
+      RowBox[{"1", "-", 
+       SuperscriptBox["\[Beta]", "2"]}]]}], 
+    RowBox[{"c", "+", 
+     RowBox[{"upx", " ", "\[Beta]"}]}]]}],
+  SequenceForm[
+  "u perp = ", $CellContext`c $CellContext`upy ($CellContext`c + \
+$CellContext`upx $CellContext`\[Beta])^(-1) (1 - $CellContext`\[Beta]^2)^
+    Rational[1, 2]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5450671991744556`*^9, 3.545067258014821*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData["\n"], "Input",
+ CellChangeTimes->{3.5450668221228895`*^9}]
+},
+WindowSize->{707, 547},
+WindowMargins->{{229, Automatic}, {Automatic, 4}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4676, 139, 564, "Input"],
+Cell[CellGroupData[{
+Cell[5280, 165, 867, 21, 52, "Print"],
+Cell[6150, 188, 1245, 32, 71, "Print"],
+Cell[7398, 222, 1564, 40, 78, "Print"],
+Cell[8965, 264, 896, 23, 38, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9910, 293, 2572, 80, 322, "Input"],
+Cell[CellGroupData[{
+Cell[12507, 377, 541, 14, 48, "Print"],
+Cell[13051, 393, 561, 15, 54, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[13639, 412, 72, 1, 58, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

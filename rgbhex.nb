@@ -1,0 +1,280 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9553,        270]
+NotebookOptionsPosition[      8673,        233]
+NotebookOutlinePosition[      9031,        249]
+CellTagsIndexPosition[      8988,        246]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"100", ",", "181", ",", "205"}], "}"}], "/", "255"}], "//", 
+  "N"}]], "Input",
+ CellChangeTimes->{{3.641910658085143*^9, 3.641910668154023*^9}, {
+  3.641910768472232*^9, 3.641910807108512*^9}, {3.641910840046607*^9, 
+  3.641910847426705*^9}, {3.641910924486599*^9, 3.641910932955336*^9}, {
+  3.6419109718937597`*^9, 3.641910977969532*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.39215686274509803`", ",", "0.7098039215686275`", ",", 
+   "0.803921568627451`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.64191066559825*^9, 3.6419106684130297`*^9}, 
+   3.641910774755045*^9, 3.641910807521009*^9, 3.6419108481232777`*^9, 
+   3.641910933238102*^9, 3.641910978262645*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sns", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"RGBColor", "[", 
+      RowBox[{".3", ",", ".4", ",", ".7"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{".3", ",", ".6", ",", ".4"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.8", ",", "0.3", ",", "0.3"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.5", ",", "0.4", ",", "0.7"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.8", ",", "0.7", ",", "0.2"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.4", ",", "0.4", ",", "0.4"}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsRow", "[", 
+  RowBox[{"Graphics", "/@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"#", ",", 
+        RowBox[{"Disk", "[", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], "]"}]}], "}"}], "&"}], "/@", 
+     "sns"}], ")"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.641910674700395*^9, 3.641910699289679*^9}, {
+  3.641911079845443*^9, 3.641911113564657*^9}, {3.641911223392815*^9, 
+  3.641911403763537*^9}, {3.641911567012876*^9, 3.6419116150188093`*^9}, {
+  3.6419132786760263`*^9, 3.64191328955153*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[
+      {RGBColor[0.3, 0.4, 0.7], DiskBox[{0, 0}]}], {195.42857142857142`, -189.},
+      ImageScaled[{0.5, 0.5}], {359.99999999999994`, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.3, 0.6, 0.4], DiskBox[{0, 0}]}], {586.2857142857142, -189.},
+      ImageScaled[{0.5, 0.5}], {359.99999999999994`, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.8, 0.3, 0.3], DiskBox[{0, 0}]}], {977.1428571428571, -189.},
+      ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.5, 0.4, 0.7], DiskBox[{0, 0}]}], {1368., -189.}, 
+     ImageScaled[{0.5, 0.5}], {360.0000000000002, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.8, 0.7, 0.2], DiskBox[{0, 0}]}], {1758.8571428571427`, -189.},
+      ImageScaled[{0.5, 0.5}], {360.0000000000002, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.4, 0.4, 0.4], DiskBox[{0, 0}]}], {2149.7142857142853`, -189.},
+      ImageScaled[{0.5, 0.5}], {359.9999999999998, 360.}]}, {}},
+  ContentSelectable->True,
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{{3.641911602279286*^9, 3.6419116156625423`*^9}, {
+  3.641913286496026*^9, 3.6419132898606453`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"john", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"RGBColor", "[", 
+      RowBox[{".3", ",", ".3", ",", ".8"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{".3", ",", ".6", ",", ".2"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.8", ",", "0.2", ",", "0.2"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.5", ",", "0.3", ",", "0.7"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.8", ",", "0.8", ",", "0.0"}], "]"}], ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.3", ",", "0.4", ",", "0.4"}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsRow", "[", 
+  RowBox[{"Graphics", "/@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"#", ",", 
+        RowBox[{"Disk", "[", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], "]"}]}], "}"}], "&"}], "/@", 
+     "john"}], ")"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.641910781961775*^9, 3.641910783459854*^9}, 
+   3.641911078319765*^9, {3.641911119600005*^9, 3.641911141514908*^9}, {
+   3.6419112269992237`*^9, 3.641911233469573*^9}, {3.641911621722681*^9, 
+   3.641911694938252*^9}, {3.641913294636047*^9, 3.641913299327745*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[
+      {RGBColor[0.3, 0.3, 0.8], DiskBox[{0, 0}]}], {195.42857142857142`, -189.},
+      ImageScaled[{0.5, 0.5}], {359.99999999999994`, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.3, 0.6, 0.2], DiskBox[{0, 0}]}], {586.2857142857142, -189.},
+      ImageScaled[{0.5, 0.5}], {359.99999999999994`, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.8, 0.2, 0.2], DiskBox[{0, 0}]}], {977.1428571428571, -189.},
+      ImageScaled[{0.5, 0.5}], {360., 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.5, 0.3, 0.7], DiskBox[{0, 0}]}], {1368., -189.}, 
+     ImageScaled[{0.5, 0.5}], {360.0000000000002, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.8, 0.8, 0.], DiskBox[{0, 0}]}], {1758.8571428571427`, -189.},
+      ImageScaled[{0.5, 0.5}], {360.0000000000002, 360.}], InsetBox[
+     GraphicsBox[
+      {RGBColor[0.3, 0.4, 0.4], DiskBox[{0, 0}]}], {2149.7142857142853`, -189.},
+      ImageScaled[{0.5, 0.5}], {359.9999999999998, 360.}]}, {}},
+  ContentSelectable->True,
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{
+  3.641910783827029*^9, 3.64191114231278*^9, {3.641911227746665*^9, 
+   3.641911234484261*^9}, {3.6419116259238*^9, 3.6419116951092443`*^9}, 
+   3.641913300008779*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rgbtohex", "=", 
+  RowBox[{
+   RowBox[{"ToUpperCase", "[", "\[IndentingNewLine]", 
+    RowBox[{"StringJoin", "[", "\[IndentingNewLine]", 
+     RowBox[{"IntegerString", "[", 
+      RowBox[{
+       RowBox[{"IntegerPart", "/@", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"List", "@@", "#"}], "*", "255"}], ")"}]}], ",", "16"}], 
+      "]"}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "]"}], 
+   "&"}]}]], "Input",
+ CellChangeTimes->{{3.6419122885144777`*^9, 3.641912392473812*^9}, {
+  3.641912431302513*^9, 3.641912472305203*^9}, {3.641912626296638*^9, 
+  3.6419126397912188`*^9}, {3.641912686535668*^9, 3.6419126878796988`*^9}, {
+  3.6419127333621883`*^9, 3.641912798163993*^9}, {3.641912865389065*^9, 
+  3.6419128655720987`*^9}, {3.641912939919793*^9, 3.641913001430965*^9}, {
+  3.6419131053693867`*^9, 3.6419131397523327`*^9}, {3.641913176309906*^9, 
+  3.641913256751932*^9}, {3.641913369643672*^9, 3.641913425560453*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ToUpperCase", "[", 
+   RowBox[{"StringJoin", "[", 
+    RowBox[{"IntegerString", "[", 
+     RowBox[{
+      RowBox[{"IntegerPart", "/@", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"List", "@@", "#1"}], " ", "255"}], ")"}]}], ",", "16"}], 
+     "]"}], "]"}], "]"}], "&"}]], "Output",
+ CellChangeTimes->{3.6419134259709473`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rgbtohex", "/@", "john"}]], "Input",
+ CellChangeTimes->{{3.641913020335513*^9, 3.641913072516286*^9}, {
+  3.6419132685386257`*^9, 3.641913272032833*^9}, {3.6419133028304567`*^9, 
+  3.641913303128398*^9}, {3.641913381566133*^9, 3.6419134042914553`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"4C4CCC\"\>", ",", "\<\"4C9933\"\>", ",", "\<\"CC3333\"\>", 
+   ",", "\<\"7F4CB2\"\>", ",", "\<\"CCCC0\"\>", ",", "\<\"4C6666\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.641913032386343*^9, 3.6419130728543386`*^9}, 
+   3.6419133035190487`*^9, {3.641913379747786*^9, 3.641913428009041*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6419128668288507`*^9, 3.641912902680325*^9}, 
+   3.641912936279448*^9}],
+
+Cell[BoxData["21394.5`"], "Output",
+ CellChangeTimes->{3.6419128982520237`*^9}]
+}, Open  ]]
+},
+WindowSize->{945, 610},
+WindowMargins->{{70, Automatic}, {Automatic, 95}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 404, 9, 28, "Input"],
+Cell[987, 33, 331, 7, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1355, 45, 1233, 32, 63, "Input"],
+Cell[2591, 79, 1205, 23, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3833, 107, 1269, 32, 63, "Input"],
+Cell[5105, 141, 1273, 25, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6415, 171, 973, 19, 97, "Input"],
+Cell[7391, 192, 372, 11, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7800, 208, 276, 4, 28, "Input"],
+Cell[8079, 214, 339, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8455, 225, 120, 2, 28, "Input"],
+Cell[8578, 229, 79, 1, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

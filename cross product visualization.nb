@@ -1,0 +1,205 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7435,        196]
+NotebookOptionsPosition[      7080,        179]
+NotebookOutlinePosition[      7424,        194]
+CellTagsIndexPosition[      7381,        191]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"o", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"vector", "[", "v_", "]"}], ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{"Thick", ",", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"Cos", "[", "v", "]"}], "]"}], ",", 
+     RowBox[{"Arrow", "[", 
+      RowBox[{"{", 
+       RowBox[{"o", ",", "v"}], "}"}], "]"}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"{", "v", "}"}]}]}], "}"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"{", 
+    RowBox[{",", ","}], "}"}]}], ";"}], "\n", 
+ RowBox[{"Animate", "[", "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"v", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "2"}], "}"}]}], ";", "\n", 
+    RowBox[{
+     RowBox[{"v", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], ";", "\n", 
+    RowBox[{
+     RowBox[{"v", "[", 
+      RowBox[{"[", "3", "]"}], "]"}], "=", 
+     RowBox[{"Cross", "[", 
+      RowBox[{
+       RowBox[{"v", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"v", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Show", "[", 
+     RowBox[{
+      RowBox[{"vector", "[", 
+       RowBox[{"v", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"vector", "[", 
+       RowBox[{"v", "[", 
+        RowBox[{"[", "2", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"vector", "[", 
+       RowBox[{"v", "[", 
+        RowBox[{"[", "3", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"Axes", "\[Rule]", "1"}], ",", 
+      RowBox[{"AxesOrigin", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<x\>\"", ",", "\"\<y\>\"", ",", "\"\<z\>\""}], "}"}]}]}], 
+     "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"b", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.545752884364397*^9, 3.5457531215959663`*^9}, {
+  3.5457531966452584`*^9, 3.5457532018365555`*^9}, {3.545753293650807*^9, 
+  3.545753335067176*^9}, {3.545753388496232*^9, 3.5457534819065742`*^9}, {
+  3.5457535133883753`*^9, 3.545754215241519*^9}, {3.545754297018196*^9, 
+  3.545754339238611*^9}, {3.5457543755441256`*^9, 3.545754417367799*^9}, {
+  3.545754827803523*^9, 3.5457549161152782`*^9}, {3.5457550037718325`*^9, 
+  3.5457550417890987`*^9}, {3.545755134874462*^9, 3.54575513933607*^9}, {
+  3.545755261671485*^9, 3.5457552727631044`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 
+    1.7529093200200454`, $CellContext`b$$ = 
+    4.185442012084916, $CellContext`c$$ = 3.1605675351664693`, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0, 2 Pi}, {
+      Hold[$CellContext`b$$], 0, 2 Pi}, {
+      Hold[$CellContext`c$$], 0, 2 Pi}}, Typeset`size$$ = {
+    360., {187., 191.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$56424$$ = 
+    0, $CellContext`b$56425$$ = 0, $CellContext`c$56426$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0, $CellContext`b$$ = 
+        0, $CellContext`c$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$56424$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$56425$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$56426$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (Part[$CellContext`v, 1] = {2, 1, 2}; 
+       Part[$CellContext`v, 
+          2] = {$CellContext`a$$, $CellContext`b$$, $CellContext`c$$}; 
+       Part[$CellContext`v, 3] = Cross[
+          Part[$CellContext`v, 1], 
+          Part[$CellContext`v, 2]]; Show[
+         $CellContext`vector[
+          Part[$CellContext`v, 1]], 
+         $CellContext`vector[
+          Part[$CellContext`v, 2]], 
+         $CellContext`vector[
+          Part[$CellContext`v, 3]], Axes -> 1, AxesOrigin -> {0, 0, 0}, 
+         AxesLabel -> {"x", "y", "z"}]), 
+      "Specifications" :> {{$CellContext`a$$, 0, 2 Pi, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}, {$CellContext`b$$, 0, 2 Pi, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}, {$CellContext`c$$, 0, 2 Pi, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {279., 284.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.545754126061418*^9, {3.5457541717930336`*^9, 3.5457542159385586`*^9}, {
+   3.545754300425391*^9, 3.5457543395416284`*^9}, {3.545754383453339*^9, 
+   3.545754417648599*^9}, {3.5457548384583416`*^9, 3.545754859221978*^9}, 
+   3.5457549170200796`*^9, 3.545754960403756*^9, 3.5457550062678366`*^9, 
+   3.5457550432867017`*^9, 3.545755139819671*^9, 3.5457552735899057`*^9, 
+   3.5924127122542515`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.545753930171214*^9, 3.5457539310402637`*^9}}]
+},
+WindowSize->{972, 633},
+WindowMargins->{{60, Automatic}, {-8, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2916, 79, 212, "Input"],
+Cell[3498, 103, 3469, 70, 580, "Output"]
+}, Open  ]],
+Cell[6982, 176, 94, 1, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

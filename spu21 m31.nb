@@ -1,0 +1,1443 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     57539,       1433]
+NotebookOptionsPosition[     56173,       1389]
+NotebookOutlinePosition[     56597,       1405]
+CellTagsIndexPosition[     56554,       1402]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Mb", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "2.5"}], " ", 
+    RowBox[{"Log10", "[", 
+     RowBox[{"x", "/", "45"}], "]"}]}], "+", "12.31", "+", 
+   RowBox[{"(", 
+    RowBox[{"12.17", "-", "4.39"}], ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Mv", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "2.5"}], " ", 
+    RowBox[{"Log10", "[", 
+     RowBox[{"x", "/", "30"}], "]"}]}], "+", "14.14", " ", "+", 
+   RowBox[{"(", 
+    RowBox[{"10.53", "-", "4.52"}], ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Mass", "[", "m_", "]"}], ":=", 
+  SuperscriptBox["10", 
+   RowBox[{
+    RowBox[{"-", "0.4"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"m", " ", "-", 
+        RowBox[{"5", " ", 
+         RowBox[{"Log10", "[", 
+          RowBox[{"780", "*", 
+           SuperscriptBox["10", "3"]}], "]"}]}], "+", "5"}], ")"}], "-", " ", 
+      "4.7"}], ")"}]}]]}]}], "Input",
+ CellChangeTimes->{{3.62705425545395*^9, 3.6270542681871853`*^9}, {
+   3.627054335380958*^9, 3.6270543359079356`*^9}, {3.627054372858028*^9, 
+   3.6270544407898808`*^9}, {3.627054838081859*^9, 3.627054873589714*^9}, 
+   3.6270549227006865`*^9, {3.6270994679801035`*^9, 3.6270994826220064`*^9}, {
+   3.6270999333005733`*^9, 3.62709995269268*^9}, 3.627100827289011*^9, {
+   3.627101007930051*^9, 3.627101052858374*^9}}],
+
+Cell["B", "Text",
+ CellChangeTimes->{{3.6270551947232723`*^9, 3.627055198283373*^9}, 
+   3.6271005195625324`*^9, {3.6271014904950676`*^9, 3.6271015179972005`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"inb", "=", 
+   RowBox[{"{", 
+    RowBox[{"441607.188", ",", 
+     RowBox[{"1.22", "*", 
+      SuperscriptBox["10", "6"]}], ",", "627897.3756", ",", "677451.188"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bkgb", "=", "1167.188"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bkgm31b", "=", 
+   RowBox[{"{", 
+    RowBox[{"1647.578", ",", "1614.577", ",", "1441.211", ",", "1298.818"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "2", ",", "3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"16", ",", "32", ",", "24", ",", "32"}], "}"}], "*", "s"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Sb", "=", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["s", "2"], "*", "inb"}], "+", 
+   RowBox[{"\[Pi]", " ", 
+    RowBox[{"r", "^", "2"}], " ", "bkgm31b"}], " ", "-", 
+   RowBox[{"\[Pi]", " ", 
+    RowBox[{"r", "^", "2"}], " ", "bkgb"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Sb", "=", 
+  RowBox[{"{", 
+   RowBox[{"988809", ",", "6414079", ",", "4495030", ",", "9908133"}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"rb", "=", 
+  RowBox[{"Mb", "[", "Sb", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mb", "=", 
+   RowBox[{"Mass", "[", "rb", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"dmb", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"mb", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "-", 
+      RowBox[{"mb", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"mb", "[", 
+       RowBox[{"[", "3", "]"}], "]"}], "-", 
+      RowBox[{"mb", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"mb", "[", 
+       RowBox[{"[", "4", "]"}], "]"}], "-", 
+      RowBox[{"mb", "[", 
+       RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Rho]b", "=", 
+   RowBox[{"dmb", "/", 
+    RowBox[{"(", 
+     RowBox[{"\[Pi]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"r", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ";;", "4"}], "]"}], "]"}], "2"], "-", 
+        SuperscriptBox[
+         RowBox[{"r", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ";;", "3"}], "]"}], "]"}], "2"]}], ")"}]}], ")"}]}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{"r", ",", "mb"}], "]"}], ",", "2"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "->", "\"\<Marketing\>\""}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", "\"\<Cumulative mass vs radius in B\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListLogLogPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{
+       RowBox[{"r", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ";;", "4"}], "]"}], "]"}], ",", "dmb"}], "]"}], ",", 
+     "2"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "False"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Mass in annulus in B\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{
+       RowBox[{"r", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ";;", "4"}], "]"}], "]"}], ",", "\[Rho]b"}], "]"}], ",",
+      "2"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Density within annulus in B\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.627053214768834*^9, 3.627053216068103*^9}, {
+   3.627053265713896*^9, 3.627053266417038*^9}, {3.627053592824934*^9, 
+   3.6270536177825394`*^9}, {3.627053769983496*^9, 3.6270537705511794`*^9}, {
+   3.627054362760681*^9, 3.627054363827157*^9}, {3.6270544806309958`*^9, 
+   3.627054485757761*^9}, 3.627099211822693*^9, {3.627100382071887*^9, 
+   3.6271005345040903`*^9}, {3.6271006335672207`*^9, 3.6271006367547407`*^9}, 
+   3.627100831054686*^9, 3.627101067430052*^9, {3.6271015295701647`*^9, 
+   3.6271015705320935`*^9}, {3.627101614532686*^9, 3.627101780299635*^9}, {
+   3.6271018150650215`*^9, 3.627101817486907*^9}, {3.6271018653009872`*^9, 
+   3.6271018665894346`*^9}, {3.627101921481346*^9, 3.627101927777603*^9}, {
+   3.627101984022276*^9, 3.627101984561648*^9}, {3.6271020292291317`*^9, 
+   3.6271020377136183`*^9}, 3.6271311955401416`*^9, {3.627131255833707*^9, 
+   3.627131320010768*^9}, {3.627149533533887*^9, 3.627149535640147*^9}, {
+   3.6271664402488947`*^9, 3.6271664575391817`*^9}, 3.627167982170676*^9, {
+   3.6271680807386503`*^9, 3.627168084910553*^9}, {3.6271683248512754`*^9, 
+   3.627168362668542*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "827959.7498836481`", ",", "2.659246331593609`*^6", ",", 
+   "4.49503085751852`*^6", ",", "9.908133274582498`*^6"}], "}"}]], "Output",
+ CellChangeTimes->{{3.627054522072605*^9, 3.6270545677865963`*^9}, {
+   3.6270546515551224`*^9, 3.6270546706422405`*^9}, 3.6270547292739844`*^9, {
+   3.6270549712605915`*^9, 3.627054978699501*^9}, 3.6271005584069767`*^9, {
+   3.627100617359775*^9, 3.627100640207912*^9}, 3.6271008436126127`*^9, 
+   3.627101070463292*^9, {3.6271016882312565`*^9, 3.627101781804389*^9}, 
+   3.627101818002533*^9, 3.627101869979374*^9, 3.627101985358534*^9, 
+   3.6271020383386264`*^9, 3.627131196084181*^9, 3.627131256513756*^9, 
+   3.62713132221495*^9, 3.627149537009408*^9, 3.6271664585704455`*^9, 
+   3.627167983178238*^9, 3.627168085473054*^9, {3.627168359371624*^9, 
+   3.627168363481053*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"988809", ",", "6414079", ",", "4495030", ",", "9908133"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.627054522072605*^9, 3.6270545677865963`*^9}, {
+   3.6270546515551224`*^9, 3.6270546706422405`*^9}, 3.6270547292739844`*^9, {
+   3.6270549712605915`*^9, 3.627054978699501*^9}, 3.6271005584069767`*^9, {
+   3.627100617359775*^9, 3.627100640207912*^9}, 3.6271008436126127`*^9, 
+   3.627101070463292*^9, {3.6271016882312565`*^9, 3.627101781804389*^9}, 
+   3.627101818002533*^9, 3.627101869979374*^9, 3.627101985358534*^9, 
+   3.6271020383386264`*^9, 3.627131196084181*^9, 3.627131256513756*^9, 
+   3.62713132221495*^9, 3.627149537009408*^9, 3.6271664585704455`*^9, 
+   3.627167983178238*^9, 3.627168085473054*^9, {3.627168359371624*^9, 
+   3.627168363481053*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "9.235250257813794`", ",", "7.205195522736393`", ",", "7.591199797996621`", 
+   ",", "6.733051715375902`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.627054522072605*^9, 3.6270545677865963`*^9}, {
+   3.6270546515551224`*^9, 3.6270546706422405`*^9}, 3.6270547292739844`*^9, {
+   3.6270549712605915`*^9, 3.627054978699501*^9}, 3.6271005584069767`*^9, {
+   3.627100617359775*^9, 3.627100640207912*^9}, 3.6271008436126127`*^9, 
+   3.627101070463292*^9, {3.6271016882312565`*^9, 3.627101781804389*^9}, 
+   3.627101818002533*^9, 3.627101869979374*^9, 3.627101985358534*^9, 
+   3.6271020383386264`*^9, 3.627131196084181*^9, 3.627131256513756*^9, 
+   3.62713132221495*^9, 3.627149537009408*^9, 3.6271664585704455`*^9, 
+   3.627167983178238*^9, 3.627168085473054*^9, {3.627168359371624*^9, 
+   3.6271683634966793`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[
+       LineBox[{{16., 9.334457920487267*^7}, {32., 6.054956065749894*^8}, {
+        48., 4.2433542156602407`*^8}, {96., 9.353378717132508*^8}}],
+       FontFamily->"Arial"]}}, {
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[GeometricTransformationBox[InsetBox[
+         StyleBox["\<\"\[FilledCircle]\"\>",
+          StripOnInput->False,
+          FontSize->8.96], {0., 0.}], {{{16., 9.334457920487267*^7}}, {{32., 
+        6.054956065749894*^8}}, {{48., 4.2433542156602407`*^8}}, {{96., 
+        9.353378717132508*^8}}}],
+       FontFamily->"Arial"]}, {}}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  BaseStyle->{FontFamily -> "Arial"},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {2.*^8, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", "2", 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {4.*^8, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", "4", 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {6.*^8, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", "6", 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {8.*^8, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", "8", 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {20., 
+        FormBox["20", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {40., 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {60., 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {80., 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox["\"Cumulative mass vs radius in B\"", TraditionalForm],
+  PlotRange->{{0, 96.}, {0, 9.353378717132508*^8}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& }]], "Output",
+ CellChangeTimes->{{3.627054522072605*^9, 3.6270545677865963`*^9}, {
+   3.6270546515551224`*^9, 3.6270546706422405`*^9}, 3.6270547292739844`*^9, {
+   3.6270549712605915`*^9, 3.627054978699501*^9}, 3.6271005584069767`*^9, {
+   3.627100617359775*^9, 3.627100640207912*^9}, 3.6271008436126127`*^9, 
+   3.627101070463292*^9, {3.6271016882312565`*^9, 3.627101781804389*^9}, 
+   3.627101818002533*^9, 3.627101869979374*^9, 3.627101985358534*^9, 
+   3.6271020383386264`*^9, 3.627131196084181*^9, 3.627131256513756*^9, 
+   3.62713132221495*^9, 3.627149537009408*^9, 3.6271664585704455`*^9, 
+   3.627167983178238*^9, 3.627168085473054*^9, {3.627168359371624*^9, 
+   3.627168363637305*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     StyleBox[GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{3.4657359027997265`, 
+       20.05413011483937}}, {{4.564348191467836, 20.051884942965145`}}, {{
+       3.4657359027997265`, 20.05413011483937}}, {{4.564348191467836, 
+       20.051884942965145`}}}],
+      FontFamily->"Arial"]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{3.425324708587652, 20.051721986942017`},
+  BaseStyle->{FontFamily -> "Arial"},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Exp[
+       Part[#, 1]], 
+      Exp[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Exp[
+       Part[#, 1]], 
+      Exp[
+       Part[#, 2]]}& )},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Log, Exp}]& , None}, {Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Log, Exp}]& , None}}, {{{{20.051880148167978`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox["\"5.1100\"", 5.11, AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 4.}]& ], 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.052369265321285`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox["\"5.1125\"", 5.1125, AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 4.}]& ], 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.052858143355955`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox[
+            "\"5.1150\"", 5.114999999999999, AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 4.}]& ], 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.053346782505674`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox[
+            "\"5.1175\"", 5.117500000000001, AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 4.}]& ], 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.05383518300378, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox["\"5.1200\"", 5.12, AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 4.}]& ], 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{3.6888794541139363`, 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {3.912023005428146, 
+        FormBox["50", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.0943445622221, 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.248495242049359, 
+        FormBox["70", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.382026634673881, 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.499809670330265, 
+        FormBox["90", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->FrontEndValueCache[{
+     Charting`ScaledTickValues[{Log, Exp}], 
+     Charting`ScaledTickValues[{Log, Exp}]}, {{{3.6888794541139363`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {3.912023005428146, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.0943445622221, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.248495242049359, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.382026634673881, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.499809670330265, 
+       Directive[
+        AbsoluteThickness[0.1]]}}, {{20.051880148167978`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.052369265321285`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.052858143355955`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.053346782505674`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.05383518300378, 
+       Directive[
+        AbsoluteThickness[0.1]]}}}],
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox["\"Mass in annulus in B\"", TraditionalForm],
+  PlotRange->{{3.442848146785808, 4.564348191467836}, {20.051760211194356`, 
+   20.05413011483937}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Log, Exp}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Log, Exp}]& }]], "Output",
+ CellChangeTimes->{{3.627054522072605*^9, 3.6270545677865963`*^9}, {
+   3.6270546515551224`*^9, 3.6270546706422405`*^9}, 3.6270547292739844`*^9, {
+   3.6270549712605915`*^9, 3.627054978699501*^9}, 3.6271005584069767`*^9, {
+   3.627100617359775*^9, 3.627100640207912*^9}, 3.6271008436126127`*^9, 
+   3.627101070463292*^9, {3.6271016882312565`*^9, 3.627101781804389*^9}, 
+   3.627101818002533*^9, 3.627101869979374*^9, 3.627101985358534*^9, 
+   3.6271020383386264`*^9, 3.627131196084181*^9, 3.627131256513756*^9, 
+   3.62713132221495*^9, 3.627149537009408*^9, 3.6271664585704455`*^9, 
+   3.627167983178238*^9, 3.627168085473054*^9, {3.627168359371624*^9, 
+   3.627168363840461*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[
+       LineBox[{{32., 212269.18649881944`}, {48., -45050.84208690487}, {96., 
+        23532.571143808145`}}],
+       FontFamily->"Arial"]}}, {
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[GeometricTransformationBox[InsetBox[
+         StyleBox["\<\"\[FilledCircle]\"\>",
+          StripOnInput->False,
+          FontSize->8.96], {0., 0.}], {{{32., 212269.18649881944`}}, {{
+        48., -45050.84208690487}}, {{96., 23532.571143808145`}}}],
+       FontFamily->"Arial"]}, {}}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{31., 0},
+  BaseStyle->{FontFamily -> "Arial"},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{-50000., 
+        FormBox[
+         RowBox[{"-", "50000"}], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {50000., 
+        FormBox["50000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {100000., 
+        FormBox["100000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {150000., 
+        FormBox["150000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {200000., 
+        FormBox["200000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{40., 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {50., 
+        FormBox["50", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {60., 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {70., 
+        FormBox["70", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {80., 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {90., 
+        FormBox["90", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox["\"Density within annulus in B\"", TraditionalForm],
+  PlotRange->{{32., 96.}, {-45050.84208690487, 212269.18649881944`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& }]], "Output",
+ CellChangeTimes->{{3.627054522072605*^9, 3.6270545677865963`*^9}, {
+   3.6270546515551224`*^9, 3.6270546706422405`*^9}, 3.6270547292739844`*^9, {
+   3.6270549712605915`*^9, 3.627054978699501*^9}, 3.6271005584069767`*^9, {
+   3.627100617359775*^9, 3.627100640207912*^9}, 3.6271008436126127`*^9, 
+   3.627101070463292*^9, {3.6271016882312565`*^9, 3.627101781804389*^9}, 
+   3.627101818002533*^9, 3.627101869979374*^9, 3.627101985358534*^9, 
+   3.6271020383386264`*^9, 3.627131196084181*^9, 3.627131256513756*^9, 
+   3.62713132221495*^9, 3.627149537009408*^9, 3.6271664585704455`*^9, 
+   3.627167983178238*^9, 3.627168085473054*^9, {3.627168359371624*^9, 
+   3.6271683639498153`*^9}}]
+}, Open  ]],
+
+Cell["V", "Text",
+ CellChangeTimes->{3.6271014670300117`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"inv", "=", 
+   RowBox[{"{", 
+    RowBox[{"955773.063", ",", "2.66*^6", ",", "1.35*^6", ",", "1.49*^6"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bkgv", "=", "1846.686"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bkgm31v", "=", 
+   RowBox[{"{", 
+    RowBox[{"3284.942", ",", "2782.683", ",", "2411.488", ",", "2093.493"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "2", ",", "3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"16", ",", "32", ",", "24", ",", "32"}], "}"}], "*", "s"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sv", "=", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["s", "2"], "*", "inv"}], "+", 
+    RowBox[{"\[Pi]", " ", 
+     RowBox[{"r", "^", "2"}], " ", "bkgm31v"}], " ", "-", 
+    RowBox[{"\[Pi]", " ", 
+     RowBox[{"r", "^", "2"}], " ", "bkgv"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rv", "=", 
+   RowBox[{"Mv", "[", "Sv", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mv", "=", 
+   RowBox[{"Mass", "[", "rv", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"dmv", "=", 
+   RowBox[{"Differences", "[", "mv", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Rho]v", "=", 
+   RowBox[{"dmv", "/", 
+    RowBox[{"(", 
+     RowBox[{"\[Pi]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"r", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ";;", "4"}], "]"}], "]"}], "2"], "-", 
+        SuperscriptBox[
+         RowBox[{"r", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ";;", "3"}], "]"}], "]"}], "2"]}], ")"}]}], ")"}]}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListLogLogPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{"r", ",", "mv"}], "]"}], ",", "2"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "->", "\"\<Marketing\>\""}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", "\"\<Cumulative mass vs radius in V\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListLogLogPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{
+       RowBox[{"r", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ";;", "4"}], "]"}], "]"}], ",", "dmv"}], "]"}], ",", 
+     "2"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "False"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Mass in annulus in V\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{
+       RowBox[{"r", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ";;", "4"}], "]"}], "]"}], ",", "\[Rho]v"}], "]"}], ",",
+      "2"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Density within annulus in V\>\""}], 
+   ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.62709940276129*^9, 3.6270994454255247`*^9}, {
+   3.6270994901679273`*^9, 3.627099618486057*^9}, {3.627099669964931*^9, 
+   3.627099686818301*^9}, {3.6270997418651915`*^9, 3.6270999273426127`*^9}, {
+   3.6271006446610966`*^9, 3.6271006503136606`*^9}, 3.627101079629405*^9, {
+   3.6271018260182705`*^9, 3.62710182667455*^9}, {3.6271018831304855`*^9, 
+   3.6271020221290207`*^9}, {3.6271021871237326`*^9, 3.6271022373853436`*^9}, 
+   3.627131211842714*^9, {3.627133255637427*^9, 3.627133259549695*^9}, 
+   3.6271495091369925`*^9, {3.6271664204919415`*^9, 3.6271664354000225`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[
+       LineBox[{{2.772588722239781, 19.461131520177545`}, {
+        3.4657359027997265`, 20.448647523921316`}, {3.871201010907891, 
+        20.963310901766103`}, {4.564348191467836, 21.736407816100527`}}],
+       FontFamily->"Arial"]}}, {
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[GeometricTransformationBox[InsetBox[
+         StyleBox["\<\"\[FilledCircle]\"\>",
+          StripOnInput->False,
+          FontSize->8.96], {0., 0.}], {{{2.772588722239781, 
+        19.461131520177545`}}, {{3.4657359027997265`, 
+        20.448647523921316`}}, {{3.871201010907891, 20.963310901766103`}}, {{
+        4.564348191467836, 21.736407816100527`}}}],
+       FontFamily->"Arial"]}, {}}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{2.706680903221953, 19.295990498699272`},
+  BaseStyle->{FontFamily -> "Arial"},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Exp[
+       Part[#, 1]], 
+      Exp[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Exp[
+       Part[#, 1]], 
+      Exp[
+       Part[#, 2]]}& )},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Log, Exp}]& , None}, {Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Log, Exp}]& , None}}, {{{{20.030118656386467`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", "5", 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.72326583694641, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", "1", 
+           
+           TemplateBox[{"10", "9"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {21.416413017506358`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", "2", 
+           
+           TemplateBox[{"10", "9"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{2.995732273553991, 
+        FormBox["20", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {3.6888794541139363`, 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.0943445622221, 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.382026634673881, 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->FrontEndValueCache[{
+     Charting`ScaledTickValues[{Log, Exp}], 
+     Charting`ScaledTickValues[{Log, Exp}]}, {{{2.995732273553991, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {3.6888794541139363`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.0943445622221, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.382026634673881, 
+       Directive[
+        AbsoluteThickness[0.1]]}}, {{20.030118656386467`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.72326583694641, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {21.416413017506358`, 
+       Directive[
+        AbsoluteThickness[0.1]]}}}],
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox["\"Cumulative mass vs radius in V\"", TraditionalForm],
+  PlotRange->{{2.735260399964197, 4.564348191467836}, {19.33472728151516, 
+   21.736407816100527`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Log, Exp}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Log, Exp}]& }]], "Output",
+ CellChangeTimes->{
+  3.627100014209377*^9, 3.627100858550311*^9, 3.6271010813583264`*^9, 
+   3.6271018271432858`*^9, {3.6271019492302294`*^9, 3.6271019748803487`*^9}, 
+   3.6271020103366823`*^9, 3.6271020422584057`*^9, {3.6271022132118835`*^9, 
+   3.627102238682231*^9}, 3.627131212374752*^9, 3.6271495124856424`*^9, 
+   3.6271664364000235`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     StyleBox[GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{3.4657359027997265`, 
+       19.982634587753928`}}, {{3.871201010907891, 20.052749325859715`}}, {{
+       4.564348191467836, 21.117288908900214`}}}],
+      FontFamily->"Arial"]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{3.425324708587652, 19.90028064509009},
+  BaseStyle->{FontFamily -> "Arial"},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Exp[
+       Part[#, 1]], 
+      Exp[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Exp[
+       Part[#, 1]], 
+      Exp[
+       Part[#, 2]]}& )},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Log, Exp}]& , None}, {Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Log, Exp}]& , None}}, {{{{20.21244021318042, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox["\"6.0\"", 6., AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 1.}]& ], 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.5001222856322, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox["\"8.0\"", 8., AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 1.}]& ], 
+           
+           TemplateBox[{"10", "8"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.72326583694641, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox["\"1.0\"", 1., AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 1.}]& ], 
+           
+           TemplateBox[{"10", "9"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {20.905587393740365`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox["\"1.2\"", 1.2, AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 1.}]& ], 
+           
+           TemplateBox[{"10", "9"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}, {21.059738073567623`, 
+        FormBox[
+         TemplateBox[{"\[Times]", "\"\[Times]\"", 
+           TagBox[
+            InterpretationBox[
+            "\"1.4\"", 1.4000000000000001`, AutoDelete -> True], 
+            NumberForm[#, {
+              DirectedInfinity[1], 1.}]& ], 
+           
+           TemplateBox[{"10", "9"}, "Superscript", SyntaxForm -> 
+            SuperscriptBox]}, "RowWithSeparators"], TraditionalForm], {0.01, 
+        0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{3.6888794541139363`, 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {3.912023005428146, 
+        FormBox["50", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.0943445622221, 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.248495242049359, 
+        FormBox["70", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.382026634673881, 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {4.499809670330265, 
+        FormBox["90", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->FrontEndValueCache[{
+     Charting`ScaledTickValues[{Log, Exp}], 
+     Charting`ScaledTickValues[{Log, Exp}]}, {{{3.6888794541139363`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {3.912023005428146, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.0943445622221, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.248495242049359, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.382026634673881, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {4.499809670330265, 
+       Directive[
+        AbsoluteThickness[0.1]]}}, {{20.21244021318042, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.5001222856322, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.72326583694641, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {20.905587393740365`, 
+       Directive[
+        AbsoluteThickness[0.1]]}, {21.059738073567623`, 
+       Directive[
+        AbsoluteThickness[0.1]]}}}],
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox["\"Mass in annulus in V\"", TraditionalForm],
+  PlotRange->{{3.442848146785808, 4.564348191467836}, {19.919598236579137`, 
+   21.117288908900214`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Log, Exp}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Log, Exp}]& }]], "Output",
+ CellChangeTimes->{
+  3.627100014209377*^9, 3.627100858550311*^9, 3.6271010813583264`*^9, 
+   3.6271018271432858`*^9, {3.6271019492302294`*^9, 3.6271019748803487`*^9}, 
+   3.6271020103366823`*^9, 3.6271020422584057`*^9, {3.6271022132118835`*^9, 
+   3.627102238682231*^9}, 3.627131212374752*^9, 3.6271495124856424`*^9, 
+   3.6271664365250387`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[
+       LineBox[{{32., 197622.70642599408`}, {48., 127185.77388370808`}, {96., 
+        68291.78175112228}}],
+       FontFamily->"Arial"]}}, {
+     {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+      AbsoluteThickness[3], CapForm["Butt"], 
+      StyleBox[GeometricTransformationBox[InsetBox[
+         StyleBox["\<\"\[FilledCircle]\"\>",
+          StripOnInput->False,
+          FontSize->8.96], {0., 0.}], {{{32., 197622.70642599408`}}, {{48., 
+        127185.77388370808`}}, {{96., 68291.78175112228}}}],
+       FontFamily->"Arial"]}, {}}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  BaseStyle->{FontFamily -> "Arial"},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {50000., 
+        FormBox["50000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {100000., 
+        FormBox["100000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {150000., 
+        FormBox["150000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {200000., 
+        FormBox["200000", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {20., 
+        FormBox["20", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {40., 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {60., 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {80., 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox["\"Density within annulus in V\"", TraditionalForm],
+  PlotRange->{{0., 96.}, {0., 197622.70642599408`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& }]], "Output",
+ CellChangeTimes->{
+  3.627100014209377*^9, 3.627100858550311*^9, 3.6271010813583264`*^9, 
+   3.6271018271432858`*^9, {3.6271019492302294`*^9, 3.6271019748803487`*^9}, 
+   3.6271020103366823`*^9, 3.6271020422584057`*^9, {3.6271022132118835`*^9, 
+   3.627102238682231*^9}, 3.627131212374752*^9, 3.6271495124856424`*^9, 
+   3.6271664365562754`*^9}]
+}, Open  ]],
+
+Cell["B-V", "Text",
+ CellChangeTimes->{{3.6271014744363823`*^9, 3.627101475342622*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mc", "=", 
+   RowBox[{"rb", "-", "rv"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{"r", ",", "mc"}], "]"}], ",", "2"}], "]"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "False"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<Color in annulus (see 1969ApJ...157...555, Fig. 3)\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Riffle", "[", 
+      RowBox[{
+       RowBox[{"r", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ";;", "4"}], "]"}], "]"}], ",", 
+       RowBox[{"Differences", "[", "mc", "]"}]}], "]"}], ",", "2"}], "]"}], 
+   ",", 
+   RowBox[{"Joined", "\[Rule]", "False"}], ",", 
+   RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Difference in Color in annulus\>\""}],
+    ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6271000279223423`*^9, 3.627100059744528*^9}, {
+  3.627100660531252*^9, 3.6271007589883327`*^9}, {3.627101358621034*^9, 
+  3.6271013993845406`*^9}, {3.627102110906046*^9, 3.6271021754137974`*^9}, {
+  3.627133208841151*^9, 3.6271332485729294`*^9}, {3.6271495200851383`*^9, 
+  3.627149522413294*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     StyleBox[GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{16., 1.3971902863188639`}}, {{32., 
+       1.2024988040241507`}}, {{48., 1.1913521950662016`}}, {{96., 
+       1.1725835991626}}}],
+      FontFamily->"Arial"]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 1.1613532648047866`},
+  BaseStyle->{FontFamily -> "Arial"},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{1.2, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"1.20\"", 1.2, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {1.25, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"1.25\"", 1.25, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {1.3, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"1.30\"", 1.3, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {1.35, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"1.35\"", 1.35, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {1.4, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"1.40\"", 1.4, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {20., 
+        FormBox["20", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {40., 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {60., 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {80., 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox[
+   "\"Color in annulus (see 1969ApJ...157...555, Fig. 3)\"", TraditionalForm],
+  PlotRange->{{0, 96.}, {1.1725835991626, 1.3971902863188639`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& }]], "Output",
+ CellChangeTimes->{{3.6271000330273876`*^9, 3.6271000463726635`*^9}, 
+   3.627100694212307*^9, {3.6271007257967544`*^9, 3.627100759441472*^9}, 
+   3.6271010873803015`*^9, {3.6271013600898037`*^9, 3.627101400415806*^9}, 
+   3.6271020750569315`*^9, 3.6271021450282354`*^9, 3.6271021758357077`*^9, {
+   3.6271332179217825`*^9, 3.6271332489529715`*^9}, 3.627149524426101*^9, 
+   3.627168234073889*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[1., 0.4, 0.], PointSize[0.019444444444444445`], 
+     AbsoluteThickness[3], CapForm["Butt"], 
+     StyleBox[GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{32., -0.19469148229471323`}}, {{
+       48., -0.011146608957949056`}}, {{96., -0.018768595903601692`}}}],
+      FontFamily->"Arial"]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  BaseStyle->{FontFamily -> "Arial"},
+  DisplayFunction->Identity,
+  Frame->{{True, False}, {True, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}, {
+     Charting`FindScaledTicks[
+       (Charting`SimpleTicks[#, #2, 6]& )[
+        SlotSequence[1]], {Identity, Identity}]& , None}}, {{{{-0.2, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"-0.20\"", -0.2, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {-0.15, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"-0.15\"", -0.15, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {-0.1, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"-0.10\"", -0.1, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {-0.05, 
+        FormBox[
+         TagBox[
+          InterpretationBox["\"-0.05\"", -0.05, AutoDelete -> True], 
+          NumberForm[#, {
+            DirectedInfinity[1], 2.}]& ], TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}, {{{0., 
+        FormBox["0", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {20., 
+        FormBox["20", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {40., 
+        FormBox["40", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {60., 
+        FormBox["60", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}, {80., 
+        FormBox["80", TraditionalForm], {0.01, 0.}, {
+         AbsoluteThickness[0.1]}}}, None}}],
+  FrameTicksStyle->Directive[
+    StrokeForm[
+     Opacity[0]], FontOpacity -> 1],
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    AbsoluteThickness[1], 
+    GrayLevel[0, 0.2]],
+  Method->{},
+  PlotLabel->FormBox["\"Difference in Color in annulus\"", TraditionalForm],
+  PlotRange->{{0., 96.}, {-0.19469148229471323`, 0.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.02]}},
+  Prolog->{
+    GrayLevel[0, 0.7], 
+    RectangleBox[
+     Scaled[{0, 0}], 
+     Scaled[{1, 1}]]},
+  Ticks->{Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& , Charting`FindScaledTicks[
+     (Charting`SimpleTicks[#, #2, 6]& )[
+      SlotSequence[1]], {Identity, Identity}]& }]], "Output",
+ CellChangeTimes->{{3.6271000330273876`*^9, 3.6271000463726635`*^9}, 
+   3.627100694212307*^9, {3.6271007257967544`*^9, 3.627100759441472*^9}, 
+   3.6271010873803015`*^9, {3.6271013600898037`*^9, 3.627101400415806*^9}, 
+   3.6271020750569315`*^9, 3.6271021450282354`*^9, 3.6271021758357077`*^9, {
+   3.6271332179217825`*^9, 3.6271332489529715`*^9}, 3.627149524426101*^9, 
+   3.6271682342613697`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"mc", 
+  ";"}], "\[IndentingNewLine]", "Sv", "\[IndentingNewLine]", "Sb", "\
+\[IndentingNewLine]", "rb", "\[IndentingNewLine]", "rv"}], "Input",
+ CellChangeTimes->{{3.6271313796264524`*^9, 3.627131379698453*^9}, {
+  3.627166380012866*^9, 3.6271664117351036`*^9}, {3.6271664662460318`*^9, 
+  3.627166473473049*^9}, {3.6271665362129693`*^9, 3.627166542337127*^9}, {
+  3.627166834462346*^9, 3.627166843228797*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2.1124871707968493`*^6", ",", "5.671093810157657`*^6", ",", 
+   "9.488166483301224`*^6", ",", "2.0555782807030596`*^7"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.627131380137351*^9, {3.6271663810597553`*^9, 3.627166412594486*^9}, {
+   3.6271664692929196`*^9, 3.6271664738793*^9}, 3.627166542868393*^9, {
+   3.6271668402435303`*^9, 3.627166843694325*^9}, 3.627168194942708*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "827959.7498836481`", ",", "2.659246331593609`*^6", ",", 
+   "4.49503085751852`*^6", ",", "9.908133274582498`*^6"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.627131380137351*^9, {3.6271663810597553`*^9, 3.627166412594486*^9}, {
+   3.6271664692929196`*^9, 3.6271664738793*^9}, 3.627166542868393*^9, {
+   3.6271668402435303`*^9, 3.627166843694325*^9}, 3.627168194958333*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "9.428008222754883`", ",", "8.161134862417493`", ",", "7.591199590870346`", 
+   ",", "6.733051685287066`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.627131380137351*^9, {3.6271663810597553`*^9, 3.627166412594486*^9}, {
+   3.6271664692929196`*^9, 3.6271664738793*^9}, 3.627166542868393*^9, {
+   3.6271668402435303`*^9, 3.627166843694325*^9}, 3.627168194958333*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "8.03081793643602`", ",", "6.958636058393342`", ",", "6.399847395804144`", 
+   ",", "5.560468086124466`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.627131380137351*^9, {3.6271663810597553`*^9, 3.627166412594486*^9}, {
+   3.6271664692929196`*^9, 3.6271664738793*^9}, 3.627166542868393*^9, {
+   3.6271668402435303`*^9, 3.627166843694325*^9}, 3.627168194973957*^9}]
+}, Open  ]]
+},
+WindowSize->{1536, 783},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1405, 38, 88, "Input"],
+Cell[1966, 60, 163, 2, 30, "Text"],
+Cell[CellGroupData[{
+Cell[2154, 66, 5149, 136, 306, "Input"],
+Cell[7306, 204, 857, 14, 42, "Output"],
+Cell[8166, 220, 800, 13, 40, "Output"],
+Cell[8969, 235, 851, 14, 40, "Output"],
+Cell[9823, 251, 4651, 106, 255, "Output"],
+Cell[14477, 359, 6825, 163, 239, "Output"],
+Cell[21305, 524, 4077, 90, 252, "Output"]
+}, Open  ]],
+Cell[25397, 617, 61, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[25483, 622, 4084, 110, 304, "Input"],
+Cell[29570, 734, 4919, 118, 255, "Output"],
+Cell[34492, 854, 6383, 157, 250, "Output"],
+Cell[40878, 1013, 3494, 81, 253, "Output"]
+}, Open  ]],
+Cell[44387, 1097, 87, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[44499, 1102, 1606, 40, 101, "Input"],
+Cell[46108, 1144, 4063, 97, 263, "Output"],
+Cell[50174, 1243, 3850, 91, 261, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54061, 1339, 435, 7, 121, "Input"],
+Cell[54499, 1348, 421, 8, 42, "Output"],
+Cell[54923, 1358, 415, 8, 42, "Output"],
+Cell[55341, 1368, 407, 8, 40, "Output"],
+Cell[55751, 1378, 406, 8, 40, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

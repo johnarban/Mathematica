@@ -1,0 +1,466 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18268,        457]
+NotebookOptionsPosition[     16885,        409]
+NotebookOutlinePosition[     17243,        425]
+CellTagsIndexPosition[     17200,        422]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Nu]", " ", "=", " ", "7"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Chi]red", " ", "=", "1.53"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Chi]", "=", 
+  RowBox[{"\[Chi]red", "*", "\[Nu]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"p", " ", "=", 
+  RowBox[{"1", "-", 
+   RowBox[{"CDF", "[", 
+    RowBox[{
+     RowBox[{"ChiSquareDistribution", "[", "\[Nu]", "]"}], ",", 
+     RowBox[{"\[Chi]red", "*", "\[Nu]"}]}], " ", 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Nu]", " ", "n"}], "/.", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"1", "-", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"PDF", "[", 
+          RowBox[{
+           RowBox[{"NormalDistribution", "[", 
+            RowBox[{"0", ",", "\[Sigma]"}], "]"}], ",", "x"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "\[Infinity]"}], ",", 
+           RowBox[{"n", " ", "\[Sigma]"}]}], " ", "}"}], ",", 
+         RowBox[{"Assumptions", "\[Rule]", 
+          RowBox[{"\[Sigma]", ">", "0"}]}]}], "]"}]}], "\[Equal]", " ", "p"}],
+      ",", "n"}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.641743505378543*^9, 3.641743545091566*^9}, {
+   3.641743591559939*^9, 3.6417437772799587`*^9}, {3.6417439693573914`*^9, 
+   3.6417440705850077`*^9}, {3.6417441387348413`*^9, 3.641744167902372*^9}, {
+   3.641744199995872*^9, 3.641744206162827*^9}, {3.641744290977737*^9, 
+   3.6417442969920273`*^9}, {3.641744416763949*^9, 3.641744439159617*^9}, {
+   3.641744516446704*^9, 3.64174452100254*^9}, {3.641747630051732*^9, 
+   3.6417476379316053`*^9}, {3.641747787341813*^9, 3.641747787548789*^9}, {
+   3.64227889698302*^9, 3.6422789644072866`*^9}, {3.642279210751479*^9, 
+   3.642279221801878*^9}, {3.642281072106915*^9, 3.642281094738639*^9}, {
+   3.6422811257847137`*^9, 3.642281131463119*^9}, {3.642281181290244*^9, 
+   3.642281181401888*^9}, {3.642281248420618*^9, 3.642281248888459*^9}, {
+   3.642281330589842*^9, 3.6422813330844727`*^9}, {3.642281444190446*^9, 
+   3.642281457254299*^9}, {3.642281657537423*^9, 3.642281703467148*^9}, {
+   3.64228176404561*^9, 3.6422818019551983`*^9}, {3.642281859362173*^9, 
+   3.6422819350853443`*^9}, {3.642282031043124*^9, 3.642282031372761*^9}, {
+   3.642282202852283*^9, 3.6422822033197317`*^9}, {3.642282247426293*^9, 
+   3.642282247940465*^9}, {3.642282759422078*^9, 3.642282759847721*^9}, {
+   3.642282995062108*^9, 3.642283023104046*^9}, {3.642283055345923*^9, 
+   3.6422831349744987`*^9}, {3.6422831842160177`*^9, 3.642283260361397*^9}, {
+   3.6422834077039833`*^9, 3.642283416739307*^9}, {3.642283541485961*^9, 
+   3.642283566890028*^9}, {3.642285510649078*^9, 3.642285539817998*^9}, {
+   3.642287470382205*^9, 3.642287474563119*^9}, {3.642287538140411*^9, 
+   3.642287563553856*^9}, {3.6422882314961967`*^9, 3.642288241915525*^9}, {
+   3.642523474653634*^9, 3.642523476319941*^9}, 3.64252403548254*^9, {
+   3.642524160333969*^9, 3.642524160787201*^9}}],
+
+Cell[BoxData["7"], "Output",
+ CellChangeTimes->{
+  3.642282543097495*^9, 3.642282760202022*^9, 3.6422830239053297`*^9, {
+   3.6422830724357853`*^9, 3.642283135327291*^9}, {3.642283187579116*^9, 
+   3.642283261098296*^9}, {3.64228340890641*^9, 3.642283417138569*^9}, {
+   3.642283546803852*^9, 3.642283567254758*^9}, {3.642285512159017*^9, 
+   3.642285540166771*^9}, 3.642287476479267*^9, {3.64228753975296*^9, 
+   3.642287564209893*^9}, 3.642288242408396*^9, 3.64252405836513*^9, 
+   3.642524164609229*^9}],
+
+Cell[BoxData["1.53`"], "Output",
+ CellChangeTimes->{
+  3.642282543097495*^9, 3.642282760202022*^9, 3.6422830239053297`*^9, {
+   3.6422830724357853`*^9, 3.642283135327291*^9}, {3.642283187579116*^9, 
+   3.642283261098296*^9}, {3.64228340890641*^9, 3.642283417138569*^9}, {
+   3.642283546803852*^9, 3.642283567254758*^9}, {3.642285512159017*^9, 
+   3.642285540166771*^9}, 3.642287476479267*^9, {3.64228753975296*^9, 
+   3.642287564209893*^9}, 3.642288242408396*^9, 3.64252405836513*^9, 
+   3.6425241646522493`*^9}],
+
+Cell[BoxData["10.71`"], "Output",
+ CellChangeTimes->{
+  3.642282543097495*^9, 3.642282760202022*^9, 3.6422830239053297`*^9, {
+   3.6422830724357853`*^9, 3.642283135327291*^9}, {3.642283187579116*^9, 
+   3.642283261098296*^9}, {3.64228340890641*^9, 3.642283417138569*^9}, {
+   3.642283546803852*^9, 3.642283567254758*^9}, {3.642285512159017*^9, 
+   3.642285540166771*^9}, 3.642287476479267*^9, {3.64228753975296*^9, 
+   3.642287564209893*^9}, 3.642288242408396*^9, 3.64252405836513*^9, 
+   3.6425241646568203`*^9}],
+
+Cell[BoxData["0.15177843195644225`"], "Output",
+ CellChangeTimes->{
+  3.642282543097495*^9, 3.642282760202022*^9, 3.6422830239053297`*^9, {
+   3.6422830724357853`*^9, 3.642283135327291*^9}, {3.642283187579116*^9, 
+   3.642283261098296*^9}, {3.64228340890641*^9, 3.642283417138569*^9}, {
+   3.642283546803852*^9, 3.642283567254758*^9}, {3.642285512159017*^9, 
+   3.642285540166771*^9}, 3.642287476479267*^9, {3.64228753975296*^9, 
+   3.642287564209893*^9}, 3.642288242408396*^9, 3.64252405836513*^9, 
+   3.6425241646621304`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.642287477400147*^9, {3.642287540170576*^9, 3.642287564993526*^9}, 
+   3.64228824330751*^9, 3.642524062344492*^9, 3.642524165476801*^9}],
+
+Cell[BoxData["7.2018502554262`"], "Output",
+ CellChangeTimes->{
+  3.642282543097495*^9, 3.642282760202022*^9, 3.6422830239053297`*^9, {
+   3.6422830724357853`*^9, 3.642283135327291*^9}, {3.642283187579116*^9, 
+   3.642283261098296*^9}, {3.64228340890641*^9, 3.642283417138569*^9}, {
+   3.642283546803852*^9, 3.642283567254758*^9}, {3.642285512159017*^9, 
+   3.642285540166771*^9}, 3.642287476479267*^9, {3.64228753975296*^9, 
+   3.642287564209893*^9}, 3.642288242408396*^9, 3.64252405836513*^9, 
+   3.642524165482872*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Nu]", " ", "=", "8"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Chi]red", " ", "=", "5.05"}], "\[IndentingNewLine]", 
+ RowBox[{"p", " ", "=", 
+  RowBox[{"1", "-", 
+   RowBox[{"CDF", "[", 
+    RowBox[{
+     RowBox[{"ChiSquareDistribution", "[", "\[Nu]", "]"}], ",", 
+     RowBox[{"\[Chi]red", "*", "\[Nu]"}]}], " ", 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Nu]", " ", "n"}], "/.", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"1", "-", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"PDF", "[", 
+          RowBox[{
+           RowBox[{"NormalDistribution", "[", 
+            RowBox[{"0", ",", "\[Sigma]"}], "]"}], ",", "x"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "\[Infinity]"}], ",", 
+           RowBox[{"n", " ", "\[Sigma]"}]}], " ", "}"}], ",", 
+         RowBox[{"Assumptions", "\[Rule]", 
+          RowBox[{"\[Sigma]", ">", "0"}]}]}], "]"}]}], "\[Equal]", " ", "p"}],
+      ",", "n"}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6422793288712397`*^9, 3.642279340323608*^9}, {
+   3.642280936615429*^9, 3.642280946082239*^9}, {3.642281335999539*^9, 
+   3.6422813382844048`*^9}, {3.6422821455310917`*^9, 
+   3.6422821457963676`*^9}, {3.642282205771738*^9, 3.642282206231744*^9}, {
+   3.642283580124289*^9, 3.642283582768116*^9}, 3.642284184552223*^9, {
+   3.64228556895006*^9, 3.642285637656535*^9}, {3.6422862288724213`*^9, 
+   3.64228623139848*^9}, {3.642287481895657*^9, 3.6422874868041553`*^9}, {
+   3.6422875439072037`*^9, 3.642287556742846*^9}, 3.642288445318365*^9}],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{{3.642285604704865*^9, 3.642285638058689*^9}, 
+   3.642286231688244*^9, {3.64228754621523*^9, 3.642287557979012*^9}, 
+   3.6422884468185787`*^9}],
+
+Cell[BoxData["5.05`"], "Output",
+ CellChangeTimes->{{3.642285604704865*^9, 3.642285638058689*^9}, 
+   3.642286231688244*^9, {3.64228754621523*^9, 3.642287557979012*^9}, 
+   3.6422884468242083`*^9}],
+
+Cell[BoxData["2.698283740776297`*^-6"], "Output",
+ CellChangeTimes->{{3.642285604704865*^9, 3.642285638058689*^9}, 
+   3.642286231688244*^9, {3.64228754621523*^9, 3.642287557979012*^9}, 
+   3.642288446828351*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.642285605552243*^9, 3.6422856388420753`*^9}, 
+   3.64228623255296*^9, {3.642287546639962*^9, 3.6422875587901297`*^9}, 
+   3.6422884477007647`*^9}],
+
+Cell[BoxData["36.38999475757182`"], "Output",
+ CellChangeTimes->{{3.642285604704865*^9, 3.642285638058689*^9}, 
+   3.642286231688244*^9, {3.64228754621523*^9, 3.642287557979012*^9}, 
+   3.642288447704831*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"\[Nu]", " ", "=", 
+    RowBox[{
+     RowBox[{"1", "\[IndentingNewLine]", "\[Chi]red"}], " ", "=", 
+     RowBox[{"0.004", "/", "\[Nu]"}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"p", " ", "=", 
+    RowBox[{"1", "-", 
+     RowBox[{"CDF", "[", 
+      RowBox[{
+       RowBox[{"ChiSquareDistribution", "[", "\[Nu]", "]"}], ",", 
+       RowBox[{"\[Chi]red", "*", "\[Nu]"}]}], " ", "]"}]}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"  ", 
+  RowBox[{"n", "/.", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"PDF", "[", 
+          RowBox[{
+           RowBox[{"NormalDistribution", "[", 
+            RowBox[{"0", ",", "\[Sigma]"}], "]"}], ",", "x"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"-", "n"}], " ", "\[Sigma]"}], ",", 
+           RowBox[{"n", " ", "\[Sigma]"}]}], " ", "}"}], ",", 
+         RowBox[{"Assumptions", "\[Rule]", 
+          RowBox[{"\[Sigma]", ">", "0"}]}]}], "]"}], "\[Equal]", "p"}], ",", 
+      "n"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.642286404155747*^9, 3.642286429344901*^9}, {
+  3.642286460248496*^9, 3.642286466968178*^9}, {3.642286502734457*^9, 
+  3.642286514969973*^9}, {3.642286734176947*^9, 3.6422867481759777`*^9}, {
+  3.642286780048574*^9, 3.6422868831148367`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ConditionalExpression", "[", 
+  RowBox[{
+   RowBox[{
+    SqrtBox["2"], " ", 
+    RowBox[{"InverseErf", "[", "p", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"-", "1"}], "<", "p", "<", "1"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.6422864152250547`*^9, 3.642286429663492*^9}, {
+  3.642286460698904*^9, 3.642286467475553*^9}, {3.642286507492365*^9, 
+  3.64228651539964*^9}, {3.6422867351359243`*^9, 3.6422867487780867`*^9}, {
+  3.642286780580018*^9, 3.642286884148431*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NormalDistribution", "[", 
+       RowBox[{"0", ",", "\[Sigma]"}], "]"}], ",", 
+      RowBox[{"n", " ", "\[Sigma]"}]}], "]"}], "\[Equal]", "p"}], ",", "n"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{"PDF", "[", 
+       RowBox[{
+        RowBox[{"NormalDistribution", "[", 
+         RowBox[{"0", ",", "\[Sigma]"}], "]"}], ",", "x"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"n", " ", "\[Sigma]"}], ",", "\[Infinity]"}], "}"}], ",", 
+      RowBox[{"Assumptions", "\[Rule]", 
+       RowBox[{"\[Sigma]", ">", "0"}]}]}], "]"}], "\[Equal]", " ", "p"}], ",",
+    "n"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.642287646701211*^9, 3.642287726210751*^9}, {
+  3.642287763535873*^9, 3.642287766562645*^9}, {3.642287810927507*^9, 
+  3.642287811207999*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.642287676462048*^9, 3.6422877266009817`*^9}, 
+   3.642287764258868*^9, 3.6422878116172247`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"n", "\[Rule]", 
+    RowBox[{
+     RowBox[{"-", 
+      SqrtBox["2"]}], " ", 
+     RowBox[{"InverseErfc", "[", 
+      RowBox[{"2", " ", "p"}], "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.642287676463546*^9, 3.642287726604138*^9}, 
+   3.642287764262185*^9, 3.6422878116209908`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.642287676462048*^9, 3.6422877266009817`*^9}, 
+   3.642287764258868*^9, 3.642287812406292*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"n", "\[Rule]", 
+    RowBox[{
+     SqrtBox["2"], " ", 
+     RowBox[{"InverseErfc", "[", 
+      RowBox[{"2", " ", "p"}], "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.642287676463546*^9, 3.642287726604138*^9}, 
+   3.642287764262185*^9, 3.6422878124098263`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"BICWD", " ", "=", " ", 
+  RowBox[{"46.29", "+", 
+   RowBox[{"3", "*", 
+    RowBox[{"Log", "[", "11", "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"BICDB", " ", "=", " ", 
+  RowBox[{"10.7", " ", "+", " ", 
+   RowBox[{"4", "*", 
+    RowBox[{"Log", "[", "11", "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"BICNOKA", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"2.412", "*", "8"}], " ", "+", " ", 
+   RowBox[{"3", "*", 
+    RowBox[{"Log", "[", "11", "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[CapitalDelta]BIC", " ", "=", " ", 
+  RowBox[{"BICWD", "-", "BICDB"}]}]}], "Input",
+ CellChangeTimes->{{3.642524230837871*^9, 3.6425242777767973`*^9}, {
+  3.6425243305287733`*^9, 3.6425243485735607`*^9}, {3.642524433316669*^9, 
+  3.642524465137203*^9}, {3.6425245045657787`*^9, 3.64252454290176*^9}, {
+  3.642769041448197*^9, 3.642769066537633*^9}}],
+
+Cell[BoxData["53.48368581839511`"], "Output",
+ CellChangeTimes->{3.6425242780668592`*^9, 3.642524349742647*^9, 
+  3.642524543248665*^9, 3.642769067455216*^9}],
+
+Cell[BoxData["20.291581091193482`"], "Output",
+ CellChangeTimes->{3.6425242780668592`*^9, 3.642524349742647*^9, 
+  3.642524543248665*^9, 3.642769067459485*^9}],
+
+Cell[BoxData["26.48968581839511`"], "Output",
+ CellChangeTimes->{3.6425242780668592`*^9, 3.642524349742647*^9, 
+  3.642524543248665*^9, 3.642769067461549*^9}],
+
+Cell[BoxData["33.192104727201624`"], "Output",
+ CellChangeTimes->{3.6425242780668592`*^9, 3.642524349742647*^9, 
+  3.642524543248665*^9, 3.6427690674634857`*^9}]
+}, Open  ]]
+},
+WindowSize->{673, 756},
+WindowMargins->{{Automatic, 85}, {Automatic, 37}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3115, 58, 182, "Input"],
+Cell[3698, 82, 506, 8, 28, "Output"],
+Cell[4207, 92, 512, 8, 28, "Output"],
+Cell[4722, 102, 513, 8, 28, "Output"],
+Cell[5238, 112, 527, 8, 28, "Output"],
+Cell[5768, 122, 649, 13, 42, "Message"],
+Cell[6420, 137, 521, 8, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6978, 150, 1762, 39, 165, "Input"],
+Cell[8743, 191, 193, 3, 28, "Output"],
+Cell[8939, 196, 197, 3, 28, "Output"],
+Cell[9139, 201, 212, 3, 32, "Output"],
+Cell[9354, 206, 658, 13, 42, "Message"],
+Cell[10015, 221, 208, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10260, 229, 1560, 40, 148, "Input"],
+Cell[11823, 271, 493, 11, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12353, 287, 1067, 28, 97, "Input"],
+Cell[13423, 317, 607, 12, 42, "Message"],
+Cell[14033, 331, 349, 10, 37, "Output"],
+Cell[14385, 343, 605, 12, 42, "Message"],
+Cell[14993, 357, 327, 9, 37, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15357, 371, 864, 19, 80, "Input"],
+Cell[16224, 392, 158, 2, 28, "Output"],
+Cell[16385, 396, 159, 2, 28, "Output"],
+Cell[16547, 400, 158, 2, 28, "Output"],
+Cell[16708, 404, 161, 2, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

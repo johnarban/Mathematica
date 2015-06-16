@@ -1,0 +1,1906 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     80719,       1896]
+NotebookOptionsPosition[     79478,       1852]
+NotebookOutlinePosition[     79822,       1867]
+CellTagsIndexPosition[     79779,       1864]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mont", "=", 
+   TemplateBox[{"\"Montpelier\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Montpelier\"", ",", "\"Vermont\"", ",", 
+             "\"UnitedStates\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Montpelier\\\", \\\"Vermont\\\", \
+\\\"UnitedStates\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ba", "=", 
+   TemplateBox[{"\"Buenos Aires\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"BuenosAires\"", ",", "\"BuenosAires\"", ",", 
+             "\"Argentina\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"BuenosAires\\\", \\\"BuenosAires\\\", \
+\\\"Argentina\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dr", "=", "\[IndentingNewLine]", 
+   RowBox[{"po", "=", 
+    TemplateBox[{"\"Pori\"",RowBox[{"Entity", "[", 
+        RowBox[{"\"City\"", ",", 
+          RowBox[{"{", 
+            RowBox[{"\"Pori\"", ",", "\"Satakunta\"", ",", "\"Finland\""}], 
+            "}"}]}], "]"}],
+      "\"Entity[\\\"City\\\", {\\\"Pori\\\", \\\"Satakunta\\\", \\\"Finland\\\
+\"}]\"","\"city\""},
+     "Entity"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"la", "=", 
+   TemplateBox[{"\"Lahore\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Lahore\"", ",", "\"Punjab\"", ",", "\"Pakistan\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Lahore\\\", \\\"Punjab\\\", \
+\\\"Pakistan\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mo", "=", 
+   TemplateBox[{"\"Moscow\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Moscow\"", ",", "\"Moscow\"", ",", "\"Russia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Moscow\\\", \\\"Moscow\\\", \
+\\\"Russia\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bo", "=", 
+   TemplateBox[{"\"Bogot\[AAcute]\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Bogota\"", ",", "\"DistritoCapital\"", ",", 
+             "\"Colombia\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Bogota\\\", \\\"DistritoCapital\\\", \
+\\\"Colombia\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pa", "=", 
+   TemplateBox[{"\"Paramaribo\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Paramaribo\"", ",", "\"Paramaribo\"", ",", 
+             "\"Suriname\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Paramaribo\\\", \\\"Paramaribo\\\", \
+\\\"Suriname\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"co", "=", 
+   TemplateBox[{"\"Conakry\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Conakry\"", ",", "\"Conakry\"", ",", "\"Guinea\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Conakry\\\", \\\"Conakry\\\", \
+\\\"Guinea\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"riy", "=", 
+   TemplateBox[{"\"Riyadh\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Riyadh\"", ",", "\"Riyadh\"", ",", "\"SaudiArabia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Riyadh\\\", \\\"Riyadh\\\", \\\"SaudiArabia\
+\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"new", "=", 
+   TemplateBox[{"\"Newcastle\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{
+            "\"Newcastle\"", ",", "\"KwaZuluNatal\"", ",", 
+             "\"SouthAfrica\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Newcastle\\\", \\\"KwaZuluNatal\\\", \
+\\\"SouthAfrica\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lis", "=", 
+   TemplateBox[{"\"Lisbon\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Lisbon\"", ",", "\"Lisboa\"", ",", "\"Portugal\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Lisbon\\\", \\\"Lisboa\\\", \
+\\\"Portugal\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"teh", "=", 
+   TemplateBox[{"\"Tehran\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Tehran\"", ",", "\"Tehran\"", ",", "\"Iran\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Tehran\\\", \\\"Tehran\\\", \
+\\\"Iran\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"irk", "=", 
+   TemplateBox[{"\"Irkutsk\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Irkutsk\"", ",", "\"Irkutsk\"", ",", "\"Russia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Irkutsk\\\", \\\"Irkutsk\\\", \
+\\\"Russia\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tro", "=", 
+   TemplateBox[{"\"Trondheim\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Trondheim\"", ",", "\"SorTrondelag\"", ",", 
+             "\"Norway\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Trondheim\\\", \\\"SorTrondelag\\\", \
+\\\"Norway\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rig", "=", 
+   TemplateBox[{"\"Riga\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Riga\"", ",", "\"Riga\"", ",", "\"Latvia\""}], "}"}]}], 
+       "]"}],"\"Entity[\\\"City\\\", {\\\"Riga\\\", \\\"Riga\\\", \
+\\\"Latvia\\\"}]\"","\"city\""},
+    "Entity"]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6358925215831327`*^9, 3.635892575788407*^9}, {
+   3.635892612006821*^9, 3.6358926940044165`*^9}, {3.635892730655264*^9, 
+   3.6358930305283613`*^9}, {3.6358978196243896`*^9, 3.635897829786587*^9}, 
+   3.63589787267802*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.635893040463375*^9, 3.635893041516121*^9}, 
+   3.635893107640993*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"SC", "[", 
+    RowBox[{"{", 
+     RowBox[{"lat_", ",", "lon_"}], "}"}], "]"}], ":=", 
+   RowBox[{"r", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        RowBox[{"lon", " ", "\[Degree]"}], "]"}], " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"lat", " ", "\[Degree]"}], "]"}]}], ",", 
+      RowBox[{
+       RowBox[{"Sin", "[", 
+        RowBox[{"lon", "  ", "\[Degree]"}], "]"}], " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"lat", "  ", "\[Degree]"}], "]"}]}], ",", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"lat", " ", "\[Degree]"}], "]"}]}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"distfun", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"lat1_", ",", "lon1_"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lat2_", ",", "lon2_"}], "}"}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"VectorAngle", "[", 
+     RowBox[{
+      RowBox[{"SC", "[", 
+       RowBox[{"{", 
+        RowBox[{"lat1", ",", "lon1"}], "}"}], "]"}], ",", 
+      RowBox[{"SC", "[", 
+       RowBox[{"{", 
+        RowBox[{"lat2", ",", "lon2"}], "}"}], "]"}]}], "]"}], "r"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", "=", "6378.7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"places", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+   "mont", ",", "ba", ",", "dr", ",", "po", ",", "la", ",", "mo", ",", "bo", 
+    ",", "pa", ",", "co", ",", "riy", ",", "new", ",", "lis", ",", "teh", ",",
+     "irk", ",", "tro", ",", "rig"}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.6358931199627256`*^9, 3.6358931905100145`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"\"Montpelier\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Montpelier\"", ",", "\"Vermont\"", ",", 
+             "\"UnitedStates\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Montpelier\\\", \\\"Vermont\\\", \
+\\\"UnitedStates\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Buenos Aires\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"BuenosAires\"", ",", "\"BuenosAires\"", ",", 
+             "\"Argentina\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"BuenosAires\\\", \\\"BuenosAires\\\", \
+\\\"Argentina\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Dreba\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Dreba\"", ",", "\"Thuringia\"", ",", "\"Germany\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Dreba\\\", \\\"Thuringia\\\", \\\"Germany\\\
+\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Pori\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Pori\"", ",", "\"Satakunta\"", ",", "\"Finland\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Pori\\\", \\\"Satakunta\\\", \
+\\\"Finland\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Lahore\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Lahore\"", ",", "\"Punjab\"", ",", "\"Pakistan\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Lahore\\\", \\\"Punjab\\\", \
+\\\"Pakistan\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Moscow\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Moscow\"", ",", "\"Moscow\"", ",", "\"Russia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Moscow\\\", \\\"Moscow\\\", \
+\\\"Russia\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Bogot\[AAcute]\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Bogota\"", ",", "\"DistritoCapital\"", ",", 
+             "\"Colombia\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Bogota\\\", \\\"DistritoCapital\\\", \
+\\\"Colombia\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Paramaribo\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Paramaribo\"", ",", "\"Paramaribo\"", ",", 
+             "\"Suriname\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Paramaribo\\\", \\\"Paramaribo\\\", \
+\\\"Suriname\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Conakry\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Conakry\"", ",", "\"Conakry\"", ",", "\"Guinea\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Conakry\\\", \\\"Conakry\\\", \
+\\\"Guinea\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Riyadh\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Riyadh\"", ",", "\"Riyadh\"", ",", "\"SaudiArabia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Riyadh\\\", \\\"Riyadh\\\", \\\"SaudiArabia\
+\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Newcastle\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Newcastle\"", ",", "\"KwaZuluNatal\"", ",", 
+             "\"SouthAfrica\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Newcastle\\\", \\\"KwaZuluNatal\\\", \
+\\\"SouthAfrica\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Lisbon\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Lisbon\"", ",", "\"Lisboa\"", ",", "\"Portugal\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Lisbon\\\", \\\"Lisboa\\\", \
+\\\"Portugal\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Tehran\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Tehran\"", ",", "\"Tehran\"", ",", "\"Iran\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Tehran\\\", \\\"Tehran\\\", \
+\\\"Iran\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Irkutsk\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Irkutsk\"", ",", "\"Irkutsk\"", ",", "\"Russia\""}], 
+           "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Irkutsk\\\", \\\"Irkutsk\\\", \
+\\\"Russia\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Trondheim\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"Trondheim\"", ",", "\"SorTrondelag\"", ",", 
+             "\"Norway\""}], "}"}]}], "]"}],
+     "\"Entity[\\\"City\\\", {\\\"Trondheim\\\", \\\"SorTrondelag\\\", \
+\\\"Norway\\\"}]\"","\"city\""},
+    "Entity"], ",", 
+   TemplateBox[{"\"Riga\"",RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           RowBox[{"\"Riga\"", ",", "\"Riga\"", ",", "\"Latvia\""}], "}"}]}], 
+       "]"}],"\"Entity[\\\"City\\\", {\\\"Riga\\\", \\\"Riga\\\", \
+\\\"Latvia\\\"}]\"","\"city\""},
+    "Entity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.635893207171818*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"centers", "=", 
+  RowBox[{"(", 
+   RowBox[{"GeoPosition", "/@", "places"}], ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"centers", "=", 
+  RowBox[{"centers", "/.", 
+   RowBox[{"GeoPosition", "\[Rule]", "Identity"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"{", 
+   RowBox[{"places", ",", "centers"}], "}"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6358932103791113`*^9, 3.6358932119502096`*^9}, {
+  3.6358933049569893`*^9, 3.635893376271694*^9}, {3.63589761485618*^9, 
+  3.6358976253616285`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"44.2664485`", ",", 
+      RowBox[{"-", "72.5715237`"}]}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "34.61`"}], ",", 
+      RowBox[{"-", "58.37`"}]}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"50.67`", ",", "11.75`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"61.49`", ",", "21.77`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"31.560000000000002`", ",", "74.35000000000001`"}], "}"}], "]"}],
+    ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"55.75`", ",", "37.62`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"4.63`", ",", 
+      RowBox[{"-", "74.09`"}]}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"5.85`", ",", 
+      RowBox[{"-", "55.2`"}]}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"9.55`", ",", 
+      RowBox[{"-", "13.67`"}]}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"24.65`", ",", "46.77`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "27.75`"}], ",", "29.92`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"38.72`", ",", 
+      RowBox[{"-", "9.14`"}]}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"35.67`", ",", "51.43`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"52.33`", ",", "104.24000000000001`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"63.440000000000005`", ",", "10.4`"}], "}"}], "]"}], ",", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"{", 
+     RowBox[{"56.97`", ",", "24.13`"}], "}"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.6358933290390177`*^9, 3.635893355235074*^9}, 
+   3.63589338929756*^9, 3.635897633141144*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"44.2664485`", ",", 
+      RowBox[{"-", "72.5715237`"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "34.61`"}], ",", 
+      RowBox[{"-", "58.37`"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"50.67`", ",", "11.75`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"61.49`", ",", "21.77`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"31.560000000000002`", ",", "74.35000000000001`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"55.75`", ",", "37.62`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4.63`", ",", 
+      RowBox[{"-", "74.09`"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"5.85`", ",", 
+      RowBox[{"-", "55.2`"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"9.55`", ",", 
+      RowBox[{"-", "13.67`"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"24.65`", ",", "46.77`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "27.75`"}], ",", "29.92`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"38.72`", ",", 
+      RowBox[{"-", "9.14`"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"35.67`", ",", "51.43`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"52.33`", ",", "104.24000000000001`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"63.440000000000005`", ",", "10.4`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"56.97`", ",", "24.13`"}], "}"}]}], "}"}], "5.85"}]], "Input",
+ CellChangeTimes->{{3.635898131540079*^9, 3.635898132151514*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     TemplateBox[{"\"Montpelier\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Montpelier\"", ",", "\"Vermont\"", ",", 
+               "\"UnitedStates\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Montpelier\\\", \\\"Vermont\\\", \
+\\\"UnitedStates\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Buenos Aires\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"BuenosAires\"", ",", "\"BuenosAires\"", ",", 
+               "\"Argentina\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"BuenosAires\\\", \\\"BuenosAires\\\", \
+\\\"Argentina\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Dreba\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Dreba\"", ",", "\"Thuringia\"", ",", "\"Germany\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Dreba\\\", \\\"Thuringia\\\", \\\"Germany\
+\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Pori\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Pori\"", ",", "\"Satakunta\"", ",", "\"Finland\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Pori\\\", \\\"Satakunta\\\", \
+\\\"Finland\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Lahore\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Lahore\"", ",", "\"Punjab\"", ",", "\"Pakistan\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Lahore\\\", \\\"Punjab\\\", \
+\\\"Pakistan\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Moscow\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Moscow\"", ",", "\"Moscow\"", ",", "\"Russia\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Moscow\\\", \\\"Moscow\\\", \
+\\\"Russia\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Bogot\[AAcute]\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Bogota\"", ",", "\"DistritoCapital\"", ",", 
+               "\"Colombia\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Bogota\\\", \\\"DistritoCapital\\\", \
+\\\"Colombia\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Paramaribo\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Paramaribo\"", ",", "\"Paramaribo\"", ",", 
+               "\"Suriname\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Paramaribo\\\", \\\"Paramaribo\\\", \
+\\\"Suriname\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Conakry\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Conakry\"", ",", "\"Conakry\"", ",", "\"Guinea\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Conakry\\\", \\\"Conakry\\\", \
+\\\"Guinea\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Riyadh\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Riyadh\"", ",", "\"Riyadh\"", ",", 
+               "\"SaudiArabia\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Riyadh\\\", \\\"Riyadh\\\", \
+\\\"SaudiArabia\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Newcastle\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Newcastle\"", ",", "\"KwaZuluNatal\"", ",", 
+               "\"SouthAfrica\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Newcastle\\\", \\\"KwaZuluNatal\\\", \
+\\\"SouthAfrica\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Lisbon\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Lisbon\"", ",", "\"Lisboa\"", ",", "\"Portugal\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Lisbon\\\", \\\"Lisboa\\\", \
+\\\"Portugal\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Tehran\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Tehran\"", ",", "\"Tehran\"", ",", "\"Iran\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Tehran\\\", \\\"Tehran\\\", \
+\\\"Iran\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Irkutsk\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Irkutsk\"", ",", "\"Irkutsk\"", ",", "\"Russia\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Irkutsk\\\", \\\"Irkutsk\\\", \
+\\\"Russia\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Trondheim\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             
+             RowBox[{"\"Trondheim\"", ",", "\"SorTrondelag\"", ",", 
+               "\"Norway\""}], "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Trondheim\\\", \\\"SorTrondelag\\\", \
+\\\"Norway\\\"}]\"","\"city\""},
+      "Entity"], 
+     TemplateBox[{"\"Riga\"",RowBox[{"Entity", "[", 
+         RowBox[{"\"City\"", ",", 
+           RowBox[{"{", 
+             RowBox[{"\"Riga\"", ",", "\"Riga\"", ",", "\"Latvia\""}], 
+             "}"}]}], "]"}],
+       "\"Entity[\\\"City\\\", {\\\"Riga\\\", \\\"Riga\\\", \
+\\\"Latvia\\\"}]\"","\"city\""},
+      "Entity"]},
+    {GridBox[{
+       {"44.2664485`"},
+       {
+        RowBox[{"-", "72.5715237`"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        RowBox[{"-", "34.61`"}]},
+       {
+        RowBox[{"-", "58.37`"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"50.67`"},
+       {"11.75`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"61.49`"},
+       {"21.77`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"31.560000000000002`"},
+       {"74.35000000000001`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"55.75`"},
+       {"37.62`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"4.63`"},
+       {
+        RowBox[{"-", "74.09`"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"5.85`"},
+       {
+        RowBox[{"-", "55.2`"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"9.55`"},
+       {
+        RowBox[{"-", "13.67`"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"24.65`"},
+       {"46.77`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        RowBox[{"-", "27.75`"}]},
+       {"29.92`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"38.72`"},
+       {
+        RowBox[{"-", "9.14`"}]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"35.67`"},
+       {"51.43`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"52.33`"},
+       {"104.24000000000001`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"63.440000000000005`"},
+       {"10.4`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"56.97`"},
+       {"24.13`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+     Entity["City", {"Montpelier", "Vermont", "UnitedStates"}], 
+     Entity["City", {"BuenosAires", "BuenosAires", "Argentina"}], 
+     Entity["City", {"Dreba", "Thuringia", "Germany"}], 
+     Entity["City", {"Pori", "Satakunta", "Finland"}], 
+     Entity["City", {"Lahore", "Punjab", "Pakistan"}], 
+     Entity["City", {"Moscow", "Moscow", "Russia"}], 
+     Entity["City", {"Bogota", "DistritoCapital", "Colombia"}], 
+     Entity["City", {"Paramaribo", "Paramaribo", "Suriname"}], 
+     Entity["City", {"Conakry", "Conakry", "Guinea"}], 
+     Entity["City", {"Riyadh", "Riyadh", "SaudiArabia"}], 
+     Entity["City", {"Newcastle", "KwaZuluNatal", "SouthAfrica"}], 
+     Entity["City", {"Lisbon", "Lisboa", "Portugal"}], 
+     Entity["City", {"Tehran", "Tehran", "Iran"}], 
+     Entity["City", {"Irkutsk", "Irkutsk", "Russia"}], 
+     Entity["City", {"Trondheim", "SorTrondelag", "Norway"}], 
+     Entity["City", {"Riga", "Riga", "Latvia"}]}, {{
+    44.2664485, -72.5715237}, {-34.61, -58.37}, {50.67, 11.75}, {61.49, 
+    21.77}, {31.560000000000002`, 74.35000000000001}, {55.75, 37.62}, {
+    4.63, -74.09}, {5.85, -55.2}, {9.55, -13.67}, {24.65, 46.77}, {-27.75, 
+    29.92}, {38.72, -9.14}, {35.67, 51.43}, {52.33, 104.24000000000001`}, {
+    63.440000000000005`, 10.4}, {56.97, 24.13}}}]]], "Output",
+ CellChangeTimes->{{3.6358933290390177`*^9, 3.635893355235074*^9}, 
+   3.63589338929756*^9, 3.635897633173182*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"dist", ",", "route"}], "}"}], "=", 
+   RowBox[{"FindShortestTour", "[", 
+    RowBox[{"centers", ",", 
+     RowBox[{"DistanceFunction", "\[Rule]", "distfun"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.63589322894575*^9, 3.6358933033208237`*^9}, {
+  3.635893397180118*^9, 3.6358934152899895`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"surfaceCenters", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{"SC", ",", 
+     RowBox[{"centers", "[", 
+      RowBox[{"[", "route", "]"}], "]"}]}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GreatCircleArc", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lat1_", ",", "lon1_"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"lat2_", ",", "lon2_"}], "}"}]}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"u", "=", 
+       RowBox[{"SC", "[", 
+        RowBox[{"{", 
+         RowBox[{"lat1", ",", "lon1"}], "}"}], "]"}]}], ",", 
+      RowBox[{"v", "=", 
+       RowBox[{"SC", "[", 
+        RowBox[{"{", 
+         RowBox[{"lat2", ",", "lon2"}], "}"}], "]"}]}], ",", "a"}], "}"}], 
+    ",", 
+    RowBox[{
+     RowBox[{"a", "=", 
+      RowBox[{"VectorAngle", "[", 
+       RowBox[{"u", ",", "v"}], "]"}]}], ";", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{"RotationTransform", "[", 
+          RowBox[{"\[Theta]", ",", 
+           RowBox[{"{", 
+            RowBox[{"u", ",", "v"}], "}"}]}], "]"}], "[", "u", "]"}], "]"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Theta]", ",", "0", ",", "a", ",", 
+         RowBox[{"a", "/", 
+          RowBox[{"Ceiling", "[", 
+           RowBox[{"10", "a"}], "]"}]}]}], "}"}]}], "]"}]}]}], 
+   "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tourLine", "=", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"GreatCircleArc", ",", 
+     RowBox[{"Partition", "[", 
+      RowBox[{
+       RowBox[{"centers", "[", 
+        RowBox[{"[", "route", "]"}], "]"}], ",", "2", ",", "1"}], "]"}], ",", 
+     RowBox[{"{", "1", "}"}]}], "]"}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Sphere", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"0.99", " ", "r"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", "Thick", ",", 
+       RowBox[{"Line", "[", "tourLine", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Blue", ",", 
+       RowBox[{"Point", "/@", "tourLine"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+   RowBox[{"SphericalRegion", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6358935009845476`*^9, 3.635893505933056*^9}, {
+   3.6358935395398483`*^9, 3.6358935409068174`*^9}, 3.635893764195348*^9, {
+   3.635893862707488*^9, 3.635893882323393*^9}, {3.635893918349906*^9, 
+   3.6358939204714055`*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{SphereBox[{0, 0, 0}, 6314.913], 
+   {RGBColor[1, 0, 0], Thickness[Large], 
+    Line3DBox[{{{1368.1238664610446`, -4358.09689741452, 4452.307515071887}, {
+      1856.2856571233547`, -4066.7983313773525`, 4550.073469853479}, {
+      2329.2681109925697`, -3742.2444841259576`, 4610.6322753112645`}, {
+      2783.203525952395, -3387.089317961894, 4633.488726140874}, {
+      3214.3799525409854`, -3004.2370302323297`, 4618.455919123124}, {
+      3619.2715475394834`, -2596.818304943339, 4565.656781480879}, {
+      3994.5674057207816`, -2168.1647123321, 4475.523065670759}, {
+      4337.198633993707, -1721.781465739482, 4348.791818829583}, {
+      4644.363446550226, -1261.318758557231, 4186.499355745768}, {
+      4913.550075806028, -790.5419156350868, 3989.9727846403366`}}, {{
+      4913.550075806027, -790.5419156350862, 3989.9727846403366`}, {
+      4721.4541244022585`, -388.3022116309169, 4271.405627379283}, {
+      4497.110141018969, 16.58963762521512, 4523.664317062858}, {
+      4242.050418835325, 421.36817789844247`, 4745.0259001098775`}, {
+      3958.0170427812936`, 823.2687288662579, 4933.978453451507}}, {{
+      3958.0170427812945`, 823.2687288662595, 4933.978453451509}, {
+      3592.9469895072507`, 724.2862397035768, 5220.532067094965}, {
+      3207.991775925069, 621.2951893159317, 5478.192652995147}, {
+      2805.281936149473, 514.8655815339523, 5705.534188983987}}, {{
+      2805.281936149474, 514.8655815339529, 5705.534188983984}, {
+      2827.488290265805, 1129.197679810942, 5605.179413570925}}, {{
+      2827.4882902658073`, 1129.1976798109276`, 5605.1794135709315`}, {
+      3173.079854090331, 1421.3815444905063`, 5347.808189767831}}, {{
+      3173.0798540903343`, 1421.381544490509, 5347.808189767827}, {
+      3014.860285077652, 1810.3240182422417`, 5321.7626873468125`}, {
+      2843.5263658758768`, 2191.391757881596, 5272.5680327576}}, {{
+      2843.526365875873, 2191.391757881602, 5272.568032757597}, {
+      2338.570768527322, 2495.693651886108, 5384.274662990819}, {
+      1812.9204856412846`, 2777.9104347540338`, 5448.334297675465}, {
+      1271.2271478006007`, 3035.544688980015, 5464.180054674257}, {
+      718.2843551969918, 3266.316534927034, 5431.671710324684}, {
+      158.98525768384252`, 3468.1838061372473`, 
+      5351.096940318549}, {-401.720746114609, 3639.360121050505, 
+      5223.168773976998}, {-958.8718074556373, 3778.330691208713, 
+      5049.019284448917}}, {{-958.8718074556372, 3778.3306912087114`, 
+      5049.019284448917}, {-554.8960451595899, 4106.070904886898, 
+      4849.7511063051}, {-146.68820097595062`, 4402.494931583174, 
+      4613.494840040345}, {262.63840497196657`, 4665.342004140574, 
+      4342.05236525717}, {669.9619199871522, 4892.60744016015, 
+      4037.493919779529}, {1072.1757685491589`, 5082.557931315336, 
+      3702.1423103602574`}, {1466.2123455483686`, 5233.744762950169, 
+      3338.5551970954757`}}, {{1466.2123455483681`, 5233.744762950171, 
+      3338.555197095479}, {1931.501567841668, 4990.136268966336, 
+      3472.125487445974}, {2382.8494234464097`, 4710.509518145528, 
+      3580.6343564571807`}, {2816.998132993502, 4396.882825737412, 
+      3663.2985990015277`}, {3230.8140586656464`, 4051.5199148447655`, 
+      3719.521553633573}}, {{3230.8140586656464`, 4051.519914844762, 
+      3719.521553633572}, {3494.1302899583834`, 4128.33872415207, 
+      3381.669201069466}, {3741.1831475986205`, 4185.942246774756, 
+      3028.0769231957065`}, {3970.822728004552, 4224.062368036386, 
+      2660.390509624727}}, {{3970.822728004552, 4224.062368036388, 
+      2660.3905096247263`}, {4257.421546663487, 4249.642014307691, 
+      2121.9609360768986`}, {4505.0224641659615`, 4236.295019792344, 
+      1564.0942403329263`}, {4711.3574607725195`, 4184.143642708645, 
+      991.9004708154632}, {4874.536511801654, 4093.6655886881363`, 
+      410.6209116730038}, {4993.064900220275, 
+      3965.689635001014, -174.41992728417017`}, {5065.856908223574, 
+      3801.3880389719507`, -757.86308299354}, {5092.2457623896635`, 
+      3602.2658001250848`, -1334.3642271410345`}, {5071.989741311554, 
+      3370.1468744167382`, -1898.642620107702}, {5005.274389760692, 
+      3107.157466833215, -2445.5294824451234`}, {4892.71081910035, 
+      2815.7065553931884`, -2970.0153407977873`}}, {{4892.710819100349, 
+      2815.706555393188, -2970.0153407977873`}, {5269.724174782971, 
+      2442.6005792953424`, -2636.5741449339066`}, {5595.898580344461, 
+      2045.929944991879, -2277.69695716624}, {5868.087312391877, 
+      1629.5214786928616`, -1896.8459965490297`}, {6083.664467004421, 
+      1197.3924246687773`, -1497.69547113344}, {6240.550292785796, 
+      753.711689430625, -1084.096131543105}, {6337.2312549840735`, 
+      302.7596227690874, -660.0381213791247}, {
+      6372.774637113183, -151.11327634024929`, -229.61248285018883`}, {
+      6346.837539208866, -603.5283305864209, 203.0283110029427}, {
+      6259.670185909621, -1050.120927019298, 633.7104167285916}, {
+      6112.113512448414, -1486.5826240617735`, 1058.2788870534582`}}, {{
+      6112.113512448415, -1486.5826240617735`, 1058.2788870534578`}, {
+      6061.597396688269, -1894.5901517259408`, 596.1366013298244}, {
+      5954.082590719412, -2284.782382519733, 128.38869661872127`}, {
+      5790.580082688572, -2653.4902429911554`, -340.5664785635072}, {
+      5572.627326866247, -2997.2466825030274`, -806.3192234395395}, {
+      5302.273786586317, -3312.8192747622907`, -1264.4899504713535`}, {
+      4982.061662638572, -3597.2406131189464`, -1710.7703676983099`}, {
+      4615.001988329833, -3847.836213820149, -2140.963990665398}, {
+      4204.546315997684, -4062.249664838298, -2551.0256029980264`}, {
+      3754.554261215479, -4238.464783792516, -2937.0992945658727`}, {
+      3269.2572098784503`, -4374.824576607141, -3295.5547195535855`}, {
+      2753.218529442093, -4470.046818634294, -3623.0212334947955`}}, {{
+      2753.2185294420933`, -4470.046818634295, -3623.0212334947955`}, {
+      2950.4000777394263`, -4699.245808626901, -3146.4332030694222`}, {
+      3124.4826539665146`, -4891.653941507052, -2645.211437976349}, {
+      3274.1033485313583`, -5045.764835099319, -2123.2800526569495`}, {
+      3398.0907663167472`, -5160.371940077168, -1584.7252992039612`}, {
+      3495.474197647713, -5234.577986156168, -1033.7635756924}, {
+      3565.4912180729443`, -5267.8020069112035`, -474.7084155847924}, {
+      3607.5936574607213`, -5259.783888219696, 88.06328334608634}, {
+      3621.4518916767274`, -5210.586404720619, 650.145526179886}}, {{
+      3621.451891676727, -5210.586404720619, 650.1455261798855}, {
+      3180.908761102681, -5493.835092299209, 622.4219807830962}, {
+      2718.8605730984564`, -5739.941803151979, 590.4904491006816}, {
+      2238.431080517341, -5947.242692337651, 554.5668095102487}, {
+      1742.868306048775, -6114.33626806187, 514.8939296922354}}, {{
+      1742.8683060487779`, -6114.336268061868, 514.8939296922355}, {
+      1738.4327117318949`, -6030.47320306696, 1139.762406763703}, {
+      1717.012913435135, -5887.6933987097145`, 1753.4955910657511`}, {
+      1678.8181790933595`, -5687.391790385123, 2350.097409514239}, {
+      1624.221665029871, -5431.525292128645, 2923.7391596745474`}, {
+      1553.7567702800109`, -5122.593677885322, 3468.8164552334483`}, {
+      1468.1119253696063`, -4763.615159126176, 3980.0039799390706`}, {
+      1368.1238664610444`, -4358.096897414521, 4452.307515071887}}}]}, 
+   {RGBColor[0, 0, 1], 
+    Point3DBox[{{1368.1238664610446`, -4358.09689741452, 4452.307515071887}, {
+     1856.2856571233547`, -4066.7983313773525`, 4550.073469853479}, {
+     2329.2681109925697`, -3742.2444841259576`, 4610.6322753112645`}, {
+     2783.203525952395, -3387.089317961894, 4633.488726140874}, {
+     3214.3799525409854`, -3004.2370302323297`, 4618.455919123124}, {
+     3619.2715475394834`, -2596.818304943339, 4565.656781480879}, {
+     3994.5674057207816`, -2168.1647123321, 4475.523065670759}, {
+     4337.198633993707, -1721.781465739482, 4348.791818829583}, {
+     4644.363446550226, -1261.318758557231, 4186.499355745768}, {
+     4913.550075806028, -790.5419156350868, 3989.9727846403366`}}], 
+    Point3DBox[{{4913.550075806027, -790.5419156350862, 
+     3989.9727846403366`}, {4721.4541244022585`, -388.3022116309169, 
+     4271.405627379283}, {4497.110141018969, 16.58963762521512, 
+     4523.664317062858}, {4242.050418835325, 421.36817789844247`, 
+     4745.0259001098775`}, {3958.0170427812936`, 823.2687288662579, 
+     4933.978453451507}}], 
+    Point3DBox[{{3958.0170427812945`, 823.2687288662595, 4933.978453451509}, {
+     3592.9469895072507`, 724.2862397035768, 5220.532067094965}, {
+     3207.991775925069, 621.2951893159317, 5478.192652995147}, {
+     2805.281936149473, 514.8655815339523, 5705.534188983987}}], 
+    Point3DBox[{{2805.281936149474, 514.8655815339529, 5705.534188983984}, {
+     2827.488290265805, 1129.197679810942, 5605.179413570925}}], 
+    Point3DBox[{{2827.4882902658073`, 1129.1976798109276`, 
+     5605.1794135709315`}, {3173.079854090331, 1421.3815444905063`, 
+     5347.808189767831}}], 
+    Point3DBox[{{3173.0798540903343`, 1421.381544490509, 5347.808189767827}, {
+     3014.860285077652, 1810.3240182422417`, 5321.7626873468125`}, {
+     2843.5263658758768`, 2191.391757881596, 5272.5680327576}}], 
+    Point3DBox[{{2843.526365875873, 2191.391757881602, 5272.568032757597}, {
+     2338.570768527322, 2495.693651886108, 5384.274662990819}, {
+     1812.9204856412846`, 2777.9104347540338`, 5448.334297675465}, {
+     1271.2271478006007`, 3035.544688980015, 5464.180054674257}, {
+     718.2843551969918, 3266.316534927034, 5431.671710324684}, {
+     158.98525768384252`, 3468.1838061372473`, 
+     5351.096940318549}, {-401.720746114609, 3639.360121050505, 
+     5223.168773976998}, {-958.8718074556373, 3778.330691208713, 
+     5049.019284448917}}], 
+    Point3DBox[{{-958.8718074556372, 3778.3306912087114`, 
+     5049.019284448917}, {-554.8960451595899, 4106.070904886898, 
+     4849.7511063051}, {-146.68820097595062`, 4402.494931583174, 
+     4613.494840040345}, {262.63840497196657`, 4665.342004140574, 
+     4342.05236525717}, {669.9619199871522, 4892.60744016015, 
+     4037.493919779529}, {1072.1757685491589`, 5082.557931315336, 
+     3702.1423103602574`}, {1466.2123455483686`, 5233.744762950169, 
+     3338.5551970954757`}}], 
+    Point3DBox[{{1466.2123455483681`, 5233.744762950171, 3338.555197095479}, {
+     1931.501567841668, 4990.136268966336, 3472.125487445974}, {
+     2382.8494234464097`, 4710.509518145528, 3580.6343564571807`}, {
+     2816.998132993502, 4396.882825737412, 3663.2985990015277`}, {
+     3230.8140586656464`, 4051.5199148447655`, 3719.521553633573}}], 
+    Point3DBox[{{3230.8140586656464`, 4051.519914844762, 3719.521553633572}, {
+     3494.1302899583834`, 4128.33872415207, 3381.669201069466}, {
+     3741.1831475986205`, 4185.942246774756, 3028.0769231957065`}, {
+     3970.822728004552, 4224.062368036386, 2660.390509624727}}], 
+    Point3DBox[{{3970.822728004552, 4224.062368036388, 2660.3905096247263`}, {
+     4257.421546663487, 4249.642014307691, 2121.9609360768986`}, {
+     4505.0224641659615`, 4236.295019792344, 1564.0942403329263`}, {
+     4711.3574607725195`, 4184.143642708645, 991.9004708154632}, {
+     4874.536511801654, 4093.6655886881363`, 410.6209116730038}, {
+     4993.064900220275, 3965.689635001014, -174.41992728417017`}, {
+     5065.856908223574, 3801.3880389719507`, -757.86308299354}, {
+     5092.2457623896635`, 3602.2658001250848`, -1334.3642271410345`}, {
+     5071.989741311554, 3370.1468744167382`, -1898.642620107702}, {
+     5005.274389760692, 3107.157466833215, -2445.5294824451234`}, {
+     4892.71081910035, 2815.7065553931884`, -2970.0153407977873`}}], 
+    Point3DBox[{{4892.710819100349, 
+     2815.706555393188, -2970.0153407977873`}, {5269.724174782971, 
+     2442.6005792953424`, -2636.5741449339066`}, {5595.898580344461, 
+     2045.929944991879, -2277.69695716624}, {5868.087312391877, 
+     1629.5214786928616`, -1896.8459965490297`}, {6083.664467004421, 
+     1197.3924246687773`, -1497.69547113344}, {6240.550292785796, 
+     753.711689430625, -1084.096131543105}, {6337.2312549840735`, 
+     302.7596227690874, -660.0381213791247}, {
+     6372.774637113183, -151.11327634024929`, -229.61248285018883`}, {
+     6346.837539208866, -603.5283305864209, 203.0283110029427}, {
+     6259.670185909621, -1050.120927019298, 633.7104167285916}, {
+     6112.113512448414, -1486.5826240617735`, 1058.2788870534582`}}], 
+    Point3DBox[{{6112.113512448415, -1486.5826240617735`, 
+     1058.2788870534578`}, {6061.597396688269, -1894.5901517259408`, 
+     596.1366013298244}, {5954.082590719412, -2284.782382519733, 
+     128.38869661872127`}, {
+     5790.580082688572, -2653.4902429911554`, -340.5664785635072}, {
+     5572.627326866247, -2997.2466825030274`, -806.3192234395395}, {
+     5302.273786586317, -3312.8192747622907`, -1264.4899504713535`}, {
+     4982.061662638572, -3597.2406131189464`, -1710.7703676983099`}, {
+     4615.001988329833, -3847.836213820149, -2140.963990665398}, {
+     4204.546315997684, -4062.249664838298, -2551.0256029980264`}, {
+     3754.554261215479, -4238.464783792516, -2937.0992945658727`}, {
+     3269.2572098784503`, -4374.824576607141, -3295.5547195535855`}, {
+     2753.218529442093, -4470.046818634294, -3623.0212334947955`}}], 
+    Point3DBox[{{
+     2753.2185294420933`, -4470.046818634295, -3623.0212334947955`}, {
+     2950.4000777394263`, -4699.245808626901, -3146.4332030694222`}, {
+     3124.4826539665146`, -4891.653941507052, -2645.211437976349}, {
+     3274.1033485313583`, -5045.764835099319, -2123.2800526569495`}, {
+     3398.0907663167472`, -5160.371940077168, -1584.7252992039612`}, {
+     3495.474197647713, -5234.577986156168, -1033.7635756924}, {
+     3565.4912180729443`, -5267.8020069112035`, -474.7084155847924}, {
+     3607.5936574607213`, -5259.783888219696, 88.06328334608634}, {
+     3621.4518916767274`, -5210.586404720619, 650.145526179886}}], 
+    Point3DBox[{{3621.451891676727, -5210.586404720619, 650.1455261798855}, {
+     3180.908761102681, -5493.835092299209, 622.4219807830962}, {
+     2718.8605730984564`, -5739.941803151979, 590.4904491006816}, {
+     2238.431080517341, -5947.242692337651, 554.5668095102487}, {
+     1742.868306048775, -6114.33626806187, 514.8939296922354}}], 
+    Point3DBox[{{1742.8683060487779`, -6114.336268061868, 
+     514.8939296922355}, {1738.4327117318949`, -6030.47320306696, 
+     1139.762406763703}, {1717.012913435135, -5887.6933987097145`, 
+     1753.4955910657511`}, {1678.8181790933595`, -5687.391790385123, 
+     2350.097409514239}, {1624.221665029871, -5431.525292128645, 
+     2923.7391596745474`}, {1553.7567702800109`, -5122.593677885322, 
+     3468.8164552334483`}, {1468.1119253696063`, -4763.615159126176, 
+     3980.0039799390706`}, {1368.1238664610444`, -4358.096897414521, 
+     4452.307515071887}}]}},
+  AutomaticImageSize->True,
+  Boxed->False,
+  ImageSize->{360., 360.},
+  SphericalRegion->True,
+  ViewPoint->{2.752824234023906, -1.5220788569831634`, 1.2470904897783182`},
+  ViewVertical->{0.10460337623371423`, -0.36939638948219783`, 
+   0.928271318439333}]], "Output",
+ CellChangeTimes->{3.6358934723951826`*^9, 3.6358935082987165`*^9, 
+  3.635893577441085*^9, 3.63589376533517*^9, 3.635893883418141*^9, 
+  3.6358939208866987`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AdjacencyGraph", "[", "tourLine", "]"}]], "Input",
+ CellChangeTimes->{{3.6358935916762037`*^9, 3.635893609013621*^9}, {
+  3.635893934362607*^9, 3.6358939394171915`*^9}, {3.635894712341751*^9, 
+  3.6358947181148496`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"AdjacencyGraph", "::", "matsq"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Argument \
+\[NoBreak]\\!\\({\\(\\({\\(\\({1368.1238664610446`, \
+\\(\\(-4358.09689741452`\\)\\), 4452.307515071887`}\\)\\), \
+\\(\\({1856.2856571233547`, \\(\\(-4066.7983313773525`\\)\\), \
+4550.073469853479`}\\)\\), \\(\\({2329.2681109925697`, \
+\\(\\(-3742.2444841259576`\\)\\), 4610.6322753112645`}\\)\\), \
+\\(\\({2783.203525952395`, \\(\\(-3387.089317961894`\\)\\), \
+4633.488726140874`}\\)\\), \\(\\({3214.3799525409854`, \
+\\(\\(-3004.2370302323297`\\)\\), 4618.455919123124`}\\)\\), \
+\\(\\({3619.2715475394834`, \\(\\(-2596.818304943339`\\)\\), \
+4565.656781480879`}\\)\\), \\(\\({3994.5674057207816`, \
+\\(\\(-2168.1647123321`\\)\\), 4475.523065670759`}\\)\\), \
+\\(\\({4337.198633993707`, \\(\\(-1721.781465739482`\\)\\), \
+4348.791818829583`}\\)\\), \\(\\({4644.363446550226`, \
+\\(\\(-1261.318758557231`\\)\\), 4186.499355745768`}\\)\\), \
+\\(\\({4913.550075806028`, \\(\\(-790.5419156350868`\\)\\), \
+3989.9727846403366`}\\)\\)}\\)\\), \\(\\(\[LeftSkeleton] 14 \
+\[RightSkeleton]\\)\\), \\(\\({\\(\[LeftSkeleton] 1 \
+\[RightSkeleton]\\)}\\)\\)}\\)\[NoBreak] at position \[NoBreak]\\!\\(1\\)\
+\[NoBreak] is not a non-empty square matrix. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/matsq\\\", ButtonNote -> \
+\\\"AdjacencyGraph::matsq\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6358947188573694`*^9}],
+
+Cell[BoxData[
+ RowBox[{"AdjacencyGraph", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1368.1238664610446`", ",", 
+        RowBox[{"-", "4358.09689741452`"}], ",", "4452.307515071887`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1856.2856571233547`", ",", 
+        RowBox[{"-", "4066.7983313773525`"}], ",", "4550.073469853479`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2329.2681109925697`", ",", 
+        RowBox[{"-", "3742.2444841259576`"}], ",", "4610.6322753112645`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2783.203525952395`", ",", 
+        RowBox[{"-", "3387.089317961894`"}], ",", "4633.488726140874`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3214.3799525409854`", ",", 
+        RowBox[{"-", "3004.2370302323297`"}], ",", "4618.455919123124`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3619.2715475394834`", ",", 
+        RowBox[{"-", "2596.818304943339`"}], ",", "4565.656781480879`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3994.5674057207816`", ",", 
+        RowBox[{"-", "2168.1647123321`"}], ",", "4475.523065670759`"}], "}"}],
+       ",", 
+      RowBox[{"{", 
+       RowBox[{"4337.198633993707`", ",", 
+        RowBox[{"-", "1721.781465739482`"}], ",", "4348.791818829583`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4644.363446550226`", ",", 
+        RowBox[{"-", "1261.318758557231`"}], ",", "4186.499355745768`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4913.550075806028`", ",", 
+        RowBox[{"-", "790.5419156350868`"}], ",", "3989.9727846403366`"}], 
+       "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"4913.550075806027`", ",", 
+        RowBox[{"-", "790.5419156350862`"}], ",", "3989.9727846403366`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4721.4541244022585`", ",", 
+        RowBox[{"-", "388.3022116309169`"}], ",", "4271.405627379283`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "4497.110141018969`", ",", "16.58963762521512`", ",", 
+        "4523.664317062858`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "4242.050418835325`", ",", "421.36817789844247`", ",", 
+        "4745.0259001098775`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3958.0170427812936`", ",", "823.2687288662579`", ",", 
+        "4933.978453451507`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "3958.0170427812945`", ",", "823.2687288662595`", ",", 
+        "4933.978453451509`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3592.9469895072507`", ",", "724.2862397035768`", ",", 
+        "5220.532067094965`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3207.991775925069`", ",", "621.2951893159317`", ",", 
+        "5478.192652995147`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "2805.281936149473`", ",", "514.8655815339523`", ",", 
+        "5705.534188983987`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "2805.281936149474`", ",", "514.8655815339529`", ",", 
+        "5705.534188983984`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "2827.488290265805`", ",", "1129.197679810942`", ",", 
+        "5605.179413570925`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "2827.4882902658073`", ",", "1129.1976798109276`", ",", 
+        "5605.1794135709315`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3173.079854090331`", ",", "1421.3815444905063`", ",", 
+        "5347.808189767831`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "3173.0798540903343`", ",", "1421.381544490509`", ",", 
+        "5347.808189767827`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3014.860285077652`", ",", "1810.3240182422417`", ",", 
+        "5321.7626873468125`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "2843.5263658758768`", ",", "2191.391757881596`", ",", 
+        "5272.5680327576`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "2843.526365875873`", ",", "2191.391757881602`", ",", 
+        "5272.568032757597`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "2338.570768527322`", ",", "2495.693651886108`", ",", 
+        "5384.274662990819`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "1812.9204856412846`", ",", "2777.9104347540338`", ",", 
+        "5448.334297675465`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "1271.2271478006007`", ",", "3035.544688980015`", ",", 
+        "5464.180054674257`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "718.2843551969918`", ",", "3266.316534927034`", ",", 
+        "5431.671710324684`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "158.98525768384252`", ",", "3468.1838061372473`", ",", 
+        "5351.096940318549`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "401.720746114609`"}], ",", "3639.360121050505`", ",", 
+        "5223.168773976998`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "958.8718074556373`"}], ",", "3778.330691208713`", ",", 
+        "5049.019284448917`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "958.8718074556372`"}], ",", "3778.3306912087114`", ",", 
+        "5049.019284448917`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "554.8960451595899`"}], ",", "4106.070904886898`", ",", 
+        "4849.7511063051`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "146.68820097595062`"}], ",", "4402.494931583174`", ",", 
+        "4613.494840040345`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "262.63840497196657`", ",", "4665.342004140574`", ",", 
+        "4342.05236525717`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "669.9619199871522`", ",", "4892.60744016015`", ",", 
+        "4037.493919779529`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "1072.1757685491589`", ",", "5082.557931315336`", ",", 
+        "3702.1423103602574`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "1466.2123455483686`", ",", "5233.744762950169`", ",", 
+        "3338.5551970954757`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "1466.2123455483681`", ",", "5233.744762950171`", ",", 
+        "3338.555197095479`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "1931.501567841668`", ",", "4990.136268966336`", ",", 
+        "3472.125487445974`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "2382.8494234464097`", ",", "4710.509518145528`", ",", 
+        "3580.6343564571807`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "2816.998132993502`", ",", "4396.882825737412`", ",", 
+        "3663.2985990015277`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3230.8140586656464`", ",", "4051.5199148447655`", ",", 
+        "3719.521553633573`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "3230.8140586656464`", ",", "4051.519914844762`", ",", 
+        "3719.521553633572`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3494.1302899583834`", ",", "4128.33872415207`", ",", 
+        "3381.669201069466`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3741.1831475986205`", ",", "4185.942246774756`", ",", 
+        "3028.0769231957065`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "3970.822728004552`", ",", "4224.062368036386`", ",", 
+        "2660.390509624727`"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "3970.822728004552`", ",", "4224.062368036388`", ",", 
+        "2660.3905096247263`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "4257.421546663487`", ",", "4249.642014307691`", ",", 
+        "2121.9609360768986`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "4505.0224641659615`", ",", "4236.295019792344`", ",", 
+        "1564.0942403329263`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "4711.3574607725195`", ",", "4184.143642708645`", ",", 
+        "991.9004708154632`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "4874.536511801654`", ",", "4093.6655886881363`", ",", 
+        "410.6209116730038`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4993.064900220275`", ",", "3965.689635001014`", ",", 
+        RowBox[{"-", "174.41992728417017`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5065.856908223574`", ",", "3801.3880389719507`", ",", 
+        RowBox[{"-", "757.86308299354`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5092.2457623896635`", ",", "3602.2658001250848`", ",", 
+        RowBox[{"-", "1334.3642271410345`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5071.989741311554`", ",", "3370.1468744167382`", ",", 
+        RowBox[{"-", "1898.642620107702`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5005.274389760692`", ",", "3107.157466833215`", ",", 
+        RowBox[{"-", "2445.5294824451234`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4892.71081910035`", ",", "2815.7065553931884`", ",", 
+        RowBox[{"-", "2970.0153407977873`"}]}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"4892.710819100349`", ",", "2815.706555393188`", ",", 
+        RowBox[{"-", "2970.0153407977873`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5269.724174782971`", ",", "2442.6005792953424`", ",", 
+        RowBox[{"-", "2636.5741449339066`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5595.898580344461`", ",", "2045.929944991879`", ",", 
+        RowBox[{"-", "2277.69695716624`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5868.087312391877`", ",", "1629.5214786928616`", ",", 
+        RowBox[{"-", "1896.8459965490297`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6083.664467004421`", ",", "1197.3924246687773`", ",", 
+        RowBox[{"-", "1497.69547113344`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6240.550292785796`", ",", "753.711689430625`", ",", 
+        RowBox[{"-", "1084.096131543105`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6337.2312549840735`", ",", "302.7596227690874`", ",", 
+        RowBox[{"-", "660.0381213791247`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6372.774637113183`", ",", 
+        RowBox[{"-", "151.11327634024929`"}], ",", 
+        RowBox[{"-", "229.61248285018883`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6346.837539208866`", ",", 
+        RowBox[{"-", "603.5283305864209`"}], ",", "203.0283110029427`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6259.670185909621`", ",", 
+        RowBox[{"-", "1050.120927019298`"}], ",", "633.7104167285916`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6112.113512448414`", ",", 
+        RowBox[{"-", "1486.5826240617735`"}], ",", "1058.2788870534582`"}], 
+       "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"6112.113512448415`", ",", 
+        RowBox[{"-", "1486.5826240617735`"}], ",", "1058.2788870534578`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6061.597396688269`", ",", 
+        RowBox[{"-", "1894.5901517259408`"}], ",", "596.1366013298244`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5954.082590719412`", ",", 
+        RowBox[{"-", "2284.782382519733`"}], ",", "128.38869661872127`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5790.580082688572`", ",", 
+        RowBox[{"-", "2653.4902429911554`"}], ",", 
+        RowBox[{"-", "340.5664785635072`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5572.627326866247`", ",", 
+        RowBox[{"-", "2997.2466825030274`"}], ",", 
+        RowBox[{"-", "806.3192234395395`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5302.273786586317`", ",", 
+        RowBox[{"-", "3312.8192747622907`"}], ",", 
+        RowBox[{"-", "1264.4899504713535`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4982.061662638572`", ",", 
+        RowBox[{"-", "3597.2406131189464`"}], ",", 
+        RowBox[{"-", "1710.7703676983099`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4615.001988329833`", ",", 
+        RowBox[{"-", "3847.836213820149`"}], ",", 
+        RowBox[{"-", "2140.963990665398`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4204.546315997684`", ",", 
+        RowBox[{"-", "4062.249664838298`"}], ",", 
+        RowBox[{"-", "2551.0256029980264`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3754.554261215479`", ",", 
+        RowBox[{"-", "4238.464783792516`"}], ",", 
+        RowBox[{"-", "2937.0992945658727`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3269.2572098784503`", ",", 
+        RowBox[{"-", "4374.824576607141`"}], ",", 
+        RowBox[{"-", "3295.5547195535855`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2753.218529442093`", ",", 
+        RowBox[{"-", "4470.046818634294`"}], ",", 
+        RowBox[{"-", "3623.0212334947955`"}]}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"2753.2185294420933`", ",", 
+        RowBox[{"-", "4470.046818634295`"}], ",", 
+        RowBox[{"-", "3623.0212334947955`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2950.4000777394263`", ",", 
+        RowBox[{"-", "4699.245808626901`"}], ",", 
+        RowBox[{"-", "3146.4332030694222`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3124.4826539665146`", ",", 
+        RowBox[{"-", "4891.653941507052`"}], ",", 
+        RowBox[{"-", "2645.211437976349`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3274.1033485313583`", ",", 
+        RowBox[{"-", "5045.764835099319`"}], ",", 
+        RowBox[{"-", "2123.2800526569495`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3398.0907663167472`", ",", 
+        RowBox[{"-", "5160.371940077168`"}], ",", 
+        RowBox[{"-", "1584.7252992039612`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3495.474197647713`", ",", 
+        RowBox[{"-", "5234.577986156168`"}], ",", 
+        RowBox[{"-", "1033.7635756924`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3565.4912180729443`", ",", 
+        RowBox[{"-", "5267.8020069112035`"}], ",", 
+        RowBox[{"-", "474.7084155847924`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3607.5936574607213`", ",", 
+        RowBox[{"-", "5259.783888219696`"}], ",", "88.06328334608634`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3621.4518916767274`", ",", 
+        RowBox[{"-", "5210.586404720619`"}], ",", "650.145526179886`"}], 
+       "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"3621.451891676727`", ",", 
+        RowBox[{"-", "5210.586404720619`"}], ",", "650.1455261798855`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3180.908761102681`", ",", 
+        RowBox[{"-", "5493.835092299209`"}], ",", "622.4219807830962`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2718.8605730984564`", ",", 
+        RowBox[{"-", "5739.941803151979`"}], ",", "590.4904491006816`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2238.431080517341`", ",", 
+        RowBox[{"-", "5947.242692337651`"}], ",", "554.5668095102487`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1742.868306048775`", ",", 
+        RowBox[{"-", "6114.33626806187`"}], ",", "514.8939296922354`"}], 
+       "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1742.8683060487779`", ",", 
+        RowBox[{"-", "6114.336268061868`"}], ",", "514.8939296922355`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1738.4327117318949`", ",", 
+        RowBox[{"-", "6030.47320306696`"}], ",", "1139.762406763703`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1717.012913435135`", ",", 
+        RowBox[{"-", "5887.6933987097145`"}], ",", "1753.4955910657511`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1678.8181790933595`", ",", 
+        RowBox[{"-", "5687.391790385123`"}], ",", "2350.097409514239`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1624.221665029871`", ",", 
+        RowBox[{"-", "5431.525292128645`"}], ",", "2923.7391596745474`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1553.7567702800109`", ",", 
+        RowBox[{"-", "5122.593677885322`"}], ",", "3468.8164552334483`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1468.1119253696063`", ",", 
+        RowBox[{"-", "4763.615159126176`"}], ",", "3980.0039799390706`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1368.1238664610444`", ",", 
+        RowBox[{"-", "4358.096897414521`"}], ",", "4452.307515071887`"}], 
+       "}"}]}], "}"}]}], "}"}], "]"}]], "Output",
+ CellChangeTimes->{3.6358947188933983`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{"Point", "/@", "tourLine"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6358943211536903`*^9, 3.635894352611988*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   Point3DBox[{{1368.1238664610446`, -4358.09689741452, 4452.307515071887}, {
+    1856.2856571233547`, -4066.7983313773525`, 4550.073469853479}, {
+    2329.2681109925697`, -3742.2444841259576`, 4610.6322753112645`}, {
+    2783.203525952395, -3387.089317961894, 4633.488726140874}, {
+    3214.3799525409854`, -3004.2370302323297`, 4618.455919123124}, {
+    3619.2715475394834`, -2596.818304943339, 4565.656781480879}, {
+    3994.5674057207816`, -2168.1647123321, 4475.523065670759}, {
+    4337.198633993707, -1721.781465739482, 4348.791818829583}, {
+    4644.363446550226, -1261.318758557231, 4186.499355745768}, {
+    4913.550075806028, -790.5419156350868, 3989.9727846403366`}}], 
+   Point3DBox[{{4913.550075806027, -790.5419156350862, 3989.9727846403366`}, {
+    4721.4541244022585`, -388.3022116309169, 4271.405627379283}, {
+    4497.110141018969, 16.58963762521512, 4523.664317062858}, {
+    4242.050418835325, 421.36817789844247`, 4745.0259001098775`}, {
+    3958.0170427812936`, 823.2687288662579, 4933.978453451507}}], 
+   Point3DBox[{{3958.0170427812945`, 823.2687288662595, 4933.978453451509}, {
+    3592.9469895072507`, 724.2862397035768, 5220.532067094965}, {
+    3207.991775925069, 621.2951893159317, 5478.192652995147}, {
+    2805.281936149473, 514.8655815339523, 5705.534188983987}}], 
+   Point3DBox[{{2805.281936149474, 514.8655815339529, 5705.534188983984}, {
+    2827.488290265805, 1129.197679810942, 5605.179413570925}}], 
+   Point3DBox[{{2827.4882902658073`, 1129.1976798109276`, 
+    5605.1794135709315`}, {3173.079854090331, 1421.3815444905063`, 
+    5347.808189767831}}], 
+   Point3DBox[{{3173.0798540903343`, 1421.381544490509, 5347.808189767827}, {
+    3014.860285077652, 1810.3240182422417`, 5321.7626873468125`}, {
+    2843.5263658758768`, 2191.391757881596, 5272.5680327576}}], 
+   Point3DBox[{{2843.526365875873, 2191.391757881602, 5272.568032757597}, {
+    2338.570768527322, 2495.693651886108, 5384.274662990819}, {
+    1812.9204856412846`, 2777.9104347540338`, 5448.334297675465}, {
+    1271.2271478006007`, 3035.544688980015, 5464.180054674257}, {
+    718.2843551969918, 3266.316534927034, 5431.671710324684}, {
+    158.98525768384252`, 3468.1838061372473`, 
+    5351.096940318549}, {-401.720746114609, 3639.360121050505, 
+    5223.168773976998}, {-958.8718074556373, 3778.330691208713, 
+    5049.019284448917}}], 
+   Point3DBox[{{-958.8718074556372, 3778.3306912087114`, 
+    5049.019284448917}, {-554.8960451595899, 4106.070904886898, 
+    4849.7511063051}, {-146.68820097595062`, 4402.494931583174, 
+    4613.494840040345}, {262.63840497196657`, 4665.342004140574, 
+    4342.05236525717}, {669.9619199871522, 4892.60744016015, 
+    4037.493919779529}, {1072.1757685491589`, 5082.557931315336, 
+    3702.1423103602574`}, {1466.2123455483686`, 5233.744762950169, 
+    3338.5551970954757`}}], 
+   Point3DBox[{{1466.2123455483681`, 5233.744762950171, 3338.555197095479}, {
+    1931.501567841668, 4990.136268966336, 3472.125487445974}, {
+    2382.8494234464097`, 4710.509518145528, 3580.6343564571807`}, {
+    2816.998132993502, 4396.882825737412, 3663.2985990015277`}, {
+    3230.8140586656464`, 4051.5199148447655`, 3719.521553633573}}], 
+   Point3DBox[{{3230.8140586656464`, 4051.519914844762, 3719.521553633572}, {
+    3494.1302899583834`, 4128.33872415207, 3381.669201069466}, {
+    3741.1831475986205`, 4185.942246774756, 3028.0769231957065`}, {
+    3970.822728004552, 4224.062368036386, 2660.390509624727}}], 
+   Point3DBox[{{3970.822728004552, 4224.062368036388, 2660.3905096247263`}, {
+    4257.421546663487, 4249.642014307691, 2121.9609360768986`}, {
+    4505.0224641659615`, 4236.295019792344, 1564.0942403329263`}, {
+    4711.3574607725195`, 4184.143642708645, 991.9004708154632}, {
+    4874.536511801654, 4093.6655886881363`, 410.6209116730038}, {
+    4993.064900220275, 3965.689635001014, -174.41992728417017`}, {
+    5065.856908223574, 3801.3880389719507`, -757.86308299354}, {
+    5092.2457623896635`, 3602.2658001250848`, -1334.3642271410345`}, {
+    5071.989741311554, 3370.1468744167382`, -1898.642620107702}, {
+    5005.274389760692, 3107.157466833215, -2445.5294824451234`}, {
+    4892.71081910035, 2815.7065553931884`, -2970.0153407977873`}}], 
+   Point3DBox[{{4892.710819100349, 2815.706555393188, -2970.0153407977873`}, {
+    5269.724174782971, 2442.6005792953424`, -2636.5741449339066`}, {
+    5595.898580344461, 2045.929944991879, -2277.69695716624}, {
+    5868.087312391877, 1629.5214786928616`, -1896.8459965490297`}, {
+    6083.664467004421, 1197.3924246687773`, -1497.69547113344}, {
+    6240.550292785796, 753.711689430625, -1084.096131543105}, {
+    6337.2312549840735`, 302.7596227690874, -660.0381213791247}, {
+    6372.774637113183, -151.11327634024929`, -229.61248285018883`}, {
+    6346.837539208866, -603.5283305864209, 203.0283110029427}, {
+    6259.670185909621, -1050.120927019298, 633.7104167285916}, {
+    6112.113512448414, -1486.5826240617735`, 1058.2788870534582`}}], 
+   Point3DBox[{{6112.113512448415, -1486.5826240617735`, 
+    1058.2788870534578`}, {6061.597396688269, -1894.5901517259408`, 
+    596.1366013298244}, {5954.082590719412, -2284.782382519733, 
+    128.38869661872127`}, {
+    5790.580082688572, -2653.4902429911554`, -340.5664785635072}, {
+    5572.627326866247, -2997.2466825030274`, -806.3192234395395}, {
+    5302.273786586317, -3312.8192747622907`, -1264.4899504713535`}, {
+    4982.061662638572, -3597.2406131189464`, -1710.7703676983099`}, {
+    4615.001988329833, -3847.836213820149, -2140.963990665398}, {
+    4204.546315997684, -4062.249664838298, -2551.0256029980264`}, {
+    3754.554261215479, -4238.464783792516, -2937.0992945658727`}, {
+    3269.2572098784503`, -4374.824576607141, -3295.5547195535855`}, {
+    2753.218529442093, -4470.046818634294, -3623.0212334947955`}}], 
+   Point3DBox[{{
+    2753.2185294420933`, -4470.046818634295, -3623.0212334947955`}, {
+    2950.4000777394263`, -4699.245808626901, -3146.4332030694222`}, {
+    3124.4826539665146`, -4891.653941507052, -2645.211437976349}, {
+    3274.1033485313583`, -5045.764835099319, -2123.2800526569495`}, {
+    3398.0907663167472`, -5160.371940077168, -1584.7252992039612`}, {
+    3495.474197647713, -5234.577986156168, -1033.7635756924}, {
+    3565.4912180729443`, -5267.8020069112035`, -474.7084155847924}, {
+    3607.5936574607213`, -5259.783888219696, 88.06328334608634}, {
+    3621.4518916767274`, -5210.586404720619, 650.145526179886}}], 
+   Point3DBox[{{3621.451891676727, -5210.586404720619, 650.1455261798855}, {
+    3180.908761102681, -5493.835092299209, 622.4219807830962}, {
+    2718.8605730984564`, -5739.941803151979, 590.4904491006816}, {
+    2238.431080517341, -5947.242692337651, 554.5668095102487}, {
+    1742.868306048775, -6114.33626806187, 514.8939296922354}}], 
+   Point3DBox[{{1742.8683060487779`, -6114.336268061868, 514.8939296922355}, {
+    1738.4327117318949`, -6030.47320306696, 1139.762406763703}, {
+    1717.012913435135, -5887.6933987097145`, 1753.4955910657511`}, {
+    1678.8181790933595`, -5687.391790385123, 2350.097409514239}, {
+    1624.221665029871, -5431.525292128645, 2923.7391596745474`}, {
+    1553.7567702800109`, -5122.593677885322, 3468.8164552334483`}, {
+    1468.1119253696063`, -4763.615159126176, 3980.0039799390706`}, {
+    1368.1238664610444`, -4358.096897414521, 4452.307515071887}}]},
+  AutomaticImageSize->True,
+  ImageSize->{418.42438215020485`, 422.0891025799688},
+  ViewPoint->{2.3638348416520407`, -1.69723312031278, 1.7267555057694806`},
+  ViewVertical->{0.3537587815477832, 0.12252049453964403`, 
+   1.1748738028928918`}]], "Output",
+ CellChangeTimes->{{3.6358943399940424`*^9, 3.635894352998262*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"{", "{"}]], "Input",
+ CellChangeTimes->{{3.635897853011078*^9, 3.635897855012475*^9}}]
+},
+WindowSize->{752, 767},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 6370, 160, 526, "Input"],
+Cell[6931, 182, 118, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[7074, 188, 1634, 48, 112, "Input"],
+Cell[8711, 238, 5602, 136, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14350, 379, 545, 12, 72, "Input"],
+Cell[14898, 393, 2163, 61, 172, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17098, 459, 1507, 44, 132, InheritFromParent],
+Cell[18608, 505, 15403, 389, 83, "Output"]
+}, Open  ]],
+Cell[34026, 897, 372, 10, 31, "Input"],
+Cell[34401, 909, 205, 6, 31, "Input"],
+Cell[34609, 917, 1246, 40, 72, "Input"],
+Cell[35858, 959, 329, 9, 31, "Input"],
+Cell[CellGroupData[{
+Cell[36212, 972, 855, 21, 52, "Input"],
+Cell[37070, 995, 15338, 234, 408, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52445, 1234, 244, 4, 31, "Input"],
+Cell[52692, 1240, 1549, 28, 90, "Message"],
+Cell[54244, 1270, 17237, 447, 1072, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71518, 1722, 166, 3, 31, "Input"],
+Cell[71687, 1727, 7662, 118, 437, "Output"]
+}, Open  ]],
+Cell[79364, 1848, 110, 2, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

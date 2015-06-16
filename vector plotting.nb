@@ -1,0 +1,144 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4713,        134]
+NotebookOptionsPosition[      4399,        118]
+NotebookOutlinePosition[      4741,        133]
+CellTagsIndexPosition[      4698,        130]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"o", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "10", ",", "3"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"e", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "5", ",", "0"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Cross", "[", 
+    RowBox[{"p", ",", "e"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"v1", ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{"Thick", ",", "Red", ",", 
+     RowBox[{"Arrow", "[", 
+      RowBox[{"{", 
+       RowBox[{"o", ",", "p"}], "}"}], "]"}]}], "}"}], "]"}]}], "\n", 
+ RowBox[{"v2", ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{"Thick", ",", "Green", ",", 
+     RowBox[{"Arrow", "[", 
+      RowBox[{"{", 
+       RowBox[{"o", ",", "e"}], "}"}], "]"}]}], "}"}], "]"}]}], "\n", 
+ RowBox[{"v3", ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{"Thick", ",", "Black", ",", 
+     RowBox[{"Arrow", "[", 
+      RowBox[{"{", 
+       RowBox[{"o", ",", " ", "n"}], "}"}], "]"}]}], "}"}], "]"}]}], "\n", 
+ RowBox[{"v4", ":=", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{"Thick", ",", "Black", ",", 
+     RowBox[{"Arrow", "[", 
+      RowBox[{"{", 
+       RowBox[{"p", ",", 
+        RowBox[{"-", "  ", "n"}]}], "}"}], "]"}]}], "}"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"Show", "[", 
+   RowBox[{"v1", ",", "v2", ",", "v3", ",", "v4", ",", 
+    RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+    RowBox[{"ViewVertical", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"AxesOrigin", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", "\"\<y\>\"", ",", "\"\<z\>\""}], "}"}]}]}], 
+   "]"}], "\n", "\n"}], "\n"}], "Input",
+ CellChangeTimes->{{3.545737701214074*^9, 3.5457379169874153`*^9}, {
+  3.5457380050014496`*^9, 3.545738005866499*^9}, {3.545738044311698*^9, 
+  3.5457380457297792`*^9}, {3.5457380836569486`*^9, 3.5457381678967667`*^9}, {
+  3.545738208487088*^9, 3.5457382120692935`*^9}, {3.5457383674451804`*^9, 
+  3.5457383881493645`*^9}, {3.5457385466374297`*^9, 3.545738564747465*^9}, {
+  3.545738597254325*^9, 3.5457386142022943`*^9}, {3.545738666265272*^9, 
+  3.5457388300466394`*^9}, {3.5457388765172977`*^9, 3.5457389409069805`*^9}, {
+  3.5457389749799294`*^9, 3.5457390147192025`*^9}, {3.5457390455259647`*^9, 
+  3.5457391180471125`*^9}, {3.5457391666228905`*^9, 3.545739177134492*^9}, {
+  3.5457392323416495`*^9, 3.545739234983801*^9}, {3.5457392742590475`*^9, 
+  3.5457393718906317`*^9}, {3.5457394172582264`*^9, 3.5457394907494297`*^9}, {
+  3.545739540501275*^9, 3.545739591693203*^9}, {3.545739637021796*^9, 
+  3.545739638675891*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], Thickness[Large], Arrow3DBox[{{0, 0, 0}, {1, 10, 3}}]}, 
+   {RGBColor[0, 1, 0], Thickness[Large], Arrow3DBox[{{0, 0, 0}, {0, 5, 0}}]}, 
+   {GrayLevel[0], Thickness[Large], Arrow3DBox[{{0, 0, 0}, {-15, 0, 5}}]}, 
+   {GrayLevel[0], Thickness[Large], Arrow3DBox[{{1, 10, 3}, {15, 0, -5}}]}},
+  AutomaticImageSize->True,
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"x\"", TraditionalForm], 
+    FormBox["\"y\"", TraditionalForm], 
+    FormBox["\"z\"", TraditionalForm]},
+  AxesOrigin->{0, 0, 0},
+  ImageSize->{437.423430849679, 203.83345629670637`},
+  ViewPoint->{1.3312720965749776`, -3.102362634516241, -0.2303490586877226},
+  ViewVertical->{0.16461227393638245`, 
+   0.20384506372838504`, -2.9520454575461765`}]], "Output",
+ CellChangeTimes->{{3.5457395427364035`*^9, 3.545739592404244*^9}, 
+   3.5457396392759247`*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 675},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2930, 73, 272, "Input"],
+Cell[3512, 97, 871, 18, 219, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,306 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10028,        297]
+NotebookOptionsPosition[      9511,        276]
+NotebookOutlinePosition[      9854,        291]
+CellTagsIndexPosition[      9811,        288]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"i", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}]}], ";"}], "\n", 
+ RowBox[{"x", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x1", "[", "t", "]"}], ",", 
+    RowBox[{"x2", "[", "t", "]"}]}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"T", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{".5", " ", "m1", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"x", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", "t"}], "]"}], ")"}], "^", 
+      "2"}]}], " ", "+", " ", 
+    RowBox[{".5", " ", "m2", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"x", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", "t"}], "]"}], ")"}], "^", 
+      "2"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"V", "[", "t_", "]"}], ":=", 
+   RowBox[{".5", " ", "k", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"x", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "-", 
+       RowBox[{"x", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], " ", ")"}], "^", "2"}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"lag", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"T", "[", "t", "]"}], "-", 
+    RowBox[{"V", "[", "t", "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"el1", "[", "t_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{
+      RowBox[{"lag", "[", "t", "]"}], ",", 
+      RowBox[{"x", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "-", 
+    RowBox[{"Dt", "[", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"lag", "[", "t", "]"}], ",", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"x", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", "t"}], "]"}]}], "]"}], ",", 
+      "t", ",", 
+      RowBox[{"Constants", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "m1", ",", "m2"}], "}"}]}]}], "]"}]}], " ", "//", 
+   "Expand"}]}], "\n", 
+ RowBox[{
+  RowBox[{"el2", "[", "t_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{
+      RowBox[{"lag", "[", "t", "]"}], ",", 
+      RowBox[{"x", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "-", 
+    RowBox[{"Dt", "[", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"lag", "[", "t", "]"}], ",", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"x", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], ",", "t"}], "]"}]}], "]"}], ",", 
+      "t", ",", 
+      RowBox[{"Constants", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "m1", ",", "m2"}], "}"}]}]}], "]"}]}], " ", "//", 
+   "Expand"}]}], "\n", 
+ RowBox[{"A", "=", 
+  RowBox[{"{", 
+   RowBox[{"A1", ",", "A2"}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{"x", "[", 
+   RowBox[{"[", "i", "]"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{"A", "[", 
+    RowBox[{"[", "i", "]"}], "]"}], " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"I", " ", "\[Omega]", " ", "t"}], "]"}]}]}], "\n", 
+ RowBox[{"Evaluate", "[", 
+  RowBox[{"el1", "[", "t", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.537047592579409*^9, 3.5370478231166143`*^9}, {
+   3.5370504379868927`*^9, 3.5370504505293145`*^9}, {3.5370504979221973`*^9, 
+   3.537050540245072*^9}, {3.5370505743067317`*^9, 3.537050650434866*^9}, {
+   3.537050847957483*^9, 3.5370510341438103`*^9}, 3.537051068775871*^9, {
+   3.537051116792748*^9, 3.5370511586528063`*^9}, 3.5370512043028708`*^9, {
+   3.5370533603018923`*^9, 3.537053395831942*^9}, {3.5370534321719933`*^9, 
+   3.5370534654120398`*^9}, {3.537053535702138*^9, 3.537053906372657*^9}, {
+   3.5370539683327436`*^9, 3.537054024092822*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"x1", "[", "t", "]"}], ",", 
+   RowBox[{"x2", "[", "t", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.537053397011944*^9, 3.5370534459720125`*^9, {3.5370537868624897`*^9, 
+   3.537053907682659*^9}, 3.5370539696027455`*^9, {3.5370540053827953`*^9, 
+   3.5370540246228223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"A1", ",", "A2"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.537053397011944*^9, 3.5370534459720125`*^9, {3.5370537868624897`*^9, 
+   3.537053907682659*^9}, 3.5370539696027455`*^9, {3.5370540053827953`*^9, 
+   3.5370540246228223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"A1", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]]}], ",", 
+   RowBox[{"A2", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]]}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.537053397011944*^9, 3.5370534459720125`*^9, {3.5370537868624897`*^9, 
+   3.537053907682659*^9}, 3.5370539696027455`*^9, {3.5370540053827953`*^9, 
+   3.5370540246228223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "ivar"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(A1\\\\ \
+\[ExponentialE]\\^\\(\[ImaginaryI]\\\\ t\\\\ \[Omega]\\)\\)\[NoBreak] is not \
+a valid variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
+\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.5370537869224896`*^9, 3.537053907682659*^9}, 
+   3.5370539696127453`*^9, {3.5370540053827953`*^9, 3.5370540246228223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "ivar"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\[ImaginaryI]\\\\ A1\\\\ \
+\[ExponentialE]\\^\\(\[ImaginaryI]\\\\ t\\\\ \[Omega]\\)\\\\ \[Omega]\\)\
+\[NoBreak] is not a valid variable. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\
+\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/ivar\\\", ButtonNote -> \
+\\\"General::ivar\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.5370537869224896`*^9, 3.537053907682659*^9}, 
+   3.5370539696127453`*^9, {3.5370540053827953`*^9, 3.5370540246328225`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[PartialD]", 
+    RowBox[{"A1", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]]}]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "0.5`"}], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A1", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]]}], "-", 
+         RowBox[{"A2", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]]}]}], ")"}], 
+       "2"], " ", "k"}], "-", 
+     RowBox[{"0.5`", " ", 
+      SuperscriptBox["A1", "2"], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]], " ", 
+      "m1", " ", 
+      SuperscriptBox["\[Omega]", "2"]}], "-", 
+     RowBox[{"0.5`", " ", 
+      SuperscriptBox["A2", "2"], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]], " ", 
+      "m2", " ", 
+      SuperscriptBox["\[Omega]", "2"]}]}], ")"}]}], "-", 
+  RowBox[{"Dt", "[", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", 
+      RowBox[{"\[ImaginaryI]", " ", "A1", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]], " ", 
+       "\[Omega]"}]], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "0.5`"}], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"A1", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]]}], "-", 
+           RowBox[{"A2", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]]}]}], ")"}],
+          "2"], " ", "k"}], "-", 
+       RowBox[{"0.5`", " ", 
+        SuperscriptBox["A1", "2"], " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]], " ",
+         "m1", " ", 
+        SuperscriptBox["\[Omega]", "2"]}], "-", 
+       RowBox[{"0.5`", " ", 
+        SuperscriptBox["A2", "2"], " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2", " ", "\[ImaginaryI]", " ", "t", " ", "\[Omega]"}]], " ",
+         "m2", " ", 
+        SuperscriptBox["\[Omega]", "2"]}]}], ")"}]}], ",", "t", ",", 
+    RowBox[{"Constants", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "m1", ",", "m2"}], "}"}]}]}], "]"}]}]], "Output",
+ CellChangeTimes->{
+  3.537053397011944*^9, 3.5370534459720125`*^9, {3.5370537868624897`*^9, 
+   3.537053907682659*^9}, 3.5370539696027455`*^9, {3.5370540053827953`*^9, 
+   3.5370540246328225`*^9}}]
+}, Open  ]]
+},
+WindowSize->{803, 547},
+WindowMargins->{{24, Automatic}, {Automatic, 30}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 3725, 115, 232, "Input"],
+Cell[4307, 139, 332, 8, 30, "Output"],
+Cell[4642, 149, 274, 6, 30, "Output"],
+Cell[4919, 157, 515, 13, 37, "Output"],
+Cell[5437, 172, 605, 12, 23, "Message"],
+Cell[6045, 186, 636, 12, 23, "Message"],
+Cell[6684, 200, 2811, 73, 93, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

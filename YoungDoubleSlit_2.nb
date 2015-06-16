@@ -1,0 +1,215 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7940,        206]
+NotebookOptionsPosition[      7569,        188]
+NotebookOutlinePosition[      7928,        204]
+CellTagsIndexPosition[      7885,        201]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x_", ",", "a_", ",", "w_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"UnitBox", "[", 
+     FractionBox[
+      RowBox[{"x", "-", "a"}], "w"], "]"}], "+", 
+    RowBox[{"UnitBox", "[", 
+     FractionBox[
+      RowBox[{"x", "+", "a"}], "w"], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"F", "[", 
+    RowBox[{"t_", ",", "a_", ",", "w_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"FourierTransform", "[", 
+      RowBox[{
+       RowBox[{"f", "[", 
+        RowBox[{"x", ",", "a", ",", "w"}], "]"}], ",", "x", ",", "t", ",", 
+       RowBox[{"FourierParameters", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "2"}], " ", "\[Pi]"}]}], "}"}]}]}], "]"}], "]"}], "//",
+     "FullSimplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalOmega]", "[", 
+    RowBox[{"t_", ",", "a_", ",", "w_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"Abs", "[", " ", 
+     RowBox[{"FourierTransform", "[", 
+      RowBox[{
+       RowBox[{"UnitBox", "[", 
+        FractionBox["x", "w"], "]"}], ",", "x", ",", "t", ",", 
+       RowBox[{"FourierParameters", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "2"}], " ", "\[Pi]"}]}], "}"}]}]}], "]"}], "]"}], "//",
+     "FullSimplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalOmega]2", "[", 
+    RowBox[{"t_", ",", "a_", ",", "w_"}], "]"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Abs", "[", " ", 
+     RowBox[{"FourierTransform", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"DiracDelta", "[", 
+         RowBox[{"x", "-", "a"}], "]"}], "+", 
+        RowBox[{"DiracDelta", "[", 
+         RowBox[{"x", "+", "a"}], "]"}]}], ",", "x", ",", "t", ",", 
+       RowBox[{"FourierParameters", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "2"}], " ", "\[Pi]"}]}], "}"}]}]}], "]"}], "]"}], "//",
+     "FullSimplify"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.631566222786021*^9, 3.63156634935824*^9}, {
+   3.631567232825715*^9, 3.6315672788172617`*^9}, {3.631567434710685*^9, 
+   3.6315675400127363`*^9}, 3.631567920526794*^9, {3.6315679562747498`*^9, 
+   3.631567956335721*^9}, {3.6315680817505493`*^9, 3.631568087815805*^9}, {
+   3.631568256115054*^9, 3.6315683070966043`*^9}, {3.631568345617196*^9, 
+   3.631568394031022*^9}, {3.631568491938142*^9, 3.6315685365117064`*^9}, {
+   3.631568570809741*^9, 3.631568579485902*^9}, {3.631568642673621*^9, 
+   3.631568646782914*^9}, {3.6315687422560053`*^9, 3.631568807074909*^9}, {
+   3.6315689469500923`*^9, 3.6315690228714*^9}, {3.631569066647476*^9, 
+   3.631569077252718*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"GraphicsColumn", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"f", "[", 
+         RowBox[{"x", ",", "a", ",", "w"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+        RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}]}], "]"}], ",", 
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Abs", "[", 
+          RowBox[{"F", "[", 
+           RowBox[{"t", ",", "a", ",", "w"}], "]"}], "]"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", 
+          RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+        RowBox[{"PlotTheme", "\[Rule]", "\"\<Scientific\>\""}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "}"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"w", ",", ".1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6315679688233852`*^9, 3.631568217588036*^9}, {
+  3.631568314366255*^9, 3.631568369372719*^9}, {3.63156839948805*^9, 
+  3.631568403816409*^9}, {3.631568433980451*^9, 3.631568437001459*^9}, {
+  3.6315685239594107`*^9, 3.6315685328771276`*^9}, {3.63156870197206*^9, 
+  3.631568704349215*^9}, {3.631568832455741*^9, 3.631568879175411*^9}, {
+  3.6315690332704163`*^9, 3.631569035765938*^9}, {3.6315691121534023`*^9, 
+  3.631569134154079*^9}, {3.6315691876890306`*^9, 3.631569204306377*^9}, {
+  3.632509317617612*^9, 3.6325093499630737`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1.605, $CellContext`w$$ = 
+    1.8650000000000002`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`w$$], 0.1, 3}, {
+      Hold[$CellContext`a$$], 0, 2}}, Typeset`size$$ = {360., {210., 214.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`w$21061$$ = 0, $CellContext`a$21062$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0, $CellContext`w$$ = 0.1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`w$$, $CellContext`w$21061$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$21062$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> GraphicsColumn[{
+         Plot[
+          $CellContext`f[$CellContext`x, $CellContext`a$$, $CellContext`w$$], \
+{$CellContext`x, -5, 5}, PlotTheme -> "Marketing"], 
+         Plot[{
+           Abs[
+            $CellContext`F[$CellContext`t, $CellContext`a$$, \
+$CellContext`w$$]]}, {$CellContext`t, -5, 5}, PlotTheme -> "Scientific", 
+          PlotRange -> All]}], 
+      "Specifications" :> {{$CellContext`w$$, 0.1, 3}, {$CellContext`a$$, 0, 
+         2}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {268., 273.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.631568218179372*^9, 3.631568319189768*^9, {3.6315683611584253`*^9, 
+   3.631568404530122*^9}, 3.631568437869431*^9, {3.6315685270834913`*^9, 
+   3.631568543588797*^9}, 3.6315685895552883`*^9, 3.631568704759121*^9, 
+   3.63156883961652*^9, 3.631568883151993*^9, 3.631569043888227*^9, 
+   3.631569089012025*^9, 3.631569135333797*^9, {3.6315691971397133`*^9, 
+   3.6315692045851097`*^9}, {3.6325093259480658`*^9, 3.6325093531350107`*^9}, 
+   3.632956442424305*^9}]
+}, Open  ]]
+},
+WindowSize->{1127, 748},
+WindowMargins->{{Automatic, 84}, {Automatic, 33}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2803, 73, 175, "Input"],
+Cell[CellGroupData[{
+Cell[3386, 97, 1595, 36, 63, "Input"],
+Cell[4984, 135, 2569, 50, 558, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

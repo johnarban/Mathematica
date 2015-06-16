@@ -1,0 +1,632 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21700,        622]
+NotebookOptionsPosition[     19571,        545]
+NotebookOutlinePosition[     19928,        561]
+CellTagsIndexPosition[     19885,        558]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["number density of hydrogen in milky way", "Text",
+ CellChangeTimes->{{3.6326949639293737`*^9, 3.632694970872464*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Mmw", "  ", "=", 
+   RowBox[{"4", "*", 
+    SuperscriptBox["10", "9"], "Msun"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Rdisk", " ", "=", " ", 
+   RowBox[{"15", "*", 
+    SuperscriptBox["10", "3"], "pc"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", " ", "=", 
+   RowBox[{"200", " ", "pc"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "=", " ", ".1"}], ";", " ", 
+  RowBox[{"(*", 
+   RowBox[{"by", " ", "number"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"mh", " ", "=", 
+   RowBox[{"1.7", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "24"}]], "g"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Mu]", "=", 
+   RowBox[{"12.", "/", "11."}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Number density of hydrogen: \>\"", ",", 
+   RowBox[{"nh", "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["Mmw", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "f"}], ")"}], "\[Mu]", " ", "mh", " ", "\[Pi]", 
+        " ", 
+        SuperscriptBox["Rdisk", "2"], "H"}]], "/.", 
+      RowBox[{"pc", "\[Rule]", 
+       RowBox[{"3", "*", 
+        SuperscriptBox["10", "18"], "cm"}]}]}], "/.", 
+     RowBox[{"Msun", "\[Rule]", 
+      RowBox[{"2", "*", 
+       SuperscriptBox["10", "33"], "g"}]}]}]}]}], " ", 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.632690043620967*^9, 3.632690117870617*^9}, {
+  3.632690223971448*^9, 3.632690377146248*^9}, {3.632690419192814*^9, 
+  3.632690478167138*^9}, {3.6326910525861073`*^9, 3.632691115528199*^9}, {
+  3.63269119145525*^9, 3.6326911953828287`*^9}, {3.632691825434704*^9, 
+  3.6326918314017897`*^9}, {3.632691861740837*^9, 3.632691868352714*^9}, {
+  3.632695737525218*^9, 3.632695758930458*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number density of hydrogen: \"\>", "\[InvisibleSpace]", 
+   FractionBox["1.0273860604657168`", 
+    SuperscriptBox["cm", "3"]]}],
+  SequenceForm[
+  "Number density of hydrogen: ", 1.0273860604657168` $CellContext`cm^(-3)],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.632691095694096*^9, 3.632691116250464*^9}, 
+   3.6326918324322147`*^9, 3.632691869048521*^9, 3.632691941311232*^9, {
+   3.632695759634507*^9, 3.632695768284425*^9}, 3.6326979925895557`*^9, 
+   3.6326982569726343`*^9}]
+}, Open  ]],
+
+Cell["insterstellar dust gran number density", "Text",
+ CellChangeTimes->{{3.6326949830967417`*^9, 3.63269499104003*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Rho]dust", " ", "=", " ", 
+   RowBox[{"2", 
+    RowBox[{"g", "/", 
+     SuperscriptBox["cm", "3"]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"adust", " ", "=", " ", 
+   RowBox[{"0.1", " ", "*", " ", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "4"}]], "cm"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fdust", " ", "=", " ", "0.007"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"by", " ", "mass"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Dust mass/particle:  \>\"", ",", 
+   RowBox[{"mdust", "=", 
+    RowBox[{"\[Rho]dust", " ", 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"4", " ", "\[Pi]"}], "3"], ")"}], 
+     SuperscriptBox["adust", "3"]}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Number density of dust: \>\"", ",", 
+   RowBox[{"ndust", " ", "=", " ", 
+    FractionBox[
+     RowBox[{"fdust", " ", "nh", " ", "mh"}], 
+     RowBox[{"\[Rho]dust", " ", 
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{"4", " ", "\[Pi]"}], "3"], ")"}], 
+      SuperscriptBox["adust", "3"]}]]}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.632691120487856*^9, 3.632691240173902*^9}, {
+  3.6326948677406893`*^9, 3.6326948683960943`*^9}, {3.632695307434738*^9, 
+  3.632695345232707*^9}, {3.632698293608789*^9, 3.6326982947909527`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Dust mass/particle:  \"\>", "\[InvisibleSpace]", 
+   RowBox[{"8.377580409572783`*^-15", " ", "g"}]}],
+  SequenceForm["Dust mass/particle:  ", 8.377580409572783*^-15 $CellContext`g],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.6326953292300777`*^9, 3.632695345503859*^9}, 
+   3.632695768613834*^9, 3.6326979930207253`*^9, 3.632698257430787*^9, 
+   3.632698295662416*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number density of dust: \"\>", "\[InvisibleSpace]", 
+   FractionBox["1.459358612132437`*^-12", 
+    SuperscriptBox["cm", "3"]]}],
+  SequenceForm[
+  "Number density of dust: ", 1.459358612132437*^-12 $CellContext`cm^(-3)],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.6326953292300777`*^9, 3.632695345503859*^9}, 
+   3.632695768613834*^9, 3.6326979930207253`*^9, 3.632698257430787*^9, 
+   3.63269829566788*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Visual extinction towards galactic center", "Text",
+ CellChangeTimes->{{3.6326950028483067`*^9, 3.632695010847487*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dgc", "=", 
+   RowBox[{"8.5", "*", 
+    SuperscriptBox["10", "3"], "pc"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dgc", "/.", 
+   RowBox[{"pc", "\[Rule]", 
+    RowBox[{"3", "*", 
+     SuperscriptBox["10", "18"], "cm"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Dust column density:  \>\"", ",", 
+   RowBox[{"Ndust", "=", 
+    RowBox[{
+     RowBox[{"ndust", " ", "dgc"}], "/.", 
+     RowBox[{"pc", "\[Rule]", 
+      RowBox[{"3", "*", 
+       SuperscriptBox["10", "18"], "cm"}]}]}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Av to GC:  \>\"", ",", 
+   RowBox[{"Av", " ", "=", " ", 
+    RowBox[{"1.086", " ", "*", " ", "\[Pi]", " ", 
+     SuperscriptBox["adust", "2"], "Ndust"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.632691880513801*^9, 3.6326919201384478`*^9}, {
+  3.632691956701683*^9, 3.63269196157869*^9}, {3.632692032718883*^9, 
+  3.632692033492476*^9}, {3.63269232174159*^9, 3.632692322600328*^9}, {
+  3.6326950439996643`*^9, 3.6326951014630003`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Dust column density:  \"\>", "\[InvisibleSpace]", 
+   FractionBox["3.7213644609377144`*^10", 
+    SuperscriptBox["cm", "2"]]}],
+  SequenceForm[
+  "Dust column density:  ", 3.7213644609377144`*^10 $CellContext`cm^(-2)],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.632695088163368*^9, 3.6326951017401114`*^9}, 
+   3.632695768674459*^9, 3.632697993073995*^9, 3.632698257485179*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Av to GC:  \"\>", "\[InvisibleSpace]", "12.696438219467906`"}],
+  
+  SequenceForm["Av to GC:  ", 12.696438219467906`],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.632695088163368*^9, 3.6326951017401114`*^9}, 
+   3.632695768674459*^9, 3.632697993073995*^9, 3.632698257491194*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Mass of molecular cloud, and average number density in galaxy\
+\>", "Text",
+ CellChangeTimes->{{3.6326950203678713`*^9, 3.632695036078959*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rcl", " ", "=", " ", 
+   RowBox[{"15", " ", "pc"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nh2", " ", "=", " ", 
+   RowBox[{"100", "/", 
+    SuperscriptBox["cm", "3"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fcl", " ", "=", " ", "0.3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Density of dust in cloud:  \>\"", ",", 
+   RowBox[{"ndustcl", " ", "=", " ", 
+    FractionBox[
+     RowBox[{"fdust", " ", "nh2", " ", 
+      RowBox[{"(", 
+       RowBox[{"2.", "mh"}], ")"}]}], 
+     RowBox[{"\[Rho]dust", " ", 
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{"4", " ", "\[Pi]"}], "3"], ")"}], 
+      SuperscriptBox["adust", "3"]}]]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Mass of cloud:  \>\"", ",", 
+   RowBox[{"Mcl", " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox["4", "3"], "\[Pi]", " ", 
+      SuperscriptBox["Rcl", "3"], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2.", " ", "mh"}], ")"}], "nh2"}], "+", 
+        RowBox[{"mdust", "*", "ndustcl"}]}], ")"}]}], "/.", 
+     RowBox[{"pc", "\[Rule]", 
+      RowBox[{"3", "*", 
+       SuperscriptBox["10", "18"], "cm"}]}]}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Mass of cloud:  \>\"", ",", 
+   RowBox[{"Mcl", "=", 
+    RowBox[{
+     RowBox[{"Mcl", "/.", 
+      RowBox[{"g", "\[Rule]", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"2", "*", 
+           SuperscriptBox["10", "33"]}]], "Msun"}], ")"}]}]}], "/.", 
+     RowBox[{"pc", "\[Rule]", 
+      RowBox[{"3", "*", 
+       SuperscriptBox["10", "18"], "cm"}]}]}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Number of clouds in MW:  \>\"", ",", 
+   RowBox[{"\[ScriptCapitalN]cl", " ", "=", " ", 
+    FractionBox[
+     RowBox[{"fcl", " ", "Mmw"}], "Mcl"]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.632692735324792*^9, 3.632692821454442*^9}, {
+  3.632693003228259*^9, 3.632693017366588*^9}, {3.63269311646789*^9, 
+  3.63269313889149*^9}, {3.632693700336752*^9, 3.6326937251573668`*^9}, {
+  3.632695055463983*^9, 3.632695058639369*^9}, {3.632695775040586*^9, 
+  3.632695802470581*^9}, {3.632697979695862*^9, 3.63269798474011*^9}, {
+  3.632698170387559*^9, 3.632698247610737*^9}, {3.632698299320092*^9, 
+  3.632698323107154*^9}, {3.632699708582027*^9, 3.632699713072782*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Density of dust in cloud:  \"\>", "\[InvisibleSpace]", 
+   FractionBox["2.840915734190331`*^-10", 
+    SuperscriptBox["cm", "3"]]}],
+  SequenceForm[
+  "Density of dust in cloud:  ", 2.840915734190331*^-10 $CellContext`cm^(-3)],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.632695802790874*^9, {3.632697988184494*^9, 3.6326979931268997`*^9}, {
+   3.6326982067072353`*^9, 3.632698257539081*^9}, {3.632698301562191*^9, 
+   3.632698324234209*^9}, 3.6326997135118313`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Mass of cloud:  \"\>", "\[InvisibleSpace]", 
+   RowBox[{"1.306876468674329`*^38", " ", "g"}]}],
+  SequenceForm["Mass of cloud:  ", 1.306876468674329*^38 $CellContext`g],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.632695802790874*^9, {3.632697988184494*^9, 3.6326979931268997`*^9}, {
+   3.6326982067072353`*^9, 3.632698257539081*^9}, {3.632698301562191*^9, 
+   3.632698324234209*^9}, 3.632699713517686*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Mass of cloud:  \"\>", "\[InvisibleSpace]", 
+   RowBox[{"65343.82343371646`", " ", "Msun"}]}],
+  SequenceForm["Mass of cloud:  ", 65343.82343371646 $CellContext`Msun],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.632695802790874*^9, {3.632697988184494*^9, 3.6326979931268997`*^9}, {
+   3.6326982067072353`*^9, 3.632698257539081*^9}, {3.632698301562191*^9, 
+   3.632698324234209*^9}, 3.632699713523758*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Number of clouds in MW:  \"\>", "\[InvisibleSpace]", 
+   "18364.398300280933`"}],
+  SequenceForm["Number of clouds in MW:  ", 18364.398300280933`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.632695802790874*^9, {3.632697988184494*^9, 3.6326979931268997`*^9}, {
+   3.6326982067072353`*^9, 3.632698257539081*^9}, {3.632698301562191*^9, 
+   3.632698324234209*^9}, 3.632699713529747*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Let the line of sight pass through a single cloud", "Text",
+ CellChangeTimes->{{3.632699584913413*^9, 3.6326995962884808`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Cloud dust column:  \>\"", ",", 
+     RowBox[{"Ndustcl", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"ndustcl", " ", "Rcl"}], "/.", 
+       RowBox[{"pc", "\[Rule]", 
+        RowBox[{"3", "*", 
+         SuperscriptBox["10", "18"], "cm"}]}]}]}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Tau]cl", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"\[Pi]", " ", 
+       SuperscriptBox["adust", "2"], "ndustcl", " ", "Rcl"}], "/.", 
+      RowBox[{"pc", "\[Rule]", 
+       RowBox[{"3", "*", 
+        SuperscriptBox["10", "18"], "cm"}]}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Av: \>\"", ",", 
+     RowBox[{"Avcl", " ", "=", " ", 
+      RowBox[{"1.086", " ", "*", " ", "\[Tau]cl"}]}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6326936690913763`*^9, 3.632693813174651*^9}, {
+   3.632693939795656*^9, 3.632693984135126*^9}, {3.632694033317769*^9, 
+   3.6326941242069693`*^9}, {3.632694159783413*^9, 3.632694212851884*^9}, {
+   3.6326942501376343`*^9, 3.6326943242731123`*^9}, {3.632694840501556*^9, 
+   3.632694851211793*^9}, {3.6326951374980497`*^9, 3.632695141982854*^9}, {
+   3.632695396792625*^9, 3.632695405960338*^9}, {3.63269581386267*^9, 
+   3.63269584985413*^9}, {3.632696330939827*^9, 3.632696353354018*^9}, {
+   3.632696717948679*^9, 3.632696724579623*^9}, 3.632698329521949*^9, {
+   3.632698738327549*^9, 3.6326987884687757`*^9}, {3.632699607540667*^9, 
+   3.632699623067637*^9}, {3.6326997786027*^9, 3.6326997841823673`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Cloud dust column:  \"\>", "\[InvisibleSpace]", 
+   FractionBox["1.278412080385649`*^10", 
+    SuperscriptBox["cm", "2"]]}],
+  SequenceForm[
+  "Cloud dust column:  ", 1.278412080385649*^10 $CellContext`cm^(-2)],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.632695406264727*^9, 3.632695768796378*^9, 3.6326958507475433`*^9, 
+   3.6326963540289183`*^9, 3.632696725213687*^9, 3.632697993189386*^9, 
+   3.632698257608898*^9, 3.6326983308891287`*^9, {3.632698778468663*^9, 
+   3.6326987896183157`*^9}, {3.632699769776999*^9, 3.632699785328529*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Av: \"\>", "\[InvisibleSpace]", "4.3616475`"}],
+  SequenceForm["Av: ", 4.3616475],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.632695406264727*^9, 3.632695768796378*^9, 3.6326958507475433`*^9, 
+   3.6326963540289183`*^9, 3.632696725213687*^9, 3.632697993189386*^9, 
+   3.632698257608898*^9, 3.6326983308891287`*^9, {3.632698778468663*^9, 
+   3.6326987896183157`*^9}, {3.632699769776999*^9, 3.632699785331799*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[{
+ "Number of clouds along line of sight (i.e. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["n", "cl"], 
+    SubscriptBox["\[Sigma]", "cl"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")"
+}], "Text",
+ CellChangeTimes->{{3.632700403271562*^9, 3.6327004226945763`*^9}, {
+  3.632700923578429*^9, 3.632700934452629*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Ncl", " ", "=", " ", 
+  RowBox[{
+   FractionBox["\[ScriptCapitalN]cl", 
+    RowBox[{"\[Pi]", " ", 
+     SuperscriptBox["Rdisk", "2"], "H"}]], "dgc"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Sigma]cl", " ", "=", " ", 
+   RowBox[{"\[Pi]", " ", 
+    SuperscriptBox["Rcl", "2"]}]}], " ", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"\[ScriptCapitalN]clLOS", " ", "=", " ", 
+  RowBox[{"Ncl", " ", "\[Sigma]cl"}]}]}], "Input",
+ CellChangeTimes->{{3.632700429335623*^9, 3.632700446103875*^9}, {
+  3.632700633086212*^9, 3.632700662225505*^9}, {3.6327027068822317`*^9, 
+  3.632702709683159*^9}, {3.632702742769331*^9, 3.632702858865004*^9}}],
+
+Cell[BoxData[
+ FractionBox["0.00110416313397262`", 
+  SuperscriptBox["pc", "2"]]], "Output",
+ CellChangeTimes->{
+  3.6327004491822443`*^9, 3.6327006629966793`*^9, 3.632702710565592*^9, {
+   3.632702758440929*^9, 3.632702859398034*^9}}],
+
+Cell[BoxData[
+ RowBox[{"225", " ", 
+  SuperscriptBox["pc", "2"], " ", "\[Pi]"}]], "Output",
+ CellChangeTimes->{
+  3.6327004491822443`*^9, 3.6327006629966793`*^9, 3.632702710565592*^9, {
+   3.632702758440929*^9, 3.632702859405506*^9}}],
+
+Cell[BoxData["0.7804869277619396`"], "Output",
+ CellChangeTimes->{
+  3.6327004491822443`*^9, 3.6327006629966793`*^9, 3.632702710565592*^9, {
+   3.632702758440929*^9, 3.6327028594115343`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Number of clouds along line of sight (i.e. ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "GC"], 
+    SubscriptBox["\[Lambda]", "mfp"]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")"
+}], "Text",
+ CellChangeTimes->{{3.632700915979401*^9, 3.6327009591546803`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"\[Lambda]mfp", " ", "=", " ", 
+  FractionBox["1", 
+   RowBox[{
+    FractionBox["\[ScriptCapitalN]cl", 
+     RowBox[{"\[Pi]", " ", 
+      SuperscriptBox["Rdisk", "2"], "H"}]], "\[Pi]", " ", 
+    SuperscriptBox["Rcl", "2"]}]]}], "\[IndentingNewLine]", 
+ RowBox[{"dgc", "/", "\[Lambda]mfp"}]}], "Input",
+ CellChangeTimes->{{3.6327009663924313`*^9, 3.632700990858241*^9}, {
+  3.632701060752252*^9, 3.632701064911944*^9}}],
+
+Cell[BoxData[
+ RowBox[{"10890.637238952744`", " ", "pc"}]], "Output",
+ CellChangeTimes->{3.632700992015974*^9, 3.632701065591317*^9}],
+
+Cell[BoxData["0.7804869277619396`"], "Output",
+ CellChangeTimes->{3.632700992015974*^9, 3.63270106559641*^9}]
+}, Open  ]],
+
+Cell["Expectation value for Av", "Text",
+ CellChangeTimes->{{3.632701159221681*^9, 3.632701163773143*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"EAvcl", " ", "=", 
+  RowBox[{
+  "Avcl", " ", "*", " ", 
+   "\[ScriptCapitalN]clLOS"}]}], "\[IndentingNewLine]", 
+ RowBox[{"EAvdust", " ", "=", " ", 
+  RowBox[{"0.7", " ", "Av"}]}], "\[IndentingNewLine]", 
+ RowBox[{"EAvdust", " ", "+", "EAvcl"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.632701166231586*^9, 3.6327011749615297`*^9}, {
+  3.632701462847584*^9, 3.632701502442402*^9}}],
+
+Cell[BoxData["3.4042088572555445`"], "Output",
+ CellChangeTimes->{
+  3.6327011754963503`*^9, {3.6327014909919577`*^9, 3.632701502817525*^9}}],
+
+Cell[BoxData["8.887506753627534`"], "Output",
+ CellChangeTimes->{
+  3.6327011754963503`*^9, {3.6327014909919577`*^9, 3.6327015028225117`*^9}}],
+
+Cell[BoxData["12.291715610883077`"], "Output",
+ CellChangeTimes->{
+  3.6327011754963503`*^9, {3.6327014909919577`*^9, 3.632701502825898*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6327018223402987`*^9, 3.632701824464004*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"\[ScriptCapitalN]cl", "  ", "\[Pi]", " ", 
+   SuperscriptBox["Rcl", "2"]}], 
+  RowBox[{"\[Pi]", " ", 
+   SuperscriptBox["Rdisk", "2"]}]]], "Input",
+ CellChangeTimes->{{3.6327024222499857`*^9, 3.632702437951741*^9}, {
+  3.632702497190281*^9, 3.632702504208818*^9}}],
+
+Cell[BoxData["0.018364398300280933`"], "Output",
+ CellChangeTimes->{{3.632702424408464*^9, 3.632702438634267*^9}, 
+   3.6327025046323*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 675},
+WindowMargins->{{36, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 123, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[706, 25, 1860, 47, 224, "Input"],
+Cell[2569, 74, 541, 11, 40, "Print"]
+}, Open  ]],
+Cell[3125, 88, 121, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[3271, 93, 1402, 37, 181, "Input"],
+Cell[CellGroupData[{
+Cell[4698, 134, 426, 8, 24, "Print"],
+Cell[5127, 144, 465, 10, 43, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[5619, 158, 125, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[5769, 163, 1080, 27, 96, "Input"],
+Cell[CellGroupData[{
+Cell[6874, 194, 435, 9, 43, "Print"],
+Cell[7312, 205, 335, 7, 21, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[7674, 216, 153, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[7852, 223, 2484, 65, 240, "Input"],
+Cell[CellGroupData[{
+Cell[10361, 292, 528, 12, 43, "Print"],
+Cell[10892, 306, 465, 9, 24, "Print"],
+Cell[11360, 317, 463, 9, 21, "Print"],
+Cell[11826, 328, 443, 9, 21, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[12296, 341, 133, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[12454, 346, 1596, 34, 88, "Input"],
+Cell[CellGroupData[{
+Cell[14075, 384, 601, 12, 43, "Print"],
+Cell[14679, 398, 472, 9, 21, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[15178, 411, 356, 11, 32, "Text"],
+Cell[CellGroupData[{
+Cell[15559, 426, 707, 15, 124, "Input"],
+Cell[16269, 443, 235, 5, 51, "Output"],
+Cell[16507, 450, 234, 5, 32, "Output"],
+Cell[16744, 457, 191, 3, 28, "Output"]
+}, Open  ]],
+Cell[16950, 463, 312, 10, 45, "Text"],
+Cell[CellGroupData[{
+Cell[17287, 477, 442, 10, 81, "Input"],
+Cell[17732, 489, 133, 2, 28, "Output"],
+Cell[17868, 493, 109, 1, 28, "Output"]
+}, Open  ]],
+Cell[17992, 497, 106, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[18123, 502, 421, 9, 80, "Input"],
+Cell[18547, 513, 141, 2, 28, "Output"],
+Cell[18691, 517, 142, 2, 28, "Output"],
+Cell[18836, 521, 141, 2, 28, "Output"]
+}, Open  ]],
+Cell[18992, 526, 94, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[19111, 531, 303, 7, 52, "Input"],
+Cell[19417, 540, 138, 2, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

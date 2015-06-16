@@ -1,0 +1,825 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     23351,        683]*)
+(*NotebookOutlinePosition[     24046,        708]*)
+(*  CellTagsIndexPosition[     24002,        704]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(105  A\ HW\ #1\ Solutions\)], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[BoxData[
+    \(\(#3)\)\ \ The\ hazards\ of\ implicit\ multiplication\)], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \( (*\ \n\t\ \ \ \ 
+      \(This\ Remove[]\ is\ clearly\ overkill, \ nevertheless\ it' s\)\ \n
+        \t\ \ \ \ 
+        \(a\ good\ habit\ to\ get\ in\ to\ \((
+          \(as\ is\ trying\ to\ put\ everything\)\n\t\t\t\ \ \ \ 
+            \(in\ a\ single\ cell\))\)\)\n\t*) \n\nRemove["\<Global`*\>"]\n\n
+     (*\ Assignments\ *) \), 
+    \(a = 5; \nb = 2; \nab = 42; \n\n (*\ Operations\ *) \n\n
+    Print["\<a b =\>", \ a\ b]\), 
+    \(Print["\<ab = \>", ab]\), 
+    \(Print["\<ab/(a b) =\>", \ ab/\((a\ b)\)]\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("a b ="\[InvisibleSpace]10\),
+      SequenceForm[ "a b =", 10],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("ab = "\[InvisibleSpace]42\),
+      SequenceForm[ "ab = ", 42],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("ab/(a b) ="\[InvisibleSpace]21\/5\),
+      SequenceForm[ "ab/(a b) =", 
+        Rational[ 21, 5]],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(Clearly, \ "\<a b\>"\  = \ a*b, \ 
+    and\ "\<ab\>"\ is\ not.\ \ When\ you\ run\ the\), 
+    \(characters\ together, \ 
+    Mathematica\ assumes\ it' s\ a\ multicharacter\), 
+    \(variable\ name\)}], "Input",
+  Background->GrayLevel[0.900008]],
+
+Cell[BoxData[
+    \(\(#4)\)\ This\ one\ is\ going\ to\ be\ a\ real\ pain\ if\ you\ forget\ 
+      to\ Clear\ or\ Remove\ a\)], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\ \  (*\ Remove\ everything\ *) \n\t\), 
+    \(Factor[
+      a\^5\  + \ 3\ a\^4\  + \ 16\ a\^3 + \ 32\ a\^2\  + \ 63\ a\  + \ 45]
+      \)}], "Input"],
+
+Cell[BoxData[
+    \(\((1 + a)\)\ \((9 + a\^2)\)\ \((5 + 2\ a + a\^2)\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(#5)\)\ What\ good\ is\ a\ calculator, \ 
+    if\ you\ don' t\ know\ how\ to\ use\ \(it?\)\)], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ScientificForm[
+      \((2.54^\((3/5)\)\ Sqrt[1.15*10^\((\(-2\))\)]\  + \ 5.11^\((2/5)\))\)/
+        Sqrt[2.32*10^\((\(-5\))\)], 5]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      InterpretationBox[\("4.3763"\[Times]10\^"2"\),
+        437.62971807971957,
+        AutoDelete->True],
+      (ScientificForm[ #, 5]&)]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(#6)\)\ \ The\ problem\ here\ is\ that\ \ \ x - x\^3/\(3!\)\  + \ 
+      x\^5/\(5!\)\ \ is\ really\ \), 
+    \(\t\t\ \ \ \ \ \ \ \ \ \ 
+    close\ to\ \ Sin[x] for\ small\ numbers.\ \ The\ difference\ is\), 
+    \(\ \ \ \ \ \ \ \ \ so\ tiny, \ 
+    it\ occurs\ beyond\ the\ available\ machine\), 
+    \(\ \ \ \ \ \ \ \ \ precision, \ 
+    and\ the\ computer\ interprets\ it\ as\ zero\  - \ \n\ \ \ \ \ \ \ \ \ 
+      that' s\ really\ bad\ if\ the\ difference\ occurs\ in\ a\ 
+        \(denominator.\)\)}], "Input",
+  CellFrame->True,
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\n
+     (*\ First, \ let' s\ illustrate\ the\ problem...\ *) \n\), 
+    \(x = 1; \nPrint["\<For x =\>", x]\), 
+    \(Print[\*"\"\<x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = \>\"", 
+      N[x - x\^3/\(3!\)\  + \ x\^5/\(5!\), 10]]\), 
+    \(\t\t\tPrint["\<Sin[x] = \>", N[Sin[x], 10]]\), 
+    \(Print[\*"\"\<x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = \>\"", 
+      x - x\^3/\(3!\)\  + \ x\^5/\(5!\) - Sin[x] // N]\n\), 
+    \(Print["\< \>"]\n\), 
+    \(x = .1; \nPrint["\<For x =\>", x]\), 
+    \(Print[\*"\"\<x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = \>\"", 
+      N[x - x\^3/\(3!\)\  + \ x\^5/\(5!\), 10]]\), 
+    \(\t\t\tPrint["\<Sin[x] = \>", N[Sin[x], 10]]\), 
+    \(Print[\*"\"\<x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = \>\"", 
+      x - x\^3/\(3!\)\  + \ x\^5/\(5!\) - Sin[x] // N]\n\), 
+    \(Print["\< \>"]\n\), 
+    \(x = .0001; \nPrint["\<For x =\>", x]\), 
+    \(Print[\*"\"\<x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = \>\"", 
+      N[x - x\^3/\(3!\)\  + \ x\^5/\(5!\), 10]]\), 
+    \(\t\t\tPrint["\<Sin[x] = \>", N[Sin[x], 10]]\), 
+    \(Print[\*"\"\<x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = \>\"", 
+      x - x\^3/\(3!\)\  + \ x\^5/\(5!\) - Sin[x] // N]\n\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("For x ="\[InvisibleSpace]1\),
+      SequenceForm[ "For x =", 1],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = "\), "\[InvisibleSpace]", 
+        StyleBox["0.841666666666666607`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->10]}],
+      SequenceForm[ 
+      "x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = ", 0.84166666666666667],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("Sin[x] = "\), "\[InvisibleSpace]", 
+        StyleBox["0.841470984807896549`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->10]}],
+      SequenceForm[ "Sin[x] = ", 0.8414709848078965],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = \
+"\[InvisibleSpace]0.000195681858770169192`\),
+      SequenceForm[ 
+      "x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = ", 0.00019568185877016919],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("For x ="\), "\[InvisibleSpace]", 
+        StyleBox["0.1`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->1]}],
+      SequenceForm[ "For x =", 0.10000000000000001],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = "\), "\[InvisibleSpace]", 
+        StyleBox["0.0998334166666666789`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->10]}],
+      SequenceForm[ 
+      "x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = ", 0.099833416666666674],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("Sin[x] = "\), "\[InvisibleSpace]", 
+        StyleBox["0.099833416646828148`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->10]}],
+      SequenceForm[ "Sin[x] = ", 0.099833416646828155],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = \
+"\[InvisibleSpace]1.98385197158756909`*^-11\),
+      SequenceForm[ 
+      "x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = ", 1.9838519715875691*^-11],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("For x ="\), "\[InvisibleSpace]", 
+        StyleBox["0.0001`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->1]}],
+      SequenceForm[ "For x =", 0.0001],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = "\), "\[InvisibleSpace]", 
+        StyleBox["0.0000999999998333333373`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->10]}],
+      SequenceForm[ 
+      "x-\!\(x\^3\)/3! + \!\(x\^5\)/5! = ", 9.9999999833333343*^-05],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("Sin[x] = "\), "\[InvisibleSpace]", 
+        StyleBox["0.0000999999998333333373`",
+          StyleBoxAutoDelete->True,
+          PrintPrecision->10]}],
+      SequenceForm[ "Sin[x] = ", 9.9999999833333343*^-05],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = "\[InvisibleSpace]0.`\),
+      SequenceForm[ "x-\!\(x\^3\)/3! + \!\(x\^5\)/5!-Sin[x] = ", 0.0],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(For\ x = \(1\ and\ x = 0.1\), \ there\ is\ enough\ precision\ within\ 
+    \), 
+    \(\tthe\ machine\ to\ register\ a\ non - zero\ answer.\ \ \ By\ the\), 
+    \(time\ we\ get\ to\ x = 0.0001, \ 
+    that' s\ no\ longer\ true.\ \n\nHow\ do\ we\ get\ around\ this?\ \ By\ 
+      eliminating\ the\ big, \ \nidentical, \ 
+    most\ significant\ bits\ of\ the\ two\ numbers\), 
+    \(being\ subtracted.\ \ If\ they\ no\ longer\ dominate\ the\ \), 
+    \(calculation, \ the\ difference\ gets\ promoted\ to\ higher\), 
+    \(significance.\n\t\nExpand\ Sin[x] = 
+      x - x\^3/\(3!\) + x\^5/\(5!\) - x\^7/\(7!\) + x\^9/\(9!\)...\ \n\), 
+    \(The\ first\ three\ terms\ look\ really\ \(familiar!\)\ \ Ditch\ them, \n
+    and\ what\ remains\ is\ a\ good\ approximation\ to\ the\ 
+      difference.\n\t\tHow\ do\ you\ figure\ out\ how\ many\ terms\ to\ 
+      \(keep?\)\ \ \)}], "Input",
+  Background->GrayLevel[0.900008]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \( (*\ For\ real, \ this\ time\ *) \nRemove["\<Global`*\>"]\n\n
+     (*\ define\ a\ function\ *) \n\), 
+    \(diff[x_]\  := \ 
+      ScientificForm[x^7/\(7!\)\  - x^9/\(9!\) + x^11/\(11!\) // N, 3]; \n\n
+    Print[\*"\"\<For x=1, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = \>\"", \ 
+      diff[1]]\), 
+    \(Print[\*"\"\<For x=0.1, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = \>\"", \ 
+      diff[0.1]]\), 
+    \(Print[\*"\"\<For x=0.01, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = \>\"", 
+      \ diff[0.01]]\), 
+    \(Print[\*"\"\<For x=0.001, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = \>\"", 
+      \ diff[0.001]]\), 
+    \(Print[
+      \*"\"\<For x=0.0001, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = \>\"", \ 
+      diff[0.0001]]\n\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{
+      \("For x=1, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = "\), 
+        "\[InvisibleSpace]", 
+        TagBox[
+          InterpretationBox[\("1.96"\[Times]10\^"-4"\),
+            0.00019568201859868526,
+            AutoDelete->True],
+          (ScientificForm[ #, 3]&)]}],
+      SequenceForm[ "For x=1, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = ", 
+        ScientificForm[ 0.00019568201859868526, 3]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{
+      \("For x=0.1, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = "\), 
+        "\[InvisibleSpace]", 
+        TagBox[
+          InterpretationBox[\("1.98"\[Times]10\^"-11"\),
+            1.9838514359868539*^-11,
+            AutoDelete->True],
+          (ScientificForm[ #, 3]&)]}],
+      SequenceForm[ "For x=0.1, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = ", 
+        ScientificForm[ 1.9838514359868539*^-11, 3]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{
+      \("For x=0.01, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = "\), 
+        "\[InvisibleSpace]", 
+        TagBox[
+          InterpretationBox[\("1.98"\[Times]10\^"-18"\),
+            1.9841242283975674*^-18,
+            AutoDelete->True],
+          (ScientificForm[ #, 3]&)]}],
+      SequenceForm[ "For x=0.01, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = ", 
+        ScientificForm[ 1.9841242283975674*^-18, 3]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{
+      \("For x=0.001, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = "\), 
+        "\[InvisibleSpace]", 
+        TagBox[
+          InterpretationBox[\("1.98"\[Times]10\^"-25"\),
+            1.9841269565696652*^-25,
+            AutoDelete->True],
+          (ScientificForm[ #, 3]&)]}],
+      SequenceForm[ "For x=0.001, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = ", 
+        ScientificForm[ 1.9841269565696652*^-25, 3]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{
+      \("For x=0.0001, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = "\), 
+        "\[InvisibleSpace]", 
+        TagBox[
+          InterpretationBox[\("1.98"\[Times]10\^"-32"\),
+            1.984126983851411*^-32,
+            AutoDelete->True],
+          (ScientificForm[ #, 3]&)]}],
+      SequenceForm[ "For x=0.0001, x-\!\(x\^3\)/3!+\!\(x\^5\)/5!-Sin[x] = ", 
+        ScientificForm[ 1.984126983851411*^-32, 3]],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(#7)\)\ Marion\ 1 - 4\ \ \ \ \ \ First, \ 
+      make\ sure\ start\ off\ with\ arbitrary\ matrices\ 8*) \)\)], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\n\), 
+    \(a = {{a11, a12, a13}, {a21, a22, a23}, {a31, a32, a33}}; \n
+    b = {{b11, b12, b13}, {b21, b22, b23}, {b31, b32, b33}}; \n\n
+    Print["\<a = \>", MatrixForm[a]]\), 
+    \(Print["\<b = \>", MatrixForm[b]]\n\n
+     (*\ don' t\ forget\ to\ multiply\ with\ a\ \(\(period!!\)!!\)\ \ *) \n
+     (*\  == \ tests\ for\ equivalence\ and\ reports\ True/False\ *) \n
+     (*\  // Simplify\ \(helps!\)\ *) \n\), 
+    \(Print["\< \>"]\), 
+    \(Print[
+      \*"\"\<(ab\!\(\()\^\(-1\)\)\) = \!\(b\^\(-1\)\)\!\(a\^\(-1\)\) ? \>\"", 
+      \ Inverse[a.b] == Inverse[b].Inverse[a] // Simplify]\), 
+    \(Print["\< \>"]\), 
+    \(Print[
+      \*"\"\<(ab\!\(\()\^\(-t\)\)\) = \!\(b\^\(-t\)\)\!\(a\^\(-t\)\) ? \>\"", 
+      \ Transpose[a.b] == Transpose[b].Transpose[a] // Simplify]\n\n\)}], 
+  "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("a = "\), "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", GridBox[{
+                {"a11", "a12", "a13"},
+                {"a21", "a22", "a23"},
+                {"a31", "a32", "a33"}
+                }], ")"}],
+          (MatrixForm[ #]&)]}],
+      SequenceForm[ "a = ", 
+        MatrixForm[ {{a11, a12, a13}, {a21, a22, a23}, {a31, a32, a33}}]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\("b = "\), "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", GridBox[{
+                {"b11", "b12", "b13"},
+                {"b21", "b22", "b23"},
+                {"b31", "b32", "b33"}
+                }], ")"}],
+          (MatrixForm[ #]&)]}],
+      SequenceForm[ "b = ", 
+        MatrixForm[ {{b11, b12, b13}, {b21, b22, b23}, {b31, b32, b33}}]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("(ab\!\(\()\^\(-1\)\)\) = \!\(b\^\(-1\)\)\!\(a\^\(-1\)\) ? "\
+\[InvisibleSpace]True\),
+      SequenceForm[ 
+      "(ab\!\(\()\^\(-1\)\)\) = \!\(b\^\(-1\)\)\!\(a\^\(-1\)\) ? ", True],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("(ab\!\(\()\^\(-t\)\)\) = \!\(b\^\(-t\)\)\!\(a\^\(-t\)\) ? "\
+\[InvisibleSpace]True\),
+      SequenceForm[ 
+      "(ab\!\(\()\^\(-t\)\)\) = \!\(b\^\(-t\)\)\!\(a\^\(-t\)\) ? ", True],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(#8)\)\ Marion\ 1 - 9\)], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\n\n (*\ define\ the\ vectors\ *) \), 
+    \(a = {1, 2, \(-1\)}; \nb = {\(-2\), 3, 1}; \n\n
+     (*\ You' ll\ note\ Mathematica\ 3\n
+      \t\ \ \ doesn' t\ have\ a\ Norm[]\ *) \n\nPrint["\<A-B = \>", a - b]\), 
+  
+    \(Print["\<|A-B| = \>", Sqrt[\((a - b)\).\((a - b)\)]]\n\), 
+    \(Print["\< \>"]\n\), 
+    \(Print["\<B\[UpArrow]\[UpArrow]A = \>", b.a/Sqrt[a.a]]\n\), 
+    \(Print["\<\[Theta] = \>", ArcCos[a.b/Sqrt[a.a\ b.b]]/Degree // N\ ]\n\), 
+  
+    \(Print["\< \>"]\), 
+    \(Print["\<a\[Cross]b = \>", Cross[a, b]]\), 
+    \(Print["\< \>"]\), 
+    \(Print["\<(a-b)\[Cross](a+b) = \>", Cross[a - b, a + b]]\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("A-B = "\[InvisibleSpace]{3, \(-1\), \(-2\)}\),
+      SequenceForm[ "A-B = ", {3, -1, -2}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("|A-B| = "\[InvisibleSpace]\@14\),
+      SequenceForm[ "|A-B| = ", 
+        Power[ 14, 
+          Rational[ 1, 2]]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("B\[UpArrow]\[UpArrow]A = "\[InvisibleSpace]\@\(3\/2\)\),
+      SequenceForm[ "B\[UpArrow]\[UpArrow]A = ", 
+        Power[ 
+          Rational[ 3, 2], 
+          Rational[ 1, 2]]],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("\[Theta] = "\[InvisibleSpace]70.8933946491309097`\),
+      SequenceForm[ "\[Theta] = ", 70.893394649130911],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("a\[Cross]b = "\[InvisibleSpace]{5, 1, 7}\),
+      SequenceForm[ "a\[Cross]b = ", {5, 1, 7}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    \(" "\)], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("(a-b)\[Cross](a+b) = "\[InvisibleSpace]{10, 2, 14}\),
+      
+      SequenceForm[ "(a-b)\[Cross](a+b) = ", {10, 2, 14}],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(#9)\)\ Marion\ 1 - 10\)], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\n\n
+     (*\ If\ we\ define\ r\ as\ an\ explicit\ function\ of\ time, \n\t\ \ \ 
+      we\ can\ use\ primes\ \((unambiguously)\)\ for\ derivatives\ *) \n\), 
+    \(r[t_] = {2\ b\ Sin[\[Omega]\ t], \ b\ Cos[\[Omega]\ t]}; \n\n
+    v[t_] = \(r'\)[t]; \na[t_]\  = \ \(v'\)[t]; \n\nPrint["\<v = \>", v[t]]\),
+   
+    \(Print["\<a = \>", a[t]]\n\), 
+    \(\[Theta][t_]\  = \ 
+      ArcCos[v[t].a[t]/Sqrt[v[t].v[t]\ a[t].a[t]]]/Degree // N; \n\n
+    Print["\<\[Theta][\[Pi]/(2 \[Omega])] = \>", 
+      \[Theta][\[Pi]/\((2\ \[Omega])\)]]\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("v = "\[InvisibleSpace]{2\ b\ \[Omega]\ Cos[t\ \[Omega]], 
+          \(-b\)\ \[Omega]\ Sin[t\ \[Omega]]}\),
+      SequenceForm[ "v = ", {
+        Times[ 2, b, \[Omega], 
+          Cos[ 
+            Times[ t, \[Omega]]]], 
+        Times[ -1, b, \[Omega], 
+          Sin[ 
+            Times[ t, \[Omega]]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("a = "\[InvisibleSpace]{\(-2\)\ b\ \[Omega]\^2\ Sin[t\ \[Omega]], 
+          \(-b\)\ \[Omega]\^2\ Cos[t\ \[Omega]]}\),
+      SequenceForm[ "a = ", {
+        Times[ -2, b, 
+          Power[ \[Omega], 2], 
+          Sin[ 
+            Times[ t, \[Omega]]]], 
+        Times[ -1, b, 
+          Power[ \[Omega], 2], 
+          Cos[ 
+            Times[ t, \[Omega]]]]}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("\[Theta][\[Pi]/(2 \[Omega])] = "\[InvisibleSpace]90.`\),
+      SequenceForm[ "\[Theta][\[Pi]/(2 \[Omega])] = ", 90.0],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(#10)\)\ Marion\ 1 - 14\n\), 
+    \(Don' t\ forget\ to\ use\ .' s\ for\ matrix\ \(multiplication!\)\)}], 
+  "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\n\), 
+    \(a = {{1, 2, \(-1\)}, {0, 3, 1}, {2, 0, 1}}; \n
+    b = {{2, 1, 0}, {0, \(-1\), 2}, {1, 1, 3}}; \n
+    c = {{2, 1}, {4, 3}, {1, 0}}; \n\nPrint["\<|ab| = \>", Det[a.b]]\), 
+    \(Print["\<ac = \>", a.c]\), 
+    \(Print["\<abc = \>", \((a.b)\).c]\), 
+    \(Print[\*"\"\<ab - \!\(b\^t\)\!\(a\^t\) =\>\"", 
+      a.b - Transpose[b].Transpose[a]]\n\)}], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("|ab| = "\[InvisibleSpace]\( - 104\)\),
+      SequenceForm[ "|ab| = ", -104],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[\("ac = "\[InvisibleSpace]{{9, 7}, {13, 9}, {5, 2}}\),
+      SequenceForm[ "ac = ", {{9, 7}, {13, 9}, {5, 2}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("abc = "\[InvisibleSpace]{{\(-5\), \(-5\)}, {3, \(-5\)}, {25, 14}}\),
+      SequenceForm[ "abc = ", {{-5, -5}, {3, -5}, {25, 14}}],
+      Editable->False]], "Print"],
+
+Cell[BoxData[
+    InterpretationBox[
+      \("ab - \!\(b\^t\)\!\(a\^t\) ="\[InvisibleSpace]{{0, \(-3\), \(-4\)}, {
+            3, 0, 6}, {4, \(-6\), 0}}\),
+      SequenceForm[ 
+      "ab - \!\(b\^t\)\!\(a\^t\) =", {{0, -3, -4}, {3, 0, 6}, {4, -6, 0}}],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(#11)\)\ Marion\ 1 - 29\n\), 
+    \(Choosing\ between\ immediate\ and\ delayed\ \), 
+    \(assignments\ makes\ a\ big\ difference...\ \ \n\t\), 
+    \(Can\ you\ hack\ this, \ and\ make\ it\ a\ bit\ more\), 
+    \(elegant \(?? \ \ Bet\ you\ can!\)\)}], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\n\n (*\ define\ the\ surfaces\ *) \), 
+    \(f = r^2 - 9; \ng = x + y + z^2 - 1; \n\n
+     (*\ transform\ r\ to\ x, y, z\ *) \nr = Sqrt[x^2 + y^2 + z^2]; \n\n
+     (*\ The\ gradient\ is\ normal\ to\ a\ surface\ *) \n
+     (*\ Why\ is\ the\ delayed\ assignment\ important\ \(here?\)\ *) \n
+    del[v_] := {D[v, x], D[v, y], D[v, z]}; \n\n
+     (*\ The\ angle\ between\ the\ normals\ is\ the\n
+      \t\ \ \ \ angle\ between\ the\ surfaces\ *) \n
+     (*\ What\ happens\ if\ you\ delay\ this\ assigment?\ \ Why?\ *) \n
+    \[Theta]\  = \ 
+      ArcCos[del[f].del[g]/Sqrt[del[f].del[f]\ del[g].del[g]]]/Degree // N; \n
+    \nx = 2; \ny = \(-2\); \nz = 1; \nPrint["\<\[Theta] = \>", \[Theta]]\)}], 
+  "Input"],
+
+Cell[BoxData[
+    InterpretationBox[\("\[Theta] = "\[InvisibleSpace]74.2068309517360358`\),
+      SequenceForm[ "\[Theta] = ", 74.206830951736038],
+      Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(#12)\)\ \ Marion\ 1 - 41\n\), 
+    \(Mathematica\ makes\ this\ problem\ TRIVIAL...\)}], "Input",
+  Background->RGBColor[0, 1, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Remove["\<Global`*\>"]\n\), 
+    \(A = {2  a, \ \(-2\), \ a}; \nB = {a, 2\ a, 2}; \n\n
+     (*\ What\ value\ of\ a\ results\ in\ \n
+      \t\ \ \ perpendicular\ \(vectors?\)\ *) \n\nSolve[A.B == 0, a]\)}], 
+  "Input"],
+
+Cell[BoxData[
+    \({{a \[Rule] 0}, {a \[Rule] 1}}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"X 3.0",
+ScreenRectangle->{{0, 1366}, {0, 768}},
+ScreenStyleEnvironment->"Presentation",
+WindowToolbars->{},
+WindowSize->{1344, 620},
+WindowMargins->{{0, Automatic}, {Automatic, 22}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1709, 49, 91, 2, 51, "Input"],
+Cell[1803, 53, 119, 2, 51, "Input"],
+
+Cell[CellGroupData[{
+Cell[1947, 59, 544, 11, 363, "Input"],
+Cell[2494, 72, 135, 3, 25, "Print"],
+Cell[2632, 77, 135, 3, 25, "Print"],
+Cell[2770, 82, 171, 4, 45, "Print"]
+}, Open  ]],
+Cell[2956, 89, 266, 6, 89, "Input"],
+Cell[3225, 97, 168, 3, 51, "Input"],
+
+Cell[CellGroupData[{
+Cell[3418, 104, 193, 4, 79, "Input"],
+Cell[3614, 110, 84, 1, 43, "Output"]
+}, Open  ]],
+Cell[3713, 114, 157, 3, 51, "Input"],
+
+Cell[CellGroupData[{
+Cell[3895, 121, 164, 3, 36, "Input"],
+Cell[4062, 126, 177, 5, 39, "Output"]
+}, Open  ]],
+Cell[4254, 134, 588, 12, 132, "Input"],
+
+Cell[CellGroupData[{
+Cell[4867, 150, 1196, 22, 530, "Input"],
+Cell[6066, 174, 137, 3, 25, "Print"],
+Cell[6206, 179, 346, 8, 29, "Print"],
+Cell[6555, 189, 288, 7, 26, "Print"],
+Cell[6846, 198, 265, 6, 30, "Print"],
+Cell[7114, 206, 36, 1, 25, "Print"],
+Cell[7153, 209, 267, 7, 25, "Print"],
+Cell[7423, 218, 348, 8, 29, "Print"],
+Cell[7774, 228, 290, 7, 26, "Print"],
+Cell[8067, 237, 267, 6, 30, "Print"],
+Cell[8337, 245, 36, 1, 25, "Print"],
+Cell[8376, 248, 257, 7, 25, "Print"],
+Cell[8636, 257, 354, 8, 29, "Print"],
+Cell[8993, 267, 297, 7, 26, "Print"],
+Cell[9293, 276, 216, 4, 30, "Print"]
+}, Open  ]],
+Cell[9524, 283, 934, 16, 322, "Input"],
+
+Cell[CellGroupData[{
+Cell[10483, 303, 747, 15, 290, "Input"],
+Cell[11233, 320, 482, 12, 30, "Print"],
+Cell[11718, 334, 489, 12, 30, "Print"],
+Cell[12210, 348, 491, 12, 30, "Print"],
+Cell[12704, 362, 493, 12, 30, "Print"],
+Cell[13200, 376, 493, 12, 30, "Print"]
+}, Open  ]],
+Cell[13708, 391, 175, 3, 51, "Input"],
+
+Cell[CellGroupData[{
+Cell[13908, 398, 841, 17, 372, "Input"],
+Cell[14752, 417, 446, 12, 66, "Print"],
+Cell[15201, 431, 446, 12, 66, "Print"],
+Cell[15650, 445, 36, 1, 25, "Print"],
+Cell[15689, 448, 261, 6, 29, "Print"],
+Cell[15953, 456, 36, 1, 25, "Print"],
+Cell[15992, 459, 261, 6, 28, "Print"]
+}, Open  ]],
+Cell[16268, 468, 88, 2, 51, "Input"],
+
+Cell[CellGroupData[{
+Cell[16381, 474, 673, 14, 445, "Input"],
+Cell[17057, 490, 163, 3, 25, "Print"],
+Cell[17223, 495, 188, 5, 30, "Print"],
+Cell[17414, 502, 36, 1, 25, "Print"],
+Cell[17453, 505, 259, 7, 59, "Print"],
+Cell[17715, 514, 181, 3, 25, "Print"],
+Cell[17899, 519, 36, 1, 25, "Print"],
+Cell[17938, 522, 165, 3, 25, "Print"],
+Cell[18106, 527, 36, 1, 25, "Print"],
+Cell[18145, 530, 192, 4, 25, "Print"]
+}, Open  ]],
+Cell[18352, 537, 89, 2, 51, "Input"],
+
+Cell[CellGroupData[{
+Cell[18466, 543, 588, 11, 328, "Input"],
+Cell[19057, 556, 386, 11, 26, "Print"],
+Cell[19446, 569, 442, 13, 33, "Print"],
+Cell[19891, 584, 198, 4, 26, "Print"]
+}, Open  ]],
+Cell[20104, 591, 171, 4, 89, "Input"],
+
+Cell[CellGroupData[{
+Cell[20300, 599, 412, 8, 233, "Input"],
+Cell[20715, 609, 149, 3, 25, "Print"],
+Cell[20867, 614, 181, 3, 25, "Print"],
+Cell[21051, 619, 210, 4, 25, "Print"],
+Cell[21264, 625, 286, 6, 28, "Print"]
+}, Open  ]],
+Cell[21565, 634, 315, 6, 165, "Input"],
+
+Cell[CellGroupData[{
+Cell[21905, 644, 749, 13, 439, "Input"],
+Cell[22657, 659, 181, 3, 25, "Print"]
+}, Open  ]],
+Cell[22853, 665, 152, 3, 89, "Input"],
+
+Cell[CellGroupData[{
+Cell[23030, 672, 238, 5, 189, "Input"],
+Cell[23271, 679, 64, 1, 35, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

@@ -1,0 +1,289 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11450,        280]
+NotebookOptionsPosition[     11107,        263]
+NotebookOutlinePosition[     11475,        279]
+CellTagsIndexPosition[     11432,        276]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x_", ",", "d_"}], "]"}], "=", 
+   RowBox[{"DiracDelta", "[", 
+    RowBox[{"x", "+", "d"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FT", "[", 
+    RowBox[{"k_", ",", "d_"}], "]"}], " ", "=", " ", 
+   RowBox[{"FourierTransform", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", ",", "d"}], "]"}], ",", "x", ",", "k", ",", 
+     RowBox[{"FourierParameters", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{
+         RowBox[{"-", "2"}], "\[Pi]"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FT", "[", 
+    RowBox[{"k_", ",", "d_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"FT", "[", 
+     RowBox[{"k", ",", "d"}], "]"}], "+", 
+    RowBox[{"FT", "[", 
+     RowBox[{"k", ",", 
+      RowBox[{"-", "d"}]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w", "=", ".1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d", "=", "1"}], ";"}], "\n", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"t", " ", "=", " ", 
+     RowBox[{"ParallelTable", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FT", "[", 
+         RowBox[{"k", ",", 
+          RowBox[{"d", "-", "s"}]}], "]"}], "+", 
+        RowBox[{"4", "*", 
+         RowBox[{"s", "/", "w"}]}]}], " ", ",", 
+       RowBox[{"{", 
+        RowBox[{"s", ",", "0", ",", "n", ",", "w"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"GraphicsRow", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Plot", "[", 
+        RowBox[{"t", ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", 
+           RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", 
+          RowBox[{"Thickness", "[", "0.001", "]"}]}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
+         RowBox[{"Mesh", "\[Rule]", "Full"}]}], "]"}], ",", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{"FT", "[", 
+            RowBox[{"k", ",", 
+             RowBox[{"d", "-", "s"}]}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"s", ",", "0", ",", "n", ",", "w"}], "}"}]}], "]"}], ",", 
+         
+         RowBox[{"{", 
+          RowBox[{"k", ",", 
+           RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", "Medium"}], ",", 
+         RowBox[{"Mesh", "\[Rule]", "Full"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Plot", "[", 
+          RowBox[{
+           RowBox[{"Sum", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"f", "[", 
+               RowBox[{"k", ",", 
+                RowBox[{"1", "-", "s"}]}], "]"}], "+", 
+              RowBox[{"f", "[", 
+               RowBox[{"k", ",", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "s"}]}], "]"}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{"s", ",", "0", ",", "n", ",", "w"}], "}"}]}], "]"}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"k", ",", 
+             RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+           RowBox[{"PlotPoints", "\[Rule]", "200"}], ",", 
+           RowBox[{"Exclusions", "\[Rule]", "None"}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ","}], "*)"}], 
+       RowBox[{"ListPlot", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "d"}], "+", "s"}], ",", "1"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "-", "s"}], ",", "1"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"s", ",", "0", ",", "n", ",", "w"}], "}"}]}], "]"}], ",", 
+         
+         RowBox[{"AxesOrigin", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "1.1"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"Filling", "\[Rule]", "Axis"}]}], "]"}]}], "}"}], "]"}]}], 
+   RowBox[{"(*", 
+    RowBox[{",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"d", ",", ".5", ",", "\"\<Aperture\>\""}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{".5", ",", "1", ",", "2"}], "}"}]}], "}"}]}], "*)"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "\"\<# of Slits\>\""}], "}"}], ",", "0", 
+     ",", "d", ",", "w"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6325454501968136`*^9, 3.6325454663130713`*^9}, {
+   3.6325454976023097`*^9, 3.6325455696894846`*^9}, {3.6325456202117968`*^9, 
+   3.632545634693797*^9}, {3.6325457061235304`*^9, 3.632545893214658*^9}, {
+   3.632545952946453*^9, 3.632545980931387*^9}, {3.6325460806348095`*^9, 
+   3.632546172155093*^9}, {3.6325462153405004`*^9, 3.6325462927359114`*^9}, 
+   3.632546361522608*^9, {3.632546491041541*^9, 3.632546556745694*^9}, {
+   3.6325466660991945`*^9, 3.632546678914386*^9}, {3.6325467545674825`*^9, 
+   3.632546772848891*^9}, {3.632546867030059*^9, 3.6325469330241947`*^9}, {
+   3.63254696853608*^9, 3.6325470202808523`*^9}, {3.632547050383*^9, 
+   3.63254717271531*^9}, {3.632547221288619*^9, 3.6325473810571117`*^9}, {
+   3.632547423887294*^9, 3.6325474847855988`*^9}, {3.632547514826756*^9, 
+   3.6325477212249784`*^9}, {3.6325478116864367`*^9, 
+   3.6325478844444647`*^9}, {3.632547925410001*^9, 3.63254796910858*^9}, {
+   3.632548047109269*^9, 3.6325480928554516`*^9}, {3.632548133542616*^9, 
+   3.6325481963959646`*^9}, {3.632548226739673*^9, 3.632548242824115*^9}, {
+   3.6325485368085985`*^9, 3.6325485880776668`*^9}, {3.632548753873586*^9, 
+   3.632548793245609*^9}, {3.6325488249079647`*^9, 3.6325488532643023`*^9}, {
+   3.6325488863425875`*^9, 3.632548957381742*^9}, {3.632549045245549*^9, 
+   3.6325491111025786`*^9}, {3.6325494309655333`*^9, 
+   3.6325494643229494`*^9}, {3.6325495215599327`*^9, 
+   3.6325495332891245`*^9}, {3.6325495679933615`*^9, 3.63254959454993*^9}, {
+   3.632549643122405*^9, 3.632549798300156*^9}, {3.6325498392239738`*^9, 
+   3.632549969727989*^9}, {3.6325500239264717`*^9, 3.632550027921935*^9}, {
+   3.632550124728153*^9, 3.632550159521387*^9}, {3.6325502209151382`*^9, 
+   3.632550224975624*^9}, {3.632550340305576*^9, 3.63255036007535*^9}, {
+   3.6325503956588364`*^9, 3.632550410156829*^9}, {3.632550684963853*^9, 
+   3.63255068557323*^9}, {3.632550766591689*^9, 3.6325508005632296`*^9}, {
+   3.6325509862852554`*^9, 3.6325509889415584`*^9}, {3.632551691710357*^9, 
+   3.632551692163515*^9}, {3.632719922358699*^9, 3.6327199613390727`*^9}, {
+   3.6327200026460648`*^9, 3.632720007552373*^9}, {3.6329565066833057`*^9, 
+   3.632956512434821*^9}, {3.632956678663803*^9, 3.6329566968140783`*^9}, {
+   3.632956733214134*^9, 3.6329567784467382`*^9}, {3.632956842050557*^9, 
+   3.632956845123721*^9}, {3.632956876650209*^9, 3.632956906489887*^9}, {
+   3.632956988966893*^9, 3.632956994837153*^9}, {3.632957051248184*^9, 
+   3.6329570551025963`*^9}, {3.6331978875310774`*^9, 3.633197892069868*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 1., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 0, "# of Slits"}, 0, 1, 0.1}}, 
+    Typeset`size$$ = {1173., {121., 125.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, $CellContext`n$9426$$ =
+     0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$9426$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`t = 
+        ParallelTable[$CellContext`FT[$CellContext`k, $CellContext`d - \
+$CellContext`s] + 
+          4 ($CellContext`s/$CellContext`w), {$CellContext`s, 
+           0, $CellContext`n$$, $CellContext`w}]; GraphicsRow[{
+          
+          Plot[$CellContext`t, {$CellContext`k, -5, 5}, PlotStyle -> 
+           Thickness[0.001], ImageSize -> Medium, Mesh -> Full], 
+          Plot[
+           Sum[
+            $CellContext`FT[$CellContext`k, $CellContext`d - $CellContext`s], \
+{$CellContext`s, 0, $CellContext`n$$, $CellContext`w}], {$CellContext`k, -5, 
+            5}, PlotRange -> Full, ImageSize -> Medium, Mesh -> Full], 
+          ListPlot[
+           
+           Table[{{-$CellContext`d + $CellContext`s, 
+              1}, {$CellContext`d - $CellContext`s, 1}}, {$CellContext`s, 
+             0, $CellContext`n$$, $CellContext`w}], AxesOrigin -> {0, 0}, 
+           PlotRange -> {{-2, 2}, {0, 1.1}}, Filling -> Axis]}]), 
+      "Specifications" :> {{{$CellContext`n$$, 0, "# of Slits"}, 0, 1, 0.1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{1224., {166., 173.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.6325508023132453`*^9, 3.63255099023842*^9, 3.6325512810696483`*^9, 
+   3.6327194370990615`*^9, 3.632719928704029*^9, 3.632719964135981*^9, 
+   3.632956521931591*^9, 3.632956697955364*^9, {3.632956744281076*^9, 
+   3.6329567703382998`*^9}, 3.632956846084104*^9, {3.6329569000549393`*^9, 
+   3.632956907134589*^9}, 3.632956996301178*^9, 3.63295705826587*^9, {
+   3.633197882789691*^9, 3.633197892381107*^9}}]
+}, Open  ]]
+},
+WindowSize->{1536, 783},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+ShowSelection->True,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 7584, 178, 272, "Input"],
+Cell[8166, 202, 2925, 58, 389, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
